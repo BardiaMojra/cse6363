@@ -25,7 +25,7 @@ print(pois_MLE)
 
 fig0 = plt.figure(0)
 plt.plot(k_range, data,
-            #label=f'$\mu$={}',
+            label=f'$\mu$={pois_MLE}',
             #alpha=0.5,
             marker='x',
             markersize=8)
