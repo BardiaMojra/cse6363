@@ -183,7 +183,7 @@ D_{test} = \{(162, 53, 28), (168, 75, 32), (175, 70, 30), (180, 85, 29) \}
 $$
 
 For distance calculation, neighbor selection for k of 1, 3, and 5 please refer
-to \textbf{\path{simple_knn_out.txt}}.
+to \textbf{\path{simple_knn.out}}.
 \newline
 
 b. For algorithm implementation please refer to \textbf{\path{simple_knn.py}}.
@@ -192,7 +192,7 @@ set:  \textbf{\path{python}} \textbf{\path{simple_knn.py}}.
 \newline
 
 c. For distance calculation, neighbor selection for k of 1, 3, and 5 please refer
-to \textbf{\path{simple_knn_out.txt}}.
+to \textbf{\path{simple_knn.out}}.
 \newline
 
 \newpage
@@ -200,7 +200,7 @@ to \textbf{\path{simple_knn_out.txt}}.
 \exercise*
 \textbf{Gaussian Naive Bayes Classification}
 \newline
-a. Using Gaussian Naive Bayes and data from problem 2 learn Gaussian distribution
+a,b,c. Using Gaussian Naive Bayes and data from problem 2 learn Gaussian distribution
 for each feature, i.e. for the following:
 
 $$
@@ -208,13 +208,22 @@ p(height|W ), p(height|M ), p(weight|W ),
 p(weight|M ), p(age|W ), p(age|M )
 $$
 
-a. Make similar predictions for problem 2b.
 
-b. Implement.
+For algorithm implementation please refer to \textbf{\path{naiveBayes.py}}.
+The following command could be used to run the naive Bayes algorithm on predefined data
+set:  \textbf{\path{python}} \textbf{\path{naiveBayes.py}}.
+\newline
 
-c. Repeat 2c.
+For a detailed output, please refer to \textbf{\path{naiveBayes.out}}
 
-d. Compare the two classifiers and discuss their comparative performance. 
 
+
+d. Compare the two classifiers and discuss their comparative performance.
+\newline
+They preformed similarly, considering small size of the problem, there were not
+much room for variational solutions. KNN sorts training dataset based on a similarity score
+for a given test datum and takes a vote among the nearest neighbors to make a prediction.
+Naive Bayes, computes conditional probabilities based on statistical priori and
+uses the highest Bayesian score as the most likely estimate.
 
 \end{document}
