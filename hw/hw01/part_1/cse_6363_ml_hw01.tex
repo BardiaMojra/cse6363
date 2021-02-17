@@ -8,7 +8,8 @@
 \maketitle
 
 \exercise
-
+\textbf{MLE and MAP}
+\newline
 Poisson distribution (PMF):
 
 $$
@@ -80,8 +81,8 @@ P_{\alpha, \beta}(\lambda) = \frac{\beta^{\alpha}}{\Gamma(\alpha)} \lambda^{\alp
 ~;~~where ~~\alpha= 2, ~~\beta=1
 $$
 
-For this part, we use Bayesian theorem to calculate the posterior distribution
-considering prior density of $\lambda$, $P(\lambda)$, and likelihood of data
+For this part, we use the Bayesian theorem to calculate the posterior distribution
+considering the prior density of $\lambda$, $P(\lambda)$, and likelihood of data
 being a match for a given expected value, $P(D \mid \lambda)$.
 
 $$
@@ -116,11 +117,11 @@ P(\lambda \mid D) \propto
 ~;~~where ~~\alpha= 2, ~~\beta=1,~~ k_i \in D
 $$
 
-With the last move, now we have the first parenthesis remain constant for given
+With the last move, now we have the first parenthesis remain constant for a given
 data and distribution ($D~and~\lambda$) so proportional probability would be
 the second parenthesis.
 
-So for posterior distribution we would have, which looks like a $\beta$
+So for posterior distribution, we would have, which looks like a $\beta$
 distribution therefore we can also define estimations for its parameters:
 
 $$
@@ -152,7 +153,8 @@ $$
 $$
 \exercise*
 
-K Nearest Neighbor
+\textbf{K Nearest Neighbor}
+\newline
 The following data provides, height, weight, age and gender.
 
 D = $\{$ \newline
@@ -173,16 +175,46 @@ D = $\{$ \newline
 $\}$
 
 a. Using Cartesian distance as the similarity measure. Show predictions for the
-following test data. For values of K or 1, 3, and 5. Include distance, calculation,
-neighbor selection and predictions.
+following test data. For values of K for 1, 3, and 5. Include distance calculation,
+neighbor selection, and predictions.
 
 $$
 D_{test} = \{(162, 53, 28), (168, 75, 32), (175, 70, 30), (180, 85, 29) \}
 $$
 
-b. Implement.
+For distance calculation, neighbor selection for k of 1, 3, and 5 please refer
+to \textbf{\path{simple_knn_out.txt}}.
+\newline
+
+b. For algorithm implementation please refer to \textbf{\path{simple_knn.py}}.
+The following command could be used to run the KNN algorithm on predefined data
+set:  \textbf{\path{python}} \textbf{\path{simple_knn.py}}.
+\newline
+
+c. For distance calculation, neighbor selection for k of 1, 3, and 5 please refer
+to \textbf{\path{simple_knn_out.txt}}.
+\newline
+
+\newpage
 
 \exercise*
+\textbf{Gaussian Naive Bayes Classification}
+\newline
+a. Using Gaussian Naive Bayes and data from problem 2 learn Gaussian distribution
+for each feature, i.e. for the following:
+
+$$
+p(height|W ), p(height|M ), p(weight|W ),
+p(weight|M ), p(age|W ), p(age|M )
+$$
+
+a. Make similar predictions for problem 2b.
+
+b. Implement.
+
+c. Repeat 2c.
+
+d. Compare the two classifiers and discuss their comparative performance. 
 
 
 \end{document}

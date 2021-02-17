@@ -2,8 +2,6 @@
 """
 import math
 import numpy as np
-from numpy.core.records import get_remaining_size
-
 
 W = 'W'
 M = 'M'
@@ -20,41 +18,9 @@ trainData = {((170, 57, 32), W), ((190, 95, 28), M), ((150, 45, 35), W),
 
 class KNN:
     def __init__(self, trainXY, testX, k):
-        trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
-        testX = np.asarray([sublist for sublist in testX], dtype=object)
-        trainX = np.delete(trainXY, np.s_[-1:], axis=1)
-        trainYclasses = trainXY[:,-1]
-        trainY = list()
-        for datum in range(len(trainYclasses)):
-            if trainYclasses[datum][-1] == W:
-                trainY.append(0)
-            else:
-                trainY.append(1)
+        #trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
+        #testX = np.asarray([sublist for sublist in testX], dtype=object)
 
-        print()
-        print()
-        print("trainX")
-        print(trainX)
-
-        print()
-        print()
-        print("trainY")
-        print(trainY)
-
-        print()
-        print()
-        print("trainXY")
-        print(trainXY)
-
-        print()
-        print()
-        print('testX')
-        print(testX)
-
-        print()
-        print()
-        print('k:')
-        print(k)
 
         self.predictions = list()
         for datum in testX:
@@ -68,56 +34,37 @@ class KNN:
 
     def euclidean_distance(self, row_A, row_B):
         dist = 0.0
-
-        """
-        print()
-        print('Calculate distances:')
-        print('row_A:')
-        print(row_A)
-        print('row_B:')
-        print(row_B)
-        """
-
         diffList = list()
-        diff = 0.0
-
-
         for i in range(len(row_A[0])):
             diff = 0.0
             diff = row_A[0][i]-row_B[i]
             diffList.append(diff)
             dist += (diff)**2
-        """
-        print("Diff: ")
-        print(diffList)
-        """
         dist = math.sqrt(dist)
-        #print('euclidean dist:')
-        #print(dist)
         return (dist)
 
-# Calculate nearest neighbors
+    # Calculate nearest neighbors
     def get_neighbors(self, trainX, test_row, k): # trainX, trainX_i, # of nearest neighbors
         distances = list()
         neighbors = list()
         for X_i in trainX:
+            print('X_i: ', X_i)
             dist = self.euclidean_distance(X_i, test_row)
             distances.append((X_i, dist))
         distances.sort(key=lambda tup: tup[1])
-        for i in range(k): neighbors.append(distances[i][0])
-
+        for i in range(k): neighbors.append(distances[i][:])
+        self.print_distances(distances)
+        self.print_neighbors(neighbors)
         print('Distances:')
         print(distances)
         print()
         print('Neighbors')
         print(neighbors)
-
         return neighbors
 
     def predict_class(self, trainXY, testX, k):
         #print(trainXY.dtype)
         #print(testX.dtype)
-
         self.trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
         neighbors = self.get_neighbors(trainXY, testX, k)
         output_values = [row[-1] for row in neighbors]
@@ -127,7 +74,6 @@ class KNN:
         self.prediction = max(set(output_values), key=output_values.count)
         #print(self.prediction)
         return (self.prediction)
-
 
     # get min and max of every feature column (trainX)
     def get_trainX_minmax_list(self, trainX):
@@ -150,6 +96,19 @@ testX_noAge = {(162, 53), (168, 75), (175, 70), (180, 85)}
 if __name__ == '__main__':
 
     """ Complete Dataset --- Part a and b """
+
+    print()
+    print()
+    print("trainXY")
+    print(trainData)
+
+    print()
+    print()
+    print('testX')
+    print(testX)
+    print()
+    print()
+
     k = 1
     KNN(trainData, testX, k)
     print('for test set:')
