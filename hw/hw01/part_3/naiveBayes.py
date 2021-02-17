@@ -8,7 +8,7 @@ import numpy as np
 
 W = 'W'
 M = 'M'
-#precision = 10 # sigfig precision for all calc
+feature = ('height', 'weight', 'age')
 
 trainData_noAge = {((170, 57), W), ((190, 95), M), ((150, 45), W),
 ((168, 65), M), ((175, 78), M), ((185, 90), M), ((171, 65), W),
@@ -20,8 +20,10 @@ trainData = {((170, 57, 32), W), ((190, 95, 28), M), ((150, 45, 35), W),
 ((155, 48, 31), W), ((165, 60, 27), W), ((182, 80, 30), M), ((175, 69, 28), W),
 ((178, 80, 27), M), ((160, 50, 31), W), ((170, 72, 30), M)}
 
+testX = {(162, 53, 28), (168, 75, 32), (175, 70, 30), (180, 85, 29)}
+testX_noAge = {(162, 53), (168, 75), (175, 70), (180, 85)}
 class naiveBayes:
-  def __init__(self, trainXY, testX, precision=10):
+  def __init__(self, trainXY, testX, precision=4):
     self.precision = precision
     trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
     testX = np.asarray([sublist for sublist in testX], dtype=object)
@@ -175,21 +177,23 @@ class naiveBayes:
       print('----------> label: ', label)
       probs[label] = summaries[label][0][3]/float(trainXY_size)
       for i in range(len(summary)):
-        print('i: ', i)
+        print('X[',i,']: ', feature[i])
         mean, var, sd, f = summary[i]
-        probs[label] *= self.gaussian_PDF(datum[i], mean, sd)
+        prob_i = self.gaussian_PDF(datum[i], mean, sd)
+        print("P(", feature[i], '|', label, '):', prob_i)
+        probs[label] *= prob_i
         print()
       print()
     return probs
 
 """ end of naiveBayes class """
 
-testX = {(162, 53, 28), (168, 75, 32), (175, 70, 30), (180, 85, 29)}
-#testX_noAge = {(162, 53), (168, 75), (175, 70), (180, 85)}
+
 
 if __name__ == '__main__':
 
-  ''' set calculation precision '''
-  sigfig = 5
+  """ Part a and b """
+  naiveBayes(trainData, testX)
 
-  naiveBayes(trainData, testX, sigfig)
+  """ Part c """
+  naiveBayes(trainData_noAge, testX_noAge)
