@@ -1,14 +1,14 @@
 """CSE 6363 - PROJ01 - Part 1
 """
 
-from os import terminal_size
-import  pprint
+
 from pprint import pprint
 
 from numpy.lib.function_base import iterable
 from sklearn.preprocessing import StandardScaler
 import pdb
 import matplotlib.pyplot as plt
+from matplotlib import cm
 import numpy as np
 
 
@@ -90,6 +90,8 @@ def prepare_data(dataset, deg=4):
   X.reshape(-1,X.ndim)
   Y = np.expand_dims(Y, axis=1)
   m, _ = X.shape
+  stdScaler = StandardScaler()
+  X = stdScaler.fit_transform(X)
   X = np.concatenate((np.ones((len(dataset),1)), X), axis=1)
 
   if deg == 1:
@@ -128,11 +130,6 @@ def prepare_data(dataset, deg=4):
       (X[:,2] ** 3).reshape((m,1)),
       (X[:,2] ** 4).reshape((m,1)), # 9
     ))
-  # normalize training data except bias (X1_0) and (X2_0)
-  #X[:,1:4] = (X[:,1:4] - np.mean(X[:,1:4], axis=0)) / np.std(X[:,1:4], axis=0)
-  #X[:,6:9] = (X[:,6:9] - np.mean(X[:,6:9], axis=0)) / np.std(X[:,6:9], axis=0)
-  stdScaler = StandardScaler()
-  X = stdScaler.fit_transform(X)
 
   return X, Y
 
@@ -161,6 +158,84 @@ def getR2(Y_, Y):
   exp_mean = np.sum((Y-Y.mean())**2)
   mean = np.sum((Y_-Y)**2)
   return (1 - (mean/exp_mean))
+
+def getX1X2(X, deg):
+  if deg == 1:
+    X1 = X[:,1]
+    X2 = X[:,2]
+  elif deg == 2:
+    X1 = X[:,1]
+    X2 = X[:,3]
+  elif deg == 3:
+    X1 = X[:,1]
+    X2 = X[:,3]
+  elif deg == 4:
+    X1 = X[:,1]
+    X2 = X[:,4]
+  return X1, X2
+
+def prepare_testdata(testset, deg=1):
+  testset = np.asarray(testset)
+  X = list()
+  Y = list()
+  for i in range(len(testset)):
+    X.append(np.asarray((testset[i][0],testset[i][1]) , dtype=np.float))
+    Y.append(testset[i][2])
+  X = np.asarray(X)
+  Y = np.asarray(Y)
+  Y = np.expand_dims(Y, axis=1)
+  stdScaler = StandardScaler()
+  X = stdScaler.fit_transform(X)
+  X = np.concatenate((np.ones((len(testset),1)), X), axis=1)
+  m, _ = X.shape
+  if deg == 1:
+    X = np.hstack((
+      (X[:,0]     ).reshape((m,1)), # 0
+      (X[:,1] ** 1).reshape((m,1)),
+      (X[:,2] ** 1).reshape((m,1)),
+    ))
+  elif deg == 2:
+    X = np.hstack((
+      (X[:,0]     ).reshape((m,1)), # 0
+      (X[:,1] ** 1).reshape((m,1)),
+      (X[:,1] ** 2).reshape((m,1)),
+      (X[:,2] ** 1).reshape((m,1)),
+      (X[:,2] ** 2).reshape((m,1)),
+    ))
+  elif deg == 3:
+    X = np.hstack((
+      (X[:,0]     ).reshape((m,1)), # 0
+      (X[:,1] ** 1).reshape((m,1)),
+      (X[:,1] ** 2).reshape((m,1)),
+      (X[:,1] ** 3).reshape((m,1)),
+      (X[:,2] ** 1).reshape((m,1)),
+      (X[:,2] ** 2).reshape((m,1)),
+      (X[:,2] ** 3).reshape((m,1)),
+    ))
+  elif deg == 4:
+    X = np.hstack((
+      (X[:,0]     ).reshape((m,1)), # 0
+      (X[:,1] ** 1).reshape((m,1)),
+      (X[:,1] ** 2).reshape((m,1)),
+      (X[:,1] ** 3).reshape((m,1)),
+      (X[:,1] ** 4).reshape((m,1)),
+      (X[:,2] ** 1).reshape((m,1)),
+      (X[:,2] ** 2).reshape((m,1)),
+      (X[:,2] ** 3).reshape((m,1)),
+      (X[:,2] ** 4).reshape((m,1)), # 9
+    ))
+  return X, Y
+
+
+def runtest(testset, deg, theta):
+  Xt, Yt = prepare_testdata(testset, deg)
+  Yt_ = predict(Xt, theta)
+  #Yt = Yt/np.mean(Yt)
+  #Yt_ = Yt_/np.mean(Yt_)
+  R2t = getR2(Yt_, Yt)
+  print(deg," deg model accuracy for test data (R2): {:.3f}".format(R2t))
+  return
+
 if __name__ == '__main__':
 
   """ Complete Dataset --- Part a and b """
@@ -168,10 +243,11 @@ if __name__ == '__main__':
   data = file.read()
   testset = np.fromstring(data, dtype=np.float, count=-1, sep="\n")
   testset =  testset.reshape(10,3)
-  pprint(testset)
+  #pprint(testset)
   stdsc = StandardScaler()
   testset = stdsc.fit_transform(testset)
-  pprint(testset)
+
+  #pprint(testset)
 
   """for i in np.arange(len(testset[0])):
     max_ = np.max(testset[:,i])
@@ -185,48 +261,55 @@ if __name__ == '__main__':
 
   pprint(testset)
   """
-  pdb.set_trace()
+  #pdb.set_trace()
 
 
   # First degree
-  model = PolyReg(degree=1, learningRate=0.1, iterations=200)
+  model = PolyReg(degree=1, learningRate=0.01, iterations=180)
   X, Y = prepare_data(D,deg=model.degree)
   theta = model.init_theta(shape=((model.degree*2)+1,1))
   theta, theta_hist, cost_hist = model.train(X,Y, theta, show_prog=False)
   Y_ = predict(X, theta)
   R2 = getR2(Y_, Y)
-  print("1st deg model accuracy (R2): {:.3f}".format(R2))
-  plot_cost(cost_hist)
+  print("1st deg model accuracy for training(R2): {:.3f}".format(R2))
+  #plot_cost(cost_hist)
+  # test data
+  runtest(testset, model.degree, theta)
 
   # Second degree
-  model = PolyReg(degree=2, learningRate=0.1, iterations=200)
+  model = PolyReg(degree=2, learningRate=0.01, iterations=200)
   X, Y = prepare_data(D,deg=model.degree)
   theta = model.init_theta(shape=((model.degree*2)+1,1))
   theta, theta_hist, cost_hist = model.train(X,Y, theta, show_prog=False)
   Y_ = predict(X, theta)
   R2 = getR2(Y_, Y)
   print("2nd deg model accuracy (R2): {:.3f}".format(R2))
-  plot_cost(cost_hist)
+  #plot_cost(cost_hist)
+  runtest(testset, model.degree, theta)
+
 
   # Third degree
-  model = PolyReg(degree=2, learningRate=0.1, iterations=200)
+  model = PolyReg(degree=3, learningRate=0.01, iterations=200)
   X, Y = prepare_data(D,deg=model.degree)
   theta = model.init_theta(shape=((model.degree*2)+1,1))
   theta, theta_hist, cost_hist = model.train(X,Y, theta, show_prog=False)
   Y_ = predict(X, theta)
   R2 = getR2(Y_, Y)
   print("3rd deg model accuracy (R2): {:.3f}".format(R2))
-  plot_cost(cost_hist)
+  #plot_cost(cost_hist)
+  runtest(testset, model.degree, theta)
+
 
   # Fourth degree
-  model = PolyReg(degree=2, learningRate=0.1, iterations=200)
+  model = PolyReg(degree=4, learningRate=0.01, iterations=200)
   X, Y = prepare_data(D,deg=model.degree)
   theta = model.init_theta(shape=((model.degree*2)+1,1))
   theta, theta_hist, cost_hist = model.train(X,Y, theta, show_prog=False)
   Y_ = predict(X, theta)
   R2 = getR2(Y_, Y)
   print("4th deg model accuracy (R2): {:.3f}".format(R2))
-  plot_cost(cost_hist)
+  #plot_cost(cost_hist)
+  runtest(testset, model.degree, theta)
 
 
 

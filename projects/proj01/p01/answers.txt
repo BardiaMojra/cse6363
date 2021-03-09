@@ -1,0 +1,13 @@
+1.C. Yes overfitting has been the main issue. I tried training with lower iterations and that improved results. Interestingly, first order fitting made the most accurate prediction. These are the results:
+
+1st deg model accuracy for training(R2): 0.783
+1  deg model accuracy for test data (R2): -922.884
+2nd deg model accuracy (R2): 0.491
+2  deg model accuracy for test data (R2): -1045.720
+3rd deg model accuracy (R2): 0.506
+3  deg model accuracy for test data (R2): -1257.004
+4th deg model accuracy (R2): 0.535
+4  deg model accuracy for test data (R2): -1193.823
+
+
+2.B I still have some bugs with problem 2 implementation.
