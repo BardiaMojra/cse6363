@@ -125,7 +125,7 @@ if __name__ == '__main__':
 
   print('-->> Training and testing with OR')
   X, Y = get_data(dataOR)
-  pOR = perceptron(.01, 500, True, L2, True)
+  pOR = perceptron(.01, 1000, True, L2, True)
   pOR.train(X,Y)
   plt.plot(range(len(pOR.accHist)), pOR.accHist, label='OR Perceptron Taining Acc')
   #plt.show()
@@ -137,7 +137,7 @@ if __name__ == '__main__':
   print("\n\n")
   print('-->> Training and testing with XOR')
   xorX, xorY = get_data(dataXOR)
-  pXOR = perceptron(.01, 500, True, L2, True)
+  pXOR = perceptron(.01, 1000, True, L2, True)
   pXOR.train(xorX,xorY)
   plt.style.use('ggplot')
   #plt.style.use('fivethirtyeight')
