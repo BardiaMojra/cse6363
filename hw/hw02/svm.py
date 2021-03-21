@@ -1,8 +1,8 @@
-
-import pdb
 import numpy as np
-import matplotlib.pyplot as plt
-from random import random
+#import matplotlib
+from matplotlib import pyplot as plt
+import pdb
+#from random import random
 
 plt.style.use('ggplot')
 
@@ -15,14 +15,15 @@ D = [( 3,  4, -1),
      ( 4,  4, -1)]
 
 class svm:
-  def __init__(self, lr=0.01, lp, iters=1000, prt=False, log=False):
+  def __init__(self, lr=0.01, lp=0.01, iters=1000, prt=False, log=False):
     self.lr = lr # learning rate
     self.lp = lp # lambda parameter
     self.iters = iters
     self.prt = prt
     self.w = None
     self.b = None
-    if log==True:
+    self.log = log
+    if self.log:
       self.xHist = list()
       self.yHist = list()
       self.yEstHist =list()
@@ -33,7 +34,7 @@ class svm:
       # add logs
     return
 
-  def fit(self, X, Y):
+  def train(self, X, Y):
     nSamples, mfeatures = X.shape
     self.w = np.zeros(mfeatures)
     self.b = 0
@@ -42,7 +43,7 @@ class svm:
 
     XY_tmp = np.ndarray.copy(XY)
     for j in range(self.iters):
-      a = random.randint(0, len(XY_tmp)-1)
+      a = np.random.randint(0, len(XY_tmp)-1)
       xDatum = XY_tmp[a][:-1]
       yDatum = XY_tmp[a][-1]
       XY_tmp = np.delete(XY_tmp, a, axis=0)
@@ -58,7 +59,7 @@ class svm:
       self.b -= bUpdate
       if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY) # reload!!
       if self.prt:
-        print('iter:{:3.d}'.format(j))
+        print('iter:{:3d}'.format(j))
       if self.log: # data logger!!
         self.xHist.append(xDatum)
         self.yHist.append(yDatum)
@@ -78,15 +79,26 @@ class svm:
     return res
 
   def visualize(self, X, Y):
-    fig = plt.figure()
-    plott = fig.add_subplot(1,1,1)
+    fig = self.fig
+    plott = fig.add_subplot(2,2,2)
     plt.scatter(X[:,0], X[:,1], marker='x', color='red', label='input')
 
     x01 = np.amin(X[:,0])
     x02 = np.amax(X[:,0])
-
-
-
+    x11 = self.getHyperPlaneVal(x01, self.w, self.b, 0)
+    x12 = self.getHyperPlaneVal(x02, self.w, self.b, 0)
+    x11p = self.getHyperPlaneVal(x01, self.w, self.b, 1)
+    x12p = self.getHyperPlaneVal(x02, self.w, self.b, 1)
+    x11n = self.getHyperPlaneVal(x01, self.w, self.b, -1)
+    x12n = self.getHyperPlaneVal(x02, self.w, self.b, -1)
+    plt.plot([x01, x02], [x11, x12], 'y--') # draw mid line
+    plt.plot([x01, x02], [x11p, x12p], "r..", label='+ class bound') # draw p class boundary
+    plt.plot([x01, x02], [x11n, x12n], "b..", label='- class bound') # draw n class boundary
+    #x1max = np.amax(X[:,1])
+    #x1min = np.amin(X[:,1])
+    #plott.set_ylim()
+    plott.legend()
+    plt.show()
     return
 
 
@@ -105,13 +117,21 @@ def get_data(data):
 if __name__ == '__main__':
 
   X, Y = get_data(D)
+  fig = plt.figure()
+  subfig = fig.add_subplot(2,2,1)
+
   for i in range(len(X)):
     if Y[i]>=0:
-      plt.scatter(X[i][0], X[i][1], marker='x', color='red')
+      plt.scatter(X[i][0], X[i][1], marker='x', color='r')
     else:
-      plt.scatter(X[i][0], X[i][1], marker='o', color='blue')
+      plt.scatter(X[i][0], X[i][1], marker='o', color='b')
+  #pdb.set_trace()
   plt.title('Data Classification')
   plt.xlabel('X1')
   plt.ylabel('X2')
-  plt.legend()
-  plt.show()
+  subfig.legend()
+  #subfig.show()
+  mySVM = svm(lr=0.01, lp=0.01, iters=1000, prt=True, log=True)
+  mySVM.fig = fig
+  mySVM.train(X, Y)
+  mySVM.visualize(X, Y)
