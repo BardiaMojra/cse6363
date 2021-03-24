@@ -36,6 +36,7 @@ class nn_2layer:
     self.nnDims = [iSize, hSize, oSize]
     self.lr = lr
     self.iters = iters
+    self.printRate = iters / 10
     self.lossFunc = lossFunc
     #self.pIC = paramIC # parameter initial conditions - normal or uniform distr.
     self.loss = 0 # training loss
@@ -58,7 +59,7 @@ class nn_2layer:
       size=(self.nnDims[2], self.nnDims[1])) / np.sqrt(self.nnDims[1]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
     self.B2 = np.random.uniform(low=-.1, high=.1, size=(self.nnDims[2], 1))
     self.Z2 = np.zeros((oSize, 1))
-    self.Y2 = np.zeros((oSize, 1))
+    self.Yest = np.zeros((oSize, 1))
     if self.prt:
       print('Initialize model parameters:')
       print('W1:', self.W1)
@@ -75,8 +76,6 @@ class nn_2layer:
       self.log.W2 = list()
       self.log.B2 = list()
       self.log.Z2 = list()
-      self.log.Y2 = list()
-
       self.log.Yest = list()
       self.log.iters = list()
       self.log.W1update = list()
@@ -96,24 +95,24 @@ class nn_2layer:
     res = self.sigmoid(var) * (1.0 - self.sigmoid(var))
     return res
 
-  def feedforward(self):
+  # forward pass is basically an estimator
+  def feedforward(self, iteration):
     # 1st layer
     self.Z1 = self.W1.dot(self.X) + self.B1
     self.Y1 = self.sigmoid(self.Z1)
     # 2nd layer
     self.Z2 = self.W2.dot(self.Y1) + self.B2
-    self.Y2 = self.sigmoid(self.Z2)
+    self.Yest = self.sigmoid(self.Z2)
     # calc loss
-    self.Yest = self.Y2
     self.loss = self.lossFunc(self.Y, self.Yest)
-    if self.prt:
-      print('Forward pass:')
-      print('Z1:', self.Z1)
-      print('Y1:', self.Y1)
-      print('Z2:', self.Z2)
-      print('Y2 (Yest):', self.Y2)
-      print('error:', self.loss)
-      print('\n\n')
+    # log data
+    if self.log.on:
+      self.log.Z1.append(self.Z1)
+      self.log.Y1.append(self.Y1)
+      self.log.Z2.append(self.Z2)
+      self.log.Yest.append(self.Yest)
+      self.log.loss.append(self.loss)
+      self.log.iters.append(iteration)
     return
 
   def L1(self, Yact, Yest):
@@ -176,24 +175,28 @@ class nn_2layer:
       self.log.B2.append(self.B2)
     return
 
-  # train with Gradient Descent - the dataset is too small for SGD or BGD
-  def gradDescent(self):
+  def train(self):
     iters = self.iters
     print('In training...')
-
+    # train with Gradient Descent - the dataset is too small for SGD or BGD
     for i in range(0, iters):
-      self.feedforward()
+      self.feedforward(i)
       self.backprop()
 
-      if self.prt:
-        print('')
-
+      if ((i % self.printRate == 0) & (self.prt)):
+        print('Forward pass:')
+        print('Z1:', self.Z1)
+        print('Y1:', self.Y1)
+        print('Z2:', self.Z2)
+        print('Yest (Yest):', self.Yest)
+        print('Loss:', self.loss)
+        print('Backprop:')
+        print('W1:', self.W1)
+        print('B1:', self.B1)
+        print('W2:', self.W2)
+        print('B2:', self.B2)
+        print('\n\n')
     return
-
-
-
-
-
 
 
 def get_data(data, Ymax,  Ymin):
@@ -206,19 +209,22 @@ def get_data(data, Ymax,  Ymin):
   Y = [Ymax if i > 0 else Ymin for i in Y]
   Y = np.asarray(Y)
   Y = np.expand_dims(Y,axis=1)
+  XY = np.concatenate((X, Y), axis=1)
+  print('dataset: ')
+  print(XY)
+  print('\n\n')
   return X, Y
 
 
 
 
-
 if __name__ == '__main__':
-
   print('-->> Training and testing with OR')
   X, Y = get_data(dataOR, Ymax=1, Ymin=0) # rescale output to [0,1] since we're using Sigmoid activation function
+
   nnOR = nn_2layer(X, Y, lr=.01, iters=1000)
   nnOR.train()
-  plt.plot(range(len(pOR.accHist)), nnOR.accHist, label='OR Perceptron Taining Acc')
+  #plt.plot(range(len(pOR.accHist)), nnOR.accHist, label='OR Perceptron Taining Acc')
   #plt.show()
   #figOR = plt.figure()
   #ax = figOR.add_subplot(111, projection='3d')
