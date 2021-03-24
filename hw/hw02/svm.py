@@ -38,17 +38,19 @@ class svm:
     nSamples, mfeatures = X.shape
     self.w = np.zeros(mfeatures)
     self.b = 0
-
+    print('In training -->>')
     XY = np.concatenate((X, Y), axis=1)
 
     XY_tmp = np.ndarray.copy(XY)
     for j in range(self.iters):
-      a = np.random.randint(0, len(XY_tmp)-1)
+      a = np.random.randint(0, len(XY_tmp))
+
       xDatum = XY_tmp[a][:-1]
       yDatum = XY_tmp[a][-1]
       XY_tmp = np.delete(XY_tmp, a, axis=0)
-      #pdb.set_trace()
       yEst = yDatum * (np.dot(xDatum, self.w) - self.b) >= 1
+      #pdb.pprint('XY_tmp', XY_tmp)
+      #pdb.set_trace()
       if yEst: # binary classification only
         wUpdate = self.lr * (2 * self.lp * self.w)
         bUpdate = 0.0
@@ -60,6 +62,14 @@ class svm:
       if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY) # reload!!
       if self.prt:
         print('iter:{:3d}'.format(j))
+        print('XY_tmp:')
+        print(XY_tmp)
+        print('yDatum:', yDatum)
+        print('yEst:', yEst)
+        print('wUpdate:', wUpdate)
+        print('bUpdate:', bUpdate)
+        print()
+        print()
       if self.log: # data logger!!
         self.xHist.append(xDatum)
         self.yHist.append(yDatum)
@@ -75,13 +85,14 @@ class svm:
     return np.sign(linOutput)
 
   def getHyperPlaneVal(self, x, w, b, offset):
-    res = (-w[0] * x + b + offset)/w[1]
+    #res = (-w[0] * x + b + offset)/w[1]
+    res = np.dot(x, self.w) - self.b + offset
     return res
 
   def visualize(self, X, Y):
     fig = self.fig
-    plott = fig.add_subplot(2,2,2)
-    plt.scatter(X[:,0], X[:,1], marker='x', color='red', label='input')
+    #plott = fig.add_subplot(2,2,2)
+    #plt.scatter(X[:,0], X[:,1], marker='x', color='red', label='input')
 
     x01 = np.amin(X[:,0])
     x02 = np.amax(X[:,0])
@@ -92,12 +103,12 @@ class svm:
     x11n = self.getHyperPlaneVal(x01, self.w, self.b, -1)
     x12n = self.getHyperPlaneVal(x02, self.w, self.b, -1)
     plt.plot([x01, x02], [x11, x12], 'y--') # draw mid line
-    plt.plot([x01, x02], [x11p, x12p], "r..", label='+ class bound') # draw p class boundary
-    plt.plot([x01, x02], [x11n, x12n], "b..", label='- class bound') # draw n class boundary
+    plt.plot([x01, x02], [x11p, x12p], color="r", label='+ class bound') # draw p class boundary
+    plt.plot([x01, x02], [x11n, x12n], color='b', label='- class bound') # draw n class boundary
     #x1max = np.amax(X[:,1])
     #x1min = np.amin(X[:,1])
     #plott.set_ylim()
-    plott.legend()
+    #self.fig.legend()
     plt.show()
     return
 
@@ -118,7 +129,7 @@ if __name__ == '__main__':
 
   X, Y = get_data(D)
   fig = plt.figure()
-  subfig = fig.add_subplot(2,2,1)
+  #subfig = fig.add_subplot(1,1,1)
 
   for i in range(len(X)):
     if Y[i]>=0:
@@ -129,7 +140,7 @@ if __name__ == '__main__':
   plt.title('Data Classification')
   plt.xlabel('X1')
   plt.ylabel('X2')
-  subfig.legend()
+  fig.legend()
   #subfig.show()
   mySVM = svm(lr=0.01, lp=0.01, iters=1000, prt=True, log=True)
   mySVM.fig = fig

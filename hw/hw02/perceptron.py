@@ -50,7 +50,7 @@ class perceptron:
 
   def train(self, X, Y):
     self.nSamples, self.mFeatures = X.shape
-    self.W = np.zeros(self.mFeatures)
+    self.W = np.random.uniform(low=-.1, high=.1, size=self.mFeatures)
     self.b = 0
 
     XY = np.concatenate((X, Y), axis=1)
