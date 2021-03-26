@@ -13,7 +13,6 @@ dataOR = [( 1,  1,  1,  1,  1),
           (-1, -1,  1,  1,  1),
           (-1, -1, -1,  1, -1)]
 
-
 dataXOR = [( 1,  1,  1,  1, -1),
            ( 1,  1, -1,  1,  1),
            ( 1, -1,  1,  1,  1),
@@ -24,12 +23,11 @@ dataXOR = [( 1,  1,  1,  1, -1),
            (-1, -1, -1,  1, -1)]
 
 class nn_2layer:
-  def __init__(self, X, Y, lr, iters, lossFunc='L2', prt=True, recTrainHist=True):
+  def __init__(self, X, Y, lr, iters, prt=True, recTrainHist=True):
     self.X = X
     self.nSamples, self.mFeatures = X.shape
     self.Y = Y
     self.Yest = np.zeros((1,1)) # network's current estimate
-    self.numLayers = 2
     iSize = self.mFeatures
     hSize = 4 # nodes (units) for the hidden layer
     oSize = 1
@@ -37,10 +35,7 @@ class nn_2layer:
     self.lr = lr
     self.iters = iters
     self.printRate = iters / 10
-    self.lossFunc = lossFunc
-    #self.pIC = paramIC # parameter initial conditions - normal or uniform distr.
-    self.loss = 0 # training loss
-    #self.param = dict() # a dictionary to hold all parameters
+    self.err = None # training error
     #self.grad = dict() # a dict to hold all gradients (for SGD at BProp)
     #self.gCache = dict() # will need this for chain rule at BProp
     # Print and data logging
@@ -50,7 +45,7 @@ class nn_2layer:
     # uniform distribution
     # first layer
     self.W1 = np.random.uniform(low=-.1, high=.1, \
-      size=(self.nnDims[1], self.nnDims[0])) / np.sqrt(self.nnDims[0]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
+      size=(1, self.nnDims[0])) / np.sqrt(self.nnDims[0]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
     self.B1 = np.random.uniform(low=-.1, high=.1, size=(self.nnDims[1], 1))
     self.Z1 = np.zeros((hSize, oSize))
     self.Y1 = np.zeros((hSize, oSize))
@@ -73,96 +68,6 @@ class nn_2layer:
     self.log = datalogger(recTrainHist)
     return
 
-
-    """
-      def train(self, X, Y):
-    self.nSamples, self.mFeatures = X.shape
-    self.W = np.random.uniform(low=-.1, high=.1, size=self.mFeatures)
-    self.b = 0
-
-    XY = np.concatenate((X, Y), axis=1)
-    XY_tmp = np.ndarray.copy(XY)
-    for _ in range(self.iters):
-      i = random.randint(0, len(XY_tmp)-1)
-      Xdatum = XY_tmp[i][:-1]
-      Ydatum = XY_tmp[i][-1]
-      XY_tmp = np.delete(XY_tmp, i, axis=0)
-      #pdb.set_trace()
-      linOutput = np.dot(Xdatum, self.W) + self.b
-      y_ = self.af(linOutput)
-      # apply the Perceptron rule
-      error = Ydatum - y_
-      update = self.lr * error
-      delta_W = update * Xdatum
-      self.W += delta_W
-      self.b += error
-      if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY)
-      if self.prt==True:
-        print("iter:{:<4d}".format(_)," |X:{:2}".format(Xdatum[0]), \
-          "{:2}".format(Xdatum[1]), "{:2}".format(Xdatum[2]), \
-          "{:2}".format(Xdatum[3]), " |Y:{:2}".format(Ydatum), \
-          " |y_:{:2}".format(y_), " | err:{:2}".format(error), \
-          " | W:{:3.2f}".format(self.W[0]), "{:3.2f}".format(self.W[1]), \
-          "{:3.2f}".format(self.W[2]), '{:3.2f}'.format(self.W[3]))
-      if self.recTrainHist==True:
-        self.WHist.append(self.W)
-        self.bHist.append(self.b)
-        self.XHist.append(Xdatum)
-        self.YHist.append(Ydatum)
-        self.YestHist.append(y_)
-        self.ErrHist.append(error)
-        self.deltaWHist.append(delta_W)
-        #self.updateHist.append(update)
-        self.accHist.append(self.getacc(self.YHist, self.YestHist))
-    return
-
-
-    """
-
-
-  def train(self, X, Y):
-    self.nSamples, self.mFeatures = X.shape
-    self.W = np.random.uniform(low=-.1, high=.1, size=self.mFeatures)
-    self.b = 0
-
-    XY = np.concatenate((X, Y), axis=1)
-    XY_tmp = np.ndarray.copy(XY)
-    for _ in range(self.iters):
-      i = random.randint(0, len(XY_tmp)-1)
-      Xdatum = XY_tmp[i][:-1]
-      Ydatum = XY_tmp[i][-1]
-      XY_tmp = np.delete(XY_tmp, i, axis=0)
-      #pdb.set_trace()
-      linOutput = np.dot(Xdatum, self.W) + self.b
-      y_ = self.af(linOutput)
-      # apply the Perceptron rule
-      error = Ydatum - y_
-      update = self.lr * error
-      delta_W = update * Xdatum
-      self.W += delta_W
-      self.b += update
-      if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY)
-      if self.prt==True:
-        print("iter:{:<4d}".format(_)," |X:{:2}".format(Xdatum[0]), \
-          "{:2}".format(Xdatum[1]), "{:2}".format(Xdatum[2]), \
-          "{:2}".format(Xdatum[3]), " |Y:{:2}".format(Ydatum), \
-          " |y_:{:2}".format(y_), " | err:{:2}".format(error), \
-          " | W:{:3.2f}".format(self.W[0]), "{:3.2f}".format(self.W[1]), \
-          "{:3.2f}".format(self.W[2]), '{:3.2f}'.format(self.W[3]))
-      if self.recTrainHist==True:
-        self.WHist.append(self.W)
-        self.bHist.append(self.b)
-        self.XHist.append(Xdatum)
-        self.YHist.append(Ydatum)
-        self.YestHist.append(y_)
-        self.ErrHist.append(error)
-        self.deltaWHist.append(delta_W)
-        self.updateHist.append(update)
-        self.accHist.append(self.getacc(self.YHist, self.YestHist))
-    return
-
-
-
   def sigmoid(self, var):
     res = 1/(1 + np.exp(-var))
     #pdb.set_trace()
@@ -173,9 +78,9 @@ class nn_2layer:
     return res
 
   # forward pass is basically an estimator
-  def feedforward(self, iteration):
+  def feedforward(self, iteration, xDatum, yDatum):
     # 1st layer
-    self.Z1 = self.W1.dot(self.X) + self.B1
+    self.Z1 = self.W1.dot(xDatum) + self.B1
     self.Y1 = self.sigmoid(self.Z1)
     # 2nd layer
     self.Z2 = self.W2.dot(self.Y1) + self.B2
@@ -202,7 +107,7 @@ class nn_2layer:
     dLossYest = - ((Yact/Yest) - ((1-Yact)/(1-Yest)))
     return dLossYest
 
-  def backprop(self):
+  def backprop(self, xDatum, yDatum):
     '''
       Backpropagation is done by performing partial derivative of the entire
       network (the output loss - end of feedforward) with respect to the network
@@ -210,7 +115,7 @@ class nn_2layer:
       determined with respect to each parameter, we update them accordingly.
     '''
     # start with the output
-    dLossYest = - (np.divide(self.Y, self.Yest) - np.divide(1-self.Y, 1-self.Yest))
+    dLossYest = - (np.divide(yDatum, self.Yest) - np.divide(1-yDatum, 1-self.Yest))
     # 2nd layer
     dLossZ2 = dLossYest * self.dSigmoid(self.Z2)
     dLossW2 = 1.0 / self.Y1.shape[1] * np.dot(dLossZ2, self.Y1.T)
@@ -218,19 +123,19 @@ class nn_2layer:
     dLossY1 = np.dot(self.W2.T, dLossZ2)
     # 1st layer
     dLossZ1 = dLossY1 * self.dSigmoid(self.Z1)
-    dLossW1 = 1.0 / self.X.shape[1] * np.dot(dLossZ1, self.X.T)
-    dLossB1 = 1.0 / self.X.shape[1] * np.dot(dLossZ1, np.ones([dLossZ1.shape[1], 1]))
-    dLossY0 = np.dot(self.W1.T, dLossZ1)
+    dLossW1 = 1.0 / xDatum.shape[1] * np.dot(dLossZ1, xDatum.T)
+    dLossB1 = 1.0 / xDatum.shape[1] * np.dot(dLossZ1, np.ones([dLossZ1.shape[1], 1]))
+    #dLossY0 = np.dot(self.W1.T, dLossZ1)
     # produce updates for each parameter
     W1update = - (self.lr * dLossW1)
     B1update = - (self.lr * dLossB1)
     W2update = - (self.lr * dLossW2)
     B2update = - (self.lr * dLossB2)
-    # update network parameters
-    self.W1 += W1update
-    self.B1 += B1update
-    self.W2 += W2update
-    self.B2 += B2update
+    # update
+    self.W1u += W1update
+    self.B1u += B1update
+    self.W2u += W2update
+    self.B2u += B2update
     # log updates and updated parameters
     if self.log.on:
       self.log.W1update.append(W1update)
@@ -243,14 +148,24 @@ class nn_2layer:
       self.log.B2.append(self.B2)
     return
 
+  def prepBatch(self):
+    self.W1u = 0.0
+    self.B1u = 0.0
+    self.W2u = 0.0
+    self.B2u = 0.0
+    return self
+
   def train(self):
-    iters = self.iters
     print('In training...')
-    # train with Gradient Descent - the dataset is too small for SGD or BGD
-    for i in range(0, iters):
+    # train with Batch Gradient Descent, since dataset is small, using it as the Batch
+    XY = np.concatenate((X, Y), axis=1)
+    XY_tmp = np.ndarray.copy(XY)
+
+    for i in range(0, self.iters):
+
       self.feedforward(i)
       self.backprop()
-
+      self.updateperBatch()
       if ((i % self.printRate == 0) & (self.prt)):
         print('Forward pass:')
         print('Z1:', self.Z1)
