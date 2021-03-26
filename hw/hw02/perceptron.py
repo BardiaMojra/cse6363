@@ -24,12 +24,12 @@ dataXOR = [( 1,  1,  1,  1, -1),
            (-1, -1, -1,  1, -1)]
 
 class perceptron:
-  def __init__(self, lr, iters, prt, L, recTrainHist):
+  def __init__(self, lr, iters, prt, recTrainHist):
     self.lr = lr
     self.iters = iters
     self.af = self.sign
     self.prt = prt
-    self.loss = L
+    #self.loss = L
     self.recTrainHist = recTrainHist
     if self.recTrainHist:
       self.WHist = list()
@@ -46,7 +46,7 @@ class perceptron:
     return
 
   def sign(self, val):
-    return np.where(val>=0, 1, -1)
+    return np.where(val>0, 1, -1)
 
   def train(self, X, Y):
     self.nSamples, self.mFeatures = X.shape
@@ -64,11 +64,11 @@ class perceptron:
       linOutput = np.dot(Xdatum, self.W) + self.b
       y_ = self.af(linOutput)
       # apply the Perceptron rule
-      error = self.loss(Ydatum, y_)
+      error = Ydatum - y_
       update = self.lr * error
       delta_W = update * Xdatum
       self.W += delta_W
-      self.b += update
+      self.b += error
       if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY)
       if self.prt==True:
         print("iter:{:<4d}".format(_)," |X:{:2}".format(Xdatum[0]), \
@@ -85,7 +85,7 @@ class perceptron:
         self.YestHist.append(y_)
         self.ErrHist.append(error)
         self.deltaWHist.append(delta_W)
-        self.updateHist.append(update)
+        #self.updateHist.append(update)
         self.accHist.append(self.getacc(self.YHist, self.YestHist))
     return
 
@@ -99,12 +99,6 @@ class perceptron:
       if groundtruth[i] == prediction[i]:
         correct += 1
     return correct / float(len(groundtruth)) * 100.0
-
-def L1(Yact, Yest):
-  return abs(Yact-Yest)
-
-def L2(Yact, Yest):
-  return ((Yact-Yest) ** 2)
 
 def get_data(data):
   X = list()
@@ -125,8 +119,9 @@ if __name__ == '__main__':
 
   print('-->> Training and testing with OR')
   X, Y = get_data(dataOR)
-  pOR = perceptron(.01, 1000, True, L2, True)
+  pOR = perceptron( 0.1, 1000, True, True)
   pOR.train(X,Y)
+  plt.style.use('ggplot')
   plt.plot(range(len(pOR.accHist)), pOR.accHist, label='OR Perceptron Taining Acc')
   #plt.show()
   #figOR = plt.figure()
@@ -137,15 +132,14 @@ if __name__ == '__main__':
   print("\n\n")
   print('-->> Training and testing with XOR')
   xorX, xorY = get_data(dataXOR)
-  pXOR = perceptron(.01, 1000, True, L2, True)
+  pXOR = perceptron( 0.1, 1000, True, True)
   pXOR.train(xorX,xorY)
-  plt.style.use('ggplot')
   #plt.style.use('fivethirtyeight')
 
   plt.plot(range(len(pXOR.accHist)), pXOR.accHist, label='XOR Perceptron Taining Acc')
 
   plt.xlabel('Training iterations')
-  plt.ylabel('Training accuracy')
+  plt.ylabel('Training accuracy [%]')
   plt.title('OR vs. XOR training accuracy')
   plt.legend()
   #plt.grid(True)

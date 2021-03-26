@@ -41,11 +41,11 @@ class nn_2layer:
     #self.pIC = paramIC # parameter initial conditions - normal or uniform distr.
     self.loss = 0 # training loss
     #self.param = dict() # a dictionary to hold all parameters
-    self.grad = dict() # a dict to hold all gradients (for SGD at BProp)
+    #self.grad = dict() # a dict to hold all gradients (for SGD at BProp)
     #self.gCache = dict() # will need this for chain rule at BProp
     # Print and data logging
     self.prt = prt
-    self.log.on = recTrainHist # this is the Enable flag for data logging
+    #self.logOn = recTrainHist # this is the Enable flag for data logging
 
     # uniform distribution
     # first layer
@@ -68,22 +68,99 @@ class nn_2layer:
       print('B2:', self.B2)
       print('\n\n')
     #pdb.set_trace()
-    if self.log.on:
-      self.log.W1 = list()
-      self.log.B1 = list()
-      self.log.Z1 = list()
-      self.log.Y1 = list()
-      self.log.W2 = list()
-      self.log.B2 = list()
-      self.log.Z2 = list()
-      self.log.Yest = list()
-      self.log.iters = list()
-      self.log.W1update = list()
-      self.log.B1update = list()
-      self.log.W2update = list()
-      self.log.B2update = list()
-      self.log.accHist = list()
+    #if self.logOn:'
+    # init datalogger
+    self.log = datalogger(recTrainHist)
     return
+
+
+    """
+      def train(self, X, Y):
+    self.nSamples, self.mFeatures = X.shape
+    self.W = np.random.uniform(low=-.1, high=.1, size=self.mFeatures)
+    self.b = 0
+
+    XY = np.concatenate((X, Y), axis=1)
+    XY_tmp = np.ndarray.copy(XY)
+    for _ in range(self.iters):
+      i = random.randint(0, len(XY_tmp)-1)
+      Xdatum = XY_tmp[i][:-1]
+      Ydatum = XY_tmp[i][-1]
+      XY_tmp = np.delete(XY_tmp, i, axis=0)
+      #pdb.set_trace()
+      linOutput = np.dot(Xdatum, self.W) + self.b
+      y_ = self.af(linOutput)
+      # apply the Perceptron rule
+      error = Ydatum - y_
+      update = self.lr * error
+      delta_W = update * Xdatum
+      self.W += delta_W
+      self.b += error
+      if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY)
+      if self.prt==True:
+        print("iter:{:<4d}".format(_)," |X:{:2}".format(Xdatum[0]), \
+          "{:2}".format(Xdatum[1]), "{:2}".format(Xdatum[2]), \
+          "{:2}".format(Xdatum[3]), " |Y:{:2}".format(Ydatum), \
+          " |y_:{:2}".format(y_), " | err:{:2}".format(error), \
+          " | W:{:3.2f}".format(self.W[0]), "{:3.2f}".format(self.W[1]), \
+          "{:3.2f}".format(self.W[2]), '{:3.2f}'.format(self.W[3]))
+      if self.recTrainHist==True:
+        self.WHist.append(self.W)
+        self.bHist.append(self.b)
+        self.XHist.append(Xdatum)
+        self.YHist.append(Ydatum)
+        self.YestHist.append(y_)
+        self.ErrHist.append(error)
+        self.deltaWHist.append(delta_W)
+        #self.updateHist.append(update)
+        self.accHist.append(self.getacc(self.YHist, self.YestHist))
+    return
+
+
+    """
+
+
+  def train(self, X, Y):
+    self.nSamples, self.mFeatures = X.shape
+    self.W = np.random.uniform(low=-.1, high=.1, size=self.mFeatures)
+    self.b = 0
+
+    XY = np.concatenate((X, Y), axis=1)
+    XY_tmp = np.ndarray.copy(XY)
+    for _ in range(self.iters):
+      i = random.randint(0, len(XY_tmp)-1)
+      Xdatum = XY_tmp[i][:-1]
+      Ydatum = XY_tmp[i][-1]
+      XY_tmp = np.delete(XY_tmp, i, axis=0)
+      #pdb.set_trace()
+      linOutput = np.dot(Xdatum, self.W) + self.b
+      y_ = self.af(linOutput)
+      # apply the Perceptron rule
+      error = Ydatum - y_
+      update = self.lr * error
+      delta_W = update * Xdatum
+      self.W += delta_W
+      self.b += update
+      if len(XY_tmp)==0: XY_tmp = np.ndarray.copy(XY)
+      if self.prt==True:
+        print("iter:{:<4d}".format(_)," |X:{:2}".format(Xdatum[0]), \
+          "{:2}".format(Xdatum[1]), "{:2}".format(Xdatum[2]), \
+          "{:2}".format(Xdatum[3]), " |Y:{:2}".format(Ydatum), \
+          " |y_:{:2}".format(y_), " | err:{:2}".format(error), \
+          " | W:{:3.2f}".format(self.W[0]), "{:3.2f}".format(self.W[1]), \
+          "{:3.2f}".format(self.W[2]), '{:3.2f}'.format(self.W[3]))
+      if self.recTrainHist==True:
+        self.WHist.append(self.W)
+        self.bHist.append(self.b)
+        self.XHist.append(Xdatum)
+        self.YHist.append(Ydatum)
+        self.YestHist.append(y_)
+        self.ErrHist.append(error)
+        self.deltaWHist.append(delta_W)
+        self.updateHist.append(update)
+        self.accHist.append(self.getacc(self.YHist, self.YestHist))
+    return
+
 
 
   def sigmoid(self, var):
@@ -115,15 +192,6 @@ class nn_2layer:
       self.log.iters.append(iteration)
     return
 
-  def L1(self, Yact, Yest):
-    losses = abs(Yact-Yest)
-    loss = np.sum(losses)
-    return loss
-
-  def L2(self, Yact, Yest):
-    losses = (Yact-Yest) ** 2
-    loss = np.sum(losses)
-    return loss
 
   def cEntropy(self, Yact, Yest): # not tested
     loss = (1.0 / self.nSamples) * (- np.dot(Yact, np.log(Yest).T) - \
@@ -198,6 +266,25 @@ class nn_2layer:
         print('\n\n')
     return
 
+# data logger with easy data structure handler
+class datalogger:
+  def __init__(self, enable):
+    self.on = enable # enable flag
+    self.W1 = list()
+    self.B1 = list()
+    self.Z1 = list()
+    self.Y1 = list()
+    self.W2 = list()
+    self.B2 = list()
+    self.Z2 = list()
+    self.Yest = list()
+    self.iters = list()
+    self.W1update = list()
+    self.B1update = list()
+    self.W2update = list()
+    self.B2update = list()
+    self.accHist = list()
+    return
 
 def get_data(data, Ymax,  Ymin):
   X = list()
@@ -222,7 +309,7 @@ if __name__ == '__main__':
   print('-->> Training and testing with OR')
   X, Y = get_data(dataOR, Ymax=1, Ymin=0) # rescale output to [0,1] since we're using Sigmoid activation function
 
-  nnOR = nn_2layer(X, Y, lr=.01, iters=1000)
+  nnOR = nn_2layer(X, Y, lr=.001, iters=1000)
   nnOR.train()
   #plt.plot(range(len(pOR.accHist)), nnOR.accHist, label='OR Perceptron Taining Acc')
   #plt.show()
