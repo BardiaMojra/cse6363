@@ -125,6 +125,7 @@ def get_data(data):
   Y = np.expand_dims(Y,axis=1)
   return X, Y
 
+from SVM import SVM
 if __name__ == '__main__':
 
   X, Y = get_data(D)
@@ -146,3 +147,9 @@ if __name__ == '__main__':
   mySVM.fig = fig
   mySVM.train(X, Y)
   mySVM.visualize(X, Y)
+
+
+  # test using
+  #model = SVM(max_iter=1000, kernel_type='linear', C=1000, epsilon=0.001)
+  #model.fit(X, Y)
+  #y_hat = model.predict(X)

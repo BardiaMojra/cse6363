@@ -1,0 +1,8 @@
+Discussions:
+
+Q1
+OR is trainable to 100 percent accuracy because its feature are linearly
+separable. On the other hand, XOR is not trainble because its features are not
+linearly separable. The perceptron tries to learn then comes the "edge case"
+datum and creates a large error. The XOR accuracy oscillates about a value which
+depends on the number of input features.

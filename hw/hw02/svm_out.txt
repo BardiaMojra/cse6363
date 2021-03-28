@@ -1,0 +1,11501 @@
+In training -->>
+iter:  0
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01 -0.02]
+bUpdate: 0.01
+
+
+iter:  1
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.030002 0.040004]
+bUpdate: -0.01
+
+
+iter:  2
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.039996 0.039996]
+bUpdate: -0.01
+
+
+iter:  3
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.010012 -0.030012]
+bUpdate: 0.01
+
+
+iter:  4
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01999  0.029994]
+bUpdate: -0.01
+
+
+iter:  5
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.020014 -0.010012]
+bUpdate: 0.01
+
+
+iter:  6
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02999001 0.03999001]
+bUpdate: -0.01
+
+
+iter:  7
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01001599 -0.02001799]
+bUpdate: 0.01
+
+
+iter:  8
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.03998601 0.03998601]
+bUpdate: -0.01
+
+
+iter:  9
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997802 0.02997801]
+bUpdate: -0.01
+
+
+iter: 10
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002598 -0.01002798]
+bUpdate: 0.01
+
+
+iter: 11
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01002197 -0.03002598]
+bUpdate: 0.01
+
+
+iter: 12
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01998003 0.02998003]
+bUpdate: -0.01
+
+
+iter: 13
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997603 0.03997403]
+bUpdate: -0.01
+
+
+iter: 14
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-2.99616323e-05 -3.39612303e-05]
+bUpdate: 0.0
+
+
+iter: 15
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002996 -0.01003395]
+bUpdate: 0.01
+
+
+iter: 16
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01002595 -0.03003195]
+bUpdate: 0.01
+
+
+iter: 17
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01002394 -0.02002594]
+bUpdate: 0.01
+
+
+iter: 18
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002194 -0.01002194]
+bUpdate: 0.01
+
+
+iter: 19
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01001794 -0.02001993]
+bUpdate: 0.01
+
+
+iter: 20
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01001593 -0.03001593]
+bUpdate: 0.01
+
+
+iter: 21
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.03998607 0.03999008]
+bUpdate: -0.01
+
+
+iter: 22
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997807 0.02998208]
+bUpdate: -0.01
+
+
+iter: 23
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997408 0.03997608]
+bUpdate: -0.01
+
+
+iter: 24
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003192 -0.02003191]
+bUpdate: 0.01
+
+
+iter: 25
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002991 -0.01002791]
+bUpdate: 0.01
+
+
+iter: 26
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100259 -0.0300259]
+bUpdate: 0.01
+
+
+iter: 27
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199761 0.0299801]
+bUpdate: -0.01
+
+
+iter: 28
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997211 0.03997411]
+bUpdate: -0.01
+
+
+iter: 29
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.38882492e-05 -3.38878543e-05]
+bUpdate: 0.0
+
+
+iter: 30
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996612 0.02996612]
+bUpdate: -0.01
+
+
+iter: 31
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.78746952e-05 -3.98743005e-05]
+bUpdate: 0.0
+
+
+iter: 32
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003787 -0.02003987]
+bUpdate: 0.01
+
+
+iter: 33
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003586 -0.03003586]
+bUpdate: 0.01
+
+
+iter: 34
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.38523749e-05 -2.98511807e-05]
+bUpdate: 0.0
+
+
+iter: 35
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003385 -0.01002985]
+bUpdate: 0.01
+
+
+iter: 36
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997016 0.03997216]
+bUpdate: -0.01
+
+
+iter: 37
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.58328676e-05 -3.58336736e-05]
+bUpdate: 0.0
+
+
+iter: 38
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996417 0.02996417]
+bUpdate: -0.01
+
+
+iter: 39
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003982 -0.01004182]
+bUpdate: 0.01
+
+
+iter: 40
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003581 -0.02003981]
+bUpdate: 0.01
+
+
+iter: 41
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100338 -0.0300358]
+bUpdate: 0.01
+
+
+iter: 42
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.17966494e-05 -2.97958549e-05]
+bUpdate: 0.0
+
+
+iter: 43
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003179 -0.01002979]
+bUpdate: 0.01
+
+
+iter: 44
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997222 0.02997222]
+bUpdate: -0.01
+
+
+iter: 45
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003178 -0.02003378]
+bUpdate: 0.01
+
+
+iter: 46
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01002977 -0.03002977]
+bUpdate: 0.01
+
+
+iter: 47
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997223 0.03997623]
+bUpdate: -0.01
+
+
+iter: 48
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003376 -0.03003176]
+bUpdate: 0.01
+
+
+iter: 49
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003175 -0.02002575]
+bUpdate: 0.01
+
+
+iter: 50
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002975 -0.01002175]
+bUpdate: 0.01
+
+
+iter: 51
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997426 0.03998025]
+bUpdate: -0.01
+
+
+iter: 52
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996826 0.02997226]
+bUpdate: -0.01
+
+
+iter: 53
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.57299640e-05 -3.37355676e-05]
+bUpdate: 0.0
+
+
+iter: 54
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003572 -0.01003373]
+bUpdate: 0.01
+
+
+iter: 55
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.17156734e-05 -3.17220747e-05]
+bUpdate: 0.0
+
+
+iter: 56
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.17093303e-05 -3.17157303e-05]
+bUpdate: 0.0
+
+
+iter: 57
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100317  -0.02003171]
+bUpdate: 0.01
+
+
+iter: 58
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100297 -0.0300277]
+bUpdate: 0.01
+
+
+iter: 59
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997231 0.0299783 ]
+bUpdate: -0.01
+
+
+iter: 60
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003169 -0.03002769]
+bUpdate: 0.01
+
+
+iter: 61
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002968 -0.01002169]
+bUpdate: 0.01
+
+
+iter: 62
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997433 0.02998032]
+bUpdate: -0.01
+
+
+iter: 63
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01002967 -0.02002568]
+bUpdate: 0.01
+
+
+iter: 64
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997234 0.03997833]
+bUpdate: -0.01
+
+
+iter: 65
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.36562971e-05 -2.96698816e-05]
+bUpdate: 0.0
+
+
+iter: 66
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003365 -0.03002966]
+bUpdate: 0.01
+
+
+iter: 67
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003164 -0.02002366]
+bUpdate: 0.01
+
+
+iter: 68
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02002964 -0.01001965]
+bUpdate: 0.01
+
+
+iter: 69
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01997437 0.02998235]
+bUpdate: -0.01
+
+
+iter: 70
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997037 0.03997635]
+bUpdate: -0.01
+
+
+iter: 71
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.56195288e-05 -3.16410936e-05]
+bUpdate: 0.0
+
+
+iter: 72
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003561 -0.02003163]
+bUpdate: 0.01
+
+
+iter: 73
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003361 -0.01002763]
+bUpdate: 0.01
+
+
+iter: 74
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199704  0.02997438]
+bUpdate: -0.01
+
+
+iter: 75
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.35926417e-05 -3.16177881e-05]
+bUpdate: 0.0
+
+
+iter: 76
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003359 -0.03003161]
+bUpdate: 0.01
+
+
+iter: 77
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.15792060e-05 -2.56051423e-05]
+bUpdate: 0.0
+
+
+iter: 78
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996843 0.0299744 ]
+bUpdate: -0.01
+
+
+iter: 79
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003557 -0.03003159]
+bUpdate: 0.01
+
+
+iter: 80
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003356 -0.01002559]
+bUpdate: 0.01
+
+
+iter: 81
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997045 0.03997642]
+bUpdate: -0.01
+
+
+iter: 82
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003555 -0.02003158]
+bUpdate: 0.01
+
+
+iter: 83
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.35397304e-05 -2.75724321e-05]
+bUpdate: 0.0
+
+
+iter: 84
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003353 -0.01002757]
+bUpdate: 0.01
+
+
+iter: 85
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02997047 0.03997444]
+bUpdate: -0.01
+
+
+iter: 86
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996448 0.02996644]
+bUpdate: -0.01
+
+
+iter: 87
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.95133065e-05 -3.95495807e-05]
+bUpdate: 0.0
+
+
+iter: 88
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003951 -0.03003954]
+bUpdate: 0.01
+
+
+iter: 89
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100375  -0.02003353]
+bUpdate: 0.01
+
+
+iter: 90
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003549 -0.01002953]
+bUpdate: 0.01
+
+
+iter: 91
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02996852 0.03997248]
+bUpdate: -0.01
+
+
+iter: 92
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003748 -0.03003552]
+bUpdate: 0.01
+
+
+iter: 93
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.54691134e-05 -2.95085429e-05]
+bUpdate: 0.0
+
+
+iter: 94
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003546 -0.0200295 ]
+bUpdate: 0.01
+
+
+iter: 95
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996655 0.0299745 ]
+bUpdate: -0.01
+
+
+iter: 96
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.74482362e-05 -3.14916413e-05]
+bUpdate: 0.0
+
+
+iter: 97
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003744 -0.01003149]
+bUpdate: 0.01
+
+
+iter: 98
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996657 0.02997052]
+bUpdate: -0.01
+
+
+iter: 99
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003743 -0.03003547]
+bUpdate: 0.01
+
+
+iter:100
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.54190864e-05 -2.94660555e-05]
+bUpdate: 0.0
+
+
+iter:101
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003541 -0.02002946]
+bUpdate: 0.01
+
+
+iter:102
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100334  -0.03002545]
+bUpdate: 0.01
+
+
+iter:103
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0399686  0.03998055]
+bUpdate: -0.01
+
+
+iter:104
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02996061 0.03997255]
+bUpdate: -0.01
+
+
+iter:105
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004538 -0.02003544]
+bUpdate: 0.01
+
+
+iter:106
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995662 0.02996857]
+bUpdate: -0.01
+
+
+iter:107
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004737 -0.01003743]
+bUpdate: 0.01
+
+
+iter:108
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.33568561e-05 -3.54189407e-05]
+bUpdate: 0.0
+
+
+iter:109
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004335 -0.01003541]
+bUpdate: 0.01
+
+
+iter:110
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003934 -0.0200334 ]
+bUpdate: 0.01
+
+
+iter:111
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996267 0.0299706 ]
+bUpdate: -0.01
+
+
+iter:112
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.13241808e-05 -3.53922140e-05]
+bUpdate: 0.0
+
+
+iter:113
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004132 -0.03003539]
+bUpdate: 0.01
+
+
+iter:114
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.93076528e-05 -2.93780585e-05]
+bUpdate: 0.0
+
+
+iter:115
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100393  -0.02002937]
+bUpdate: 0.01
+
+
+iter:116
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003729 -0.01002537]
+bUpdate: 0.01
+
+
+iter:117
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003328 -0.03002336]
+bUpdate: 0.01
+
+
+iter:118
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02996872 0.03998264]
+bUpdate: -0.01
+
+
+iter:119
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996273 0.02997465]
+bUpdate: -0.01
+
+
+iter:120
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995874 0.02996865]
+bUpdate: -0.01
+
+
+iter:121
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.52558533e-05 -3.73417514e-05]
+bUpdate: 0.0
+
+
+iter:122
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004525 -0.01003733]
+bUpdate: 0.01
+
+
+iter:123
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004124 -0.02003533]
+bUpdate: 0.01
+
+
+iter:124
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003923 -0.03003132]
+bUpdate: 0.01
+
+
+iter:125
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-3.72216594e-05 -2.53134869e-05]
+bUpdate: 0.0
+
+
+iter:126
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996279 0.02997469]
+bUpdate: -0.01
+
+
+iter:127
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.12067722e-05 -3.13033625e-05]
+bUpdate: 0.0
+
+
+iter:128
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100412 -0.0300313]
+bUpdate: 0.01
+
+
+iter:129
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02003919 -0.01002529]
+bUpdate: 0.01
+
+
+iter:130
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003518 -0.02002329]
+bUpdate: 0.01
+
+
+iter:131
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.03996682 0.03998072]
+bUpdate: -0.01
+
+
+iter:132
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995883 0.03997272]
+bUpdate: -0.01
+
+
+iter:133
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.71605477e-05 -3.52718154e-05]
+bUpdate: 0.0
+
+
+iter:134
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004715 -0.02003526]
+bUpdate: 0.01
+
+
+iter:135
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004514 -0.01003126]
+bUpdate: 0.01
+
+
+iter:136
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004113 -0.03002925]
+bUpdate: 0.01
+
+
+iter:137
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996088 0.02997675]
+bUpdate: -0.01
+
+
+iter:138
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995688 0.02997076]
+bUpdate: -0.01
+
+
+iter:139
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.71079823e-05 -3.52351090e-05]
+bUpdate: 0.0
+
+
+iter:140
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.70985607e-05 -3.52280619e-05]
+bUpdate: 0.0
+
+
+iter:141
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004709 -0.03003522]
+bUpdate: 0.01
+
+
+iter:142
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004508 -0.01002921]
+bUpdate: 0.01
+
+
+iter:143
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004107 -0.02002721]
+bUpdate: 0.01
+
+
+iter:144
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02996094 0.0399768 ]
+bUpdate: -0.01
+
+
+iter:145
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004505 -0.0100312 ]
+bUpdate: 0.01
+
+
+iter:146
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004105 -0.03002919]
+bUpdate: 0.01
+
+
+iter:147
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01003904 -0.02002319]
+bUpdate: 0.01
+
+
+iter:148
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996297 0.02998082]
+bUpdate: -0.01
+
+
+iter:149
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.10222471e-05 -2.51774957e-05]
+bUpdate: 0.0
+
+
+iter:150
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004101 -0.01002517]
+bUpdate: 0.01
+
+
+iter:151
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01996299 0.02997683]
+bUpdate: -0.01
+
+
+iter:152
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.09984387e-05 -2.91627922e-05]
+bUpdate: 0.0
+
+
+iter:153
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995901 0.03997084]
+bUpdate: -0.01
+
+
+iter:154
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004698 -0.02003715]
+bUpdate: 0.01
+
+
+iter:155
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004497 -0.03003314]
+bUpdate: 0.01
+
+
+iter:156
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995704 0.03997286]
+bUpdate: -0.01
+
+
+iter:157
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004896 -0.01003513]
+bUpdate: 0.01
+
+
+iter:158
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004495 -0.02003312]
+bUpdate: 0.01
+
+
+iter:159
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.29362772e-05 -2.91179907e-05]
+bUpdate: 0.0
+
+
+iter:160
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995707 0.02997089]
+bUpdate: -0.01
+
+
+iter:161
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004692 -0.03003511]
+bUpdate: 0.01
+
+
+iter:162
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004491 -0.0300291 ]
+bUpdate: 0.01
+
+
+iter:163
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199571  0.02997691]
+bUpdate: -0.01
+
+
+iter:164
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004689 -0.02002909]
+bUpdate: 0.01
+
+
+iter:165
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.48827801e-05 -2.50830670e-05]
+bUpdate: 0.0
+
+
+iter:166
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004487 -0.01002508]
+bUpdate: 0.01
+
+
+iter:167
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995914 0.03997693]
+bUpdate: -0.01
+
+
+iter:168
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.68566558e-05 -3.10684202e-05]
+bUpdate: 0.0
+
+
+iter:169
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004685 -0.01003106]
+bUpdate: 0.01
+
+
+iter:170
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995716 0.03997094]
+bUpdate: -0.01
+
+
+iter:171
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004883 -0.02003705]
+bUpdate: 0.01
+
+
+iter:172
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995318 0.02996696]
+bUpdate: -0.01
+
+
+iter:173
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005081 -0.03003904]
+bUpdate: 0.01
+
+
+iter:174
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100488  -0.02003303]
+bUpdate: 0.01
+
+
+iter:175
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995321 0.02997098]
+bUpdate: -0.01
+
+
+iter:176
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005078 -0.03003502]
+bUpdate: 0.01
+
+
+iter:177
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02004877 -0.01002901]
+bUpdate: 0.01
+
+
+iter:178
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-4.47610272e-05 -2.70031420e-05]
+bUpdate: 0.0
+
+
+iter:179
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995525 0.039973  ]
+bUpdate: -0.01
+
+
+iter:180
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.07431246e-05 -3.49923419e-05]
+bUpdate: 0.0
+
+
+iter:181
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994927 0.02996501]
+bUpdate: -0.01
+
+
+iter:182
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005472 -0.01004098]
+bUpdate: 0.01
+
+
+iter:183
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005071 -0.03003897]
+bUpdate: 0.01
+
+
+iter:184
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100487  -0.02003296]
+bUpdate: 0.01
+
+
+iter:185
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995331 0.03997104]
+bUpdate: -0.01
+
+
+iter:186
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994732 0.02996305]
+bUpdate: -0.01
+
+
+iter:187
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.66721271e-05 -4.29425830e-05]
+bUpdate: 0.0
+
+
+iter:188
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005666 -0.02004293]
+bUpdate: 0.01
+
+
+iter:189
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.46494605e-05 -3.89254077e-05]
+bUpdate: 0.0
+
+
+iter:190
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005464 -0.03003892]
+bUpdate: 0.01
+
+
+iter:191
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005263 -0.01003291]
+bUpdate: 0.01
+
+
+iter:192
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004862 -0.0200309 ]
+bUpdate: 0.01
+
+
+iter:193
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995339 0.0399731 ]
+bUpdate: -0.01
+
+
+iter:194
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199474  0.02996511]
+bUpdate: -0.01
+
+
+iter:195
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.65875129e-05 -4.08847187e-05]
+bUpdate: 0.0
+
+
+iter:196
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005658 -0.01004088]
+bUpdate: 0.01
+
+
+iter:197
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005256 -0.03003887]
+bUpdate: 0.01
+
+
+iter:198
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005055 -0.01003286]
+bUpdate: 0.01
+
+
+iter:199
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004654 -0.02003085]
+bUpdate: 0.01
+
+
+iter:200
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995547 0.03997315]
+bUpdate: -0.01
+
+
+iter:201
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.05260405e-05 -3.48424803e-05]
+bUpdate: 0.0
+
+
+iter:202
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005052 -0.03003484]
+bUpdate: 0.01
+
+
+iter:203
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995149 0.02997117]
+bUpdate: -0.01
+
+
+iter:204
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0200525  -0.01003482]
+bUpdate: 0.01
+
+
+iter:205
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02995151 0.03996718]
+bUpdate: -0.01
+
+
+iter:206
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005448 -0.03004081]
+bUpdate: 0.01
+
+
+iter:207
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994753 0.0299652 ]
+bUpdate: -0.01
+
+
+iter:208
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005645 -0.02004079]
+bUpdate: 0.01
+
+
+iter:209
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.44432555e-05 -3.67859704e-05]
+bUpdate: 0.0
+
+
+iter:210
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005443 -0.02003678]
+bUpdate: 0.01
+
+
+iter:211
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005242 -0.03003277]
+bUpdate: 0.01
+
+
+iter:212
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994959 0.03997324]
+bUpdate: -0.01
+
+
+iter:213
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.64009139e-05 -3.47593503e-05]
+bUpdate: 0.0
+
+
+iter:214
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005639 -0.01003475]
+bUpdate: 0.01
+
+
+iter:215
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994762 0.02996725]
+bUpdate: -0.01
+
+
+iter:216
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005637 -0.01003874]
+bUpdate: 0.01
+
+
+iter:217
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.23566065e-05 -3.67311511e-05]
+bUpdate: 0.0
+
+
+iter:218
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005235 -0.02003672]
+bUpdate: 0.01
+
+
+iter:219
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.03356660e-05 -3.27164601e-05]
+bUpdate: 0.0
+
+
+iter:220
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005033 -0.03003271]
+bUpdate: 0.01
+
+
+iter:221
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995168 0.0299733 ]
+bUpdate: -0.01
+
+
+iter:222
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.23058706e-05 -3.26980341e-05]
+bUpdate: 0.0
+
+
+iter:223
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100523  -0.02003269]
+bUpdate: 0.01
+
+
+iter:224
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.02849503e-05 -2.86849562e-05]
+bUpdate: 0.0
+
+
+iter:225
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005027 -0.01002868]
+bUpdate: 0.01
+
+
+iter:226
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004626 -0.03002667]
+bUpdate: 0.01
+
+
+iter:227
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01995574 0.02997933]
+bUpdate: -0.01
+
+
+iter:228
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01004825 -0.03002666]
+bUpdate: 0.01
+
+
+iter:229
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.03995376 0.03997934]
+bUpdate: -0.01
+
+
+iter:230
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994577 0.03997135]
+bUpdate: -0.01
+
+
+iter:231
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006022 -0.01003665]
+bUpdate: 0.01
+
+
+iter:232
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199438  0.02996536]
+bUpdate: -0.01
+
+
+iter:233
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006019 -0.02004063]
+bUpdate: 0.01
+
+
+iter:234
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005818 -0.01003663]
+bUpdate: 0.01
+
+
+iter:235
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.41700325e-05 -3.46191093e-05]
+bUpdate: 0.0
+
+
+iter:236
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005416 -0.03003461]
+bUpdate: 0.01
+
+
+iter:237
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994785 0.02997139]
+bUpdate: -0.01
+
+
+iter:238
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.6137937e-05 -3.4599542e-05]
+bUpdate: 0.0
+
+
+iter:239
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005613 -0.02003459]
+bUpdate: 0.01
+
+
+iter:240
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994588 0.03996941]
+bUpdate: -0.01
+
+
+iter:241
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100601  -0.02003858]
+bUpdate: 0.01
+
+
+iter:242
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994191 0.02996543]
+bUpdate: -0.01
+
+
+iter:243
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.20810215e-05 -4.05649562e-05]
+bUpdate: 0.0
+
+
+iter:244
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006207 -0.01004056]
+bUpdate: 0.01
+
+
+iter:245
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005806 -0.03003855]
+bUpdate: 0.01
+
+
+iter:246
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005604 -0.02003254]
+bUpdate: 0.01
+
+
+iter:247
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994597 0.03997147]
+bUpdate: -0.01
+
+
+iter:248
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993998 0.02996347]
+bUpdate: -0.01
+
+
+iter:249
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006401 -0.01004252]
+bUpdate: 0.01
+
+
+iter:250
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.99977581e-05 -4.05129969e-05]
+bUpdate: 0.0
+
+
+iter:251
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005999 -0.0300405 ]
+bUpdate: 0.01
+
+
+iter:252
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005797 -0.0200345 ]
+bUpdate: 0.01
+
+
+iter:253
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994404 0.03996951]
+bUpdate: -0.01
+
+
+iter:254
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006195 -0.03003848]
+bUpdate: 0.01
+
+
+iter:255
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.99385840e-05 -3.24760992e-05]
+bUpdate: 0.0
+
+
+iter:256
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005993 -0.01003247]
+bUpdate: 0.01
+
+
+iter:257
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994409 0.02996954]
+bUpdate: -0.01
+
+
+iter:258
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.99034281e-05 -3.64570174e-05]
+bUpdate: 0.0
+
+
+iter:259
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.98914474e-05 -3.64497260e-05]
+bUpdate: 0.0
+
+
+iter:260
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005988 -0.02003644]
+bUpdate: 0.01
+
+
+iter:261
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005787 -0.01003244]
+bUpdate: 0.01
+
+
+iter:262
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005386 -0.03003043]
+bUpdate: 0.01
+
+
+iter:263
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994815 0.02997558]
+bUpdate: -0.01
+
+
+iter:264
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005583 -0.03003042]
+bUpdate: 0.01
+
+
+iter:265
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005382 -0.02002441]
+bUpdate: 0.01
+
+
+iter:266
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.03994819 0.03997959]
+bUpdate: -0.01
+
+
+iter:267
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0200598 -0.0100284]
+bUpdate: 0.01
+
+
+iter:268
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994421 0.0399736 ]
+bUpdate: -0.01
+
+
+iter:269
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993822 0.02996561]
+bUpdate: -0.01
+
+
+iter:270
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.57670108e-05 -4.03848049e-05]
+bUpdate: 0.0
+
+
+iter:271
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006575 -0.03004038]
+bUpdate: 0.01
+
+
+iter:272
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006374 -0.01003437]
+bUpdate: 0.01
+
+
+iter:273
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005973 -0.02003236]
+bUpdate: 0.01
+
+
+iter:274
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994228 0.03997164]
+bUpdate: -0.01
+
+
+iter:275
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199363  0.02996365]
+bUpdate: -0.01
+
+
+iter:276
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006769 -0.03004234]
+bUpdate: 0.01
+
+
+iter:277
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006568 -0.02003633]
+bUpdate: 0.01
+
+
+iter:278
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006367 -0.01003233]
+bUpdate: 0.01
+
+
+iter:279
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994035 0.03996968]
+bUpdate: -0.01
+
+
+iter:280
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.56403913e-05 -3.83141009e-05]
+bUpdate: 0.0
+
+
+iter:281
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993437 0.02996169]
+bUpdate: -0.01
+
+
+iter:282
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006961 -0.0100443 ]
+bUpdate: 0.01
+
+
+iter:283
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199344  0.02995771]
+bUpdate: -0.01
+
+
+iter:284
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006959 -0.03004828]
+bUpdate: 0.01
+
+
+iter:285
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.75731775e-05 -4.22718027e-05]
+bUpdate: 0.0
+
+
+iter:286
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.75596628e-05 -4.22633484e-05]
+bUpdate: 0.0
+
+
+iter:287
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006755 -0.02004225]
+bUpdate: 0.01
+
+
+iter:288
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006553 -0.01003825]
+bUpdate: 0.01
+
+
+iter:289
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.15195351e-05 -3.62387954e-05]
+bUpdate: 0.0
+
+
+iter:290
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.15072312e-05 -3.62315477e-05]
+bUpdate: 0.0
+
+
+iter:291
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006149 -0.03003622]
+bUpdate: 0.01
+
+
+iter:292
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005948 -0.02003022]
+bUpdate: 0.01
+
+
+iter:293
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994253 0.02997379]
+bUpdate: -0.01
+
+
+iter:294
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006146 -0.03003221]
+bUpdate: 0.01
+
+
+iter:295
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-5.94469483e-05 -2.61993297e-05]
+bUpdate: 0.0
+
+
+iter:296
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005944 -0.02002619]
+bUpdate: 0.01
+
+
+iter:297
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02005742 -0.01002219]
+bUpdate: 0.01
+
+
+iter:298
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01994659 0.02997982]
+bUpdate: -0.01
+
+
+iter:299
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0299426  0.03997382]
+bUpdate: -0.01
+
+
+iter:300
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006339 -0.03003418]
+bUpdate: 0.01
+
+
+iter:301
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993862 0.03997183]
+bUpdate: -0.01
+
+
+iter:302
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006736 -0.01003616]
+bUpdate: 0.01
+
+
+iter:303
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.33510985e-05 -3.41554391e-05]
+bUpdate: 0.0
+
+
+iter:304
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993666 0.02996585]
+bUpdate: -0.01
+
+
+iter:305
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006733 -0.02004014]
+bUpdate: 0.01
+
+
+iter:306
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006531 -0.02003613]
+bUpdate: 0.01
+
+
+iter:307
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199367  0.02996787]
+bUpdate: -0.01
+
+
+iter:308
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006729 -0.03003812]
+bUpdate: 0.01
+
+
+iter:309
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.52731158e-05 -3.21124739e-05]
+bUpdate: 0.0
+
+
+iter:310
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006526 -0.01003211]
+bUpdate: 0.01
+
+
+iter:311
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993875 0.0399699 ]
+bUpdate: -0.01
+
+
+iter:312
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006723 -0.03003809]
+bUpdate: 0.01
+
+
+iter:313
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.52213129e-05 -3.20859915e-05]
+bUpdate: 0.0
+
+
+iter:314
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006521 -0.01003208]
+bUpdate: 0.01
+
+
+iter:315
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.11952269e-05 -3.00731584e-05]
+bUpdate: 0.0
+
+
+iter:316
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993882 0.02996993]
+bUpdate: -0.01
+
+
+iter:317
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006517 -0.02003606]
+bUpdate: 0.01
+
+
+iter:318
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006316 -0.01003205]
+bUpdate: 0.01
+
+
+iter:319
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01005915 -0.02003005]
+bUpdate: 0.01
+
+
+iter:320
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994287 0.03997396]
+bUpdate: -0.01
+
+
+iter:321
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993688 0.02996596]
+bUpdate: -0.01
+
+
+iter:322
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.71092056e-05 -4.00294823e-05]
+bUpdate: 0.0
+
+
+iter:323
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100671  -0.03004002]
+bUpdate: 0.01
+
+
+iter:324
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006508 -0.02003401]
+bUpdate: 0.01
+
+
+iter:325
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993693 0.02996999]
+bUpdate: -0.01
+
+
+iter:326
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006706 -0.030036  ]
+bUpdate: 0.01
+
+
+iter:327
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993496 0.03997001]
+bUpdate: -0.01
+
+
+iter:328
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007103 -0.01003799]
+bUpdate: 0.01
+
+
+iter:329
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.70161082e-05 -3.59798717e-05]
+bUpdate: 0.0
+
+
+iter:330
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.70027049e-05 -3.59726758e-05]
+bUpdate: 0.0
+
+
+iter:331
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.69893044e-05 -3.59654812e-05]
+bUpdate: 0.0
+
+
+iter:332
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006698 -0.03003596]
+bUpdate: 0.01
+
+
+iter:333
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993504 0.02997005]
+bUpdate: -0.01
+
+
+iter:334
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006895 -0.01003595]
+bUpdate: 0.01
+
+
+iter:335
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006494 -0.02003394]
+bUpdate: 0.01
+
+
+iter:336
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993708 0.02997007]
+bUpdate: -0.01
+
+
+iter:337
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006691 -0.02003593]
+bUpdate: 0.01
+
+
+iter:338
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.48967752e-05 -3.19179584e-05]
+bUpdate: 0.0
+
+
+iter:339
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006488 -0.01003191]
+bUpdate: 0.01
+
+
+iter:340
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993913 0.03997009]
+bUpdate: -0.01
+
+
+iter:341
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006686 -0.0300379 ]
+bUpdate: 0.01
+
+
+iter:342
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006485 -0.03003189]
+bUpdate: 0.01
+
+
+iter:343
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.28323042e-05 -2.58852533e-05]
+bUpdate: 0.0
+
+
+iter:344
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006282 -0.02002588]
+bUpdate: 0.01
+
+
+iter:345
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006081 -0.01002187]
+bUpdate: 0.01
+
+
+iter:346
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199432  0.02998013]
+bUpdate: -0.01
+
+
+iter:347
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993922 0.03997413]
+bUpdate: -0.01
+
+
+iter:348
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006677 -0.01003386]
+bUpdate: 0.01
+
+
+iter:349
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.27581423e-05 -3.18546055e-05]
+bUpdate: 0.0
+
+
+iter:350
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006275 -0.03003185]
+bUpdate: 0.01
+
+
+iter:351
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993927 0.02997416]
+bUpdate: -0.01
+
+
+iter:352
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006472 -0.02003184]
+bUpdate: 0.01
+
+
+iter:353
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993729 0.03997217]
+bUpdate: -0.01
+
+
+iter:354
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100687  -0.02003582]
+bUpdate: 0.01
+
+
+iter:355
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006668 -0.01003182]
+bUpdate: 0.01
+
+
+iter:356
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006267 -0.03002981]
+bUpdate: 0.01
+
+
+iter:357
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993934 0.03997619]
+bUpdate: -0.01
+
+
+iter:358
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.66436689e-05 -3.18005114e-05]
+bUpdate: 0.0
+
+
+iter:359
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993337 0.02996821]
+bUpdate: -0.01
+
+
+iter:360
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007062 -0.02003779]
+bUpdate: 0.01
+
+
+iter:361
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.86028907e-05 -3.37802349e-05]
+bUpdate: 0.0
+
+
+iter:362
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993141 0.02996623]
+bUpdate: -0.01
+
+
+iter:363
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.25754523e-05 -3.97667242e-05]
+bUpdate: 0.0
+
+
+iter:364
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007256 -0.03003976]
+bUpdate: 0.01
+
+
+iter:365
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007055 -0.01003375]
+bUpdate: 0.01
+
+
+iter:366
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006653 -0.03003174]
+bUpdate: 0.01
+
+
+iter:367
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006452 -0.02002574]
+bUpdate: 0.01
+
+
+iter:368
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006251 -0.01002173]
+bUpdate: 0.01
+
+
+iter:369
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02994151 0.03998027]
+bUpdate: -0.01
+
+
+iter:370
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.44819055e-05 -2.77242804e-05]
+bUpdate: 0.0
+
+
+iter:371
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993553 0.02997228]
+bUpdate: -0.01
+
+
+iter:372
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993154 0.03996629]
+bUpdate: -0.01
+
+
+iter:373
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007444 -0.02004171]
+bUpdate: 0.01
+
+
+iter:374
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992757 0.0299623 ]
+bUpdate: -0.01
+
+
+iter:375
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007641 -0.03004369]
+bUpdate: 0.01
+
+
+iter:376
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.43977675e-05 -3.76818301e-05]
+bUpdate: 0.0
+
+
+iter:377
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007438 -0.01003767]
+bUpdate: 0.01
+
+
+iter:378
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007037 -0.02003567]
+bUpdate: 0.01
+
+
+iter:379
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006835 -0.03003166]
+bUpdate: 0.01
+
+
+iter:380
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993366 0.03997435]
+bUpdate: -0.01
+
+
+iter:381
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.23269989e-05 -3.36481630e-05]
+bUpdate: 0.0
+
+
+iter:382
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992769 0.02996636]
+bUpdate: -0.01
+
+
+iter:383
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0200763  -0.01003963]
+bUpdate: 0.01
+
+
+iter:384
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007228 -0.02003763]
+bUpdate: 0.01
+
+
+iter:385
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992973 0.03996638]
+bUpdate: -0.01
+
+
+iter:386
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992375 0.02995839]
+bUpdate: -0.01
+
+
+iter:387
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008024 -0.0100476 ]
+bUpdate: 0.01
+
+
+iter:388
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.62230025e-05 -4.55946856e-05]
+bUpdate: 0.0
+
+
+iter:389
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007621 -0.03004559]
+bUpdate: 0.01
+
+
+iter:390
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007419 -0.03003958]
+bUpdate: 0.01
+
+
+iter:391
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992782 0.02996643]
+bUpdate: -0.01
+
+
+iter:392
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.61632423e-05 -3.95618205e-05]
+bUpdate: 0.0
+
+
+iter:393
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007615 -0.01003955]
+bUpdate: 0.01
+
+
+iter:394
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.21327801e-05 -3.75459974e-05]
+bUpdate: 0.0
+
+
+iter:395
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007212 -0.02003754]
+bUpdate: 0.01
+
+
+iter:396
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0200701  -0.01003353]
+bUpdate: 0.01
+
+
+iter:397
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.60899091e-05 -3.15242743e-05]
+bUpdate: 0.0
+
+
+iter:398
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006608 -0.03003152]
+bUpdate: 0.01
+
+
+iter:399
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006406 -0.02002551]
+bUpdate: 0.01
+
+
+iter:400
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993795 0.03997849]
+bUpdate: -0.01
+
+
+iter:401
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993196 0.0299705 ]
+bUpdate: -0.01
+
+
+iter:402
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992798 0.0299645 ]
+bUpdate: -0.01
+
+
+iter:403
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007601 -0.02004149]
+bUpdate: 0.01
+
+
+iter:404
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.39950383e-05 -3.74809646e-05]
+bUpdate: 0.0
+
+
+iter:405
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007398 -0.01003747]
+bUpdate: 0.01
+
+
+iter:406
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.99654432e-05 -3.54659737e-05]
+bUpdate: 0.0
+
+
+iter:407
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006995 -0.03003546]
+bUpdate: 0.01
+
+
+iter:408
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-6.79374599e-05 -2.94517887e-05]
+bUpdate: 0.0
+
+
+iter:409
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006792 -0.01002945]
+bUpdate: 0.01
+
+
+iter:410
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993609 0.03997256]
+bUpdate: -0.01
+
+
+iter:411
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100699  -0.03003543]
+bUpdate: 0.01
+
+
+iter:412
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006788 -0.02002943]
+bUpdate: 0.01
+
+
+iter:413
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993413 0.02997458]
+bUpdate: -0.01
+
+
+iter:414
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02006986 -0.01003142]
+bUpdate: 0.01
+
+
+iter:415
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01993416 0.02997059]
+bUpdate: -0.01
+
+
+iter:416
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006983 -0.0300354 ]
+bUpdate: 0.01
+
+
+iter:417
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01006782 -0.0200294 ]
+bUpdate: 0.01
+
+
+iter:418
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0399342  0.03997461]
+bUpdate: -0.01
+
+
+iter:419
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992621 0.03996661]
+bUpdate: -0.01
+
+
+iter:420
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.97741882e-05 -4.13795834e-05]
+bUpdate: 0.0
+
+
+iter:421
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007976 -0.02004137]
+bUpdate: 0.01
+
+
+iter:422
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.77422817e-05 -3.73630332e-05]
+bUpdate: 0.0
+
+
+iter:423
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007773 -0.03003736]
+bUpdate: 0.01
+
+
+iter:424
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007571 -0.01003135]
+bUpdate: 0.01
+
+
+iter:425
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199283  0.02997066]
+bUpdate: -0.01
+
+
+iter:426
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992432 0.02996466]
+bUpdate: -0.01
+
+
+iter:427
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007967 -0.01004133]
+bUpdate: 0.01
+
+
+iter:428
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007565 -0.03003932]
+bUpdate: 0.01
+
+
+iter:429
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.36355066e-05 -3.33127544e-05]
+bUpdate: 0.0
+
+
+iter:430
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992638 0.03996669]
+bUpdate: -0.01
+
+
+iter:431
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007961 -0.0200413 ]
+bUpdate: 0.01
+
+
+iter:432
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007759 -0.01003729]
+bUpdate: 0.01
+
+
+iter:433
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.35746161e-05 -3.52837125e-05]
+bUpdate: 0.0
+
+
+iter:434
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992644 0.02996472]
+bUpdate: -0.01
+
+
+iter:435
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007755 -0.02004127]
+bUpdate: 0.01
+
+
+iter:436
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.55296802e-05 -3.72613465e-05]
+bUpdate: 0.0
+
+
+iter:437
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007551 -0.03003725]
+bUpdate: 0.01
+
+
+iter:438
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199265  0.02996875]
+bUpdate: -0.01
+
+
+iter:439
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007748 -0.03003724]
+bUpdate: 0.01
+
+
+iter:440
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007547 -0.02003123]
+bUpdate: 0.01
+
+
+iter:441
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.34541806e-05 -2.72264996e-05]
+bUpdate: 0.0
+
+
+iter:442
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007344 -0.01002722]
+bUpdate: 0.01
+
+
+iter:443
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02993058 0.03997478]
+bUpdate: -0.01
+
+
+iter:444
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.54109170e-05 -3.32105669e-05]
+bUpdate: 0.0
+
+
+iter:445
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100754 -0.0200332]
+bUpdate: 0.01
+
+
+iter:446
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992662 0.0399708 ]
+bUpdate: -0.01
+
+
+iter:447
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007937 -0.01003719]
+bUpdate: 0.01
+
+
+iter:448
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992465 0.02996482]
+bUpdate: -0.01
+
+
+iter:449
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007934 -0.03004118]
+bUpdate: 0.01
+
+
+iter:450
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992268 0.02996483]
+bUpdate: -0.01
+
+
+iter:451
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100813  -0.03004116]
+bUpdate: 0.01
+
+
+iter:452
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.92875445e-05 -3.51534680e-05]
+bUpdate: 0.0
+
+
+iter:453
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.92716870e-05 -3.51464373e-05]
+bUpdate: 0.0
+
+
+iter:454
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007926 -0.02003514]
+bUpdate: 0.01
+
+
+iter:455
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007724 -0.01003113]
+bUpdate: 0.01
+
+
+iter:456
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.32245335e-05 -2.91261537e-05]
+bUpdate: 0.0
+
+
+iter:457
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992679 0.03997088]
+bUpdate: -0.01
+
+
+iter:458
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199208  0.02996289]
+bUpdate: -0.01
+
+
+iter:459
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008318 -0.01004311]
+bUpdate: 0.01
+
+
+iter:460
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007916 -0.0300411 ]
+bUpdate: 0.01
+
+
+iter:461
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007715 -0.02003509]
+bUpdate: 0.01
+
+
+iter:462
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.51315098e-05 -3.10832223e-05]
+bUpdate: 0.0
+
+
+iter:463
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007512 -0.03003108]
+bUpdate: 0.01
+
+
+iter:464
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199269  0.02997493]
+bUpdate: -0.01
+
+
+iter:465
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992291 0.03996893]
+bUpdate: -0.01
+
+
+iter:466
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008307 -0.02003906]
+bUpdate: 0.01
+
+
+iter:467
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008105 -0.01003505]
+bUpdate: 0.01
+
+
+iter:468
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992296 0.03996696]
+bUpdate: -0.01
+
+
+iter:469
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.30231896e-05 -4.10381318e-05]
+bUpdate: 0.0
+
+
+iter:470
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008301 -0.02004103]
+bUpdate: 0.01
+
+
+iter:471
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008099 -0.03003702]
+bUpdate: 0.01
+
+
+iter:472
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992103 0.02996899]
+bUpdate: -0.01
+
+
+iter:473
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008296 -0.01003701]
+bUpdate: 0.01
+
+
+iter:474
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007894 -0.030035  ]
+bUpdate: 0.01
+
+
+iter:475
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007693 -0.01002899]
+bUpdate: 0.01
+
+
+iter:476
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992709 0.02997301]
+bUpdate: -0.01
+
+
+iter:477
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0299231  0.03996702]
+bUpdate: -0.01
+
+
+iter:478
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.28802647e-05 -4.09759163e-05]
+bUpdate: 0.0
+
+
+iter:479
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008286 -0.02004097]
+bUpdate: 0.01
+
+
+iter:480
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.08471159e-05 -3.69595276e-05]
+bUpdate: 0.0
+
+
+iter:481
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008083 -0.03003695]
+bUpdate: 0.01
+
+
+iter:482
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992119 0.02996906]
+bUpdate: -0.01
+
+
+iter:483
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100828  -0.02003694]
+bUpdate: 0.01
+
+
+iter:484
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008078 -0.01003293]
+bUpdate: 0.01
+
+
+iter:485
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.67663010e-05 -3.09245824e-05]
+bUpdate: 0.0
+
+
+iter:486
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.67509478e-05 -3.09183975e-05]
+bUpdate: 0.0
+
+
+iter:487
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992326 0.03996909]
+bUpdate: -0.01
+
+
+iter:488
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008272 -0.02003891]
+bUpdate: 0.01
+
+
+iter:489
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100807 -0.0300349]
+bUpdate: 0.01
+
+
+iter:490
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007869 -0.01002889]
+bUpdate: 0.01
+
+
+iter:491
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992533 0.02997311]
+bUpdate: -0.01
+
+
+iter:492
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992134 0.02996712]
+bUpdate: -0.01
+
+
+iter:493
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.26411624e-05 -3.88735391e-05]
+bUpdate: 0.0
+
+
+iter:494
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.26246342e-05 -3.88657644e-05]
+bUpdate: 0.0
+
+
+iter:495
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008261 -0.01003886]
+bUpdate: 0.01
+
+
+iter:496
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007859 -0.03003685]
+bUpdate: 0.01
+
+
+iter:497
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007658 -0.02003084]
+bUpdate: 0.01
+
+
+iter:498
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-7.45605541e-05 -2.68366811e-05]
+bUpdate: 0.0
+
+
+iter:499
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007455 -0.01002683]
+bUpdate: 0.01
+
+
+iter:500
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992947 0.03997517]
+bUpdate: -0.01
+
+
+iter:501
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007652 -0.03003282]
+bUpdate: 0.01
+
+
+iter:502
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100745  -0.02002681]
+bUpdate: 0.01
+
+
+iter:503
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992751 0.02997719]
+bUpdate: -0.01
+
+
+iter:504
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992353 0.0399712 ]
+bUpdate: -0.01
+
+
+iter:505
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.24566315e-05 -3.67987325e-05]
+bUpdate: 0.0
+
+
+iter:506
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008244 -0.02003679]
+bUpdate: 0.01
+
+
+iter:507
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991958 0.02996722]
+bUpdate: -0.01
+
+
+iter:508
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008441 -0.01003878]
+bUpdate: 0.01
+
+
+iter:509
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008039 -0.03003677]
+bUpdate: 0.01
+
+
+iter:510
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992163 0.03996924]
+bUpdate: -0.01
+
+
+iter:511
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008436 -0.02003876]
+bUpdate: 0.01
+
+
+iter:512
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008234 -0.03003475]
+bUpdate: 0.01
+
+
+iter:513
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.03255926e-05 -2.87414948e-05]
+bUpdate: 0.0
+
+
+iter:514
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991969 0.02997126]
+bUpdate: -0.01
+
+
+iter:515
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008429 -0.01003473]
+bUpdate: 0.01
+
+
+iter:516
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991972 0.03996728]
+bUpdate: -0.01
+
+
+iter:517
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008626 -0.02004072]
+bUpdate: 0.01
+
+
+iter:518
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.42432995e-05 -3.67083655e-05]
+bUpdate: 0.0
+
+
+iter:519
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008423 -0.0300367 ]
+bUpdate: 0.01
+
+
+iter:520
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991779 0.02996931]
+bUpdate: -0.01
+
+
+iter:521
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008619 -0.01003669]
+bUpdate: 0.01
+
+
+iter:522
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.21759250e-05 -3.46802073e-05]
+bUpdate: 0.0
+
+
+iter:523
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991784 0.02996533]
+bUpdate: -0.01
+
+
+iter:524
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008614 -0.02004067]
+bUpdate: 0.01
+
+
+iter:525
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991587 0.03996334]
+bUpdate: -0.01
+
+
+iter:526
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009011 -0.01004465]
+bUpdate: 0.01
+
+
+iter:527
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008609 -0.03004264]
+bUpdate: 0.01
+
+
+iter:528
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008407 -0.01003663]
+bUpdate: 0.01
+
+
+iter:529
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991994 0.03996537]
+bUpdate: -0.01
+
+
+iter:530
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008604 -0.02004262]
+bUpdate: 0.01
+
+
+iter:531
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991598 0.02996139]
+bUpdate: -0.01
+
+
+iter:532
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.80069250e-05 -4.46029153e-05]
+bUpdate: 0.0
+
+
+iter:533
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008799 -0.03004459]
+bUpdate: 0.01
+
+
+iter:534
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.59717258e-05 -3.85850759e-05]
+bUpdate: 0.0
+
+
+iter:535
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008595 -0.01003858]
+bUpdate: 0.01
+
+
+iter:536
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008194 -0.03003657]
+bUpdate: 0.01
+
+
+iter:537
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992008 0.02996944]
+bUpdate: -0.01
+
+
+iter:538
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100839  -0.02003656]
+bUpdate: 0.01
+
+
+iter:539
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.18881879e-05 -3.25489058e-05]
+bUpdate: 0.0
+
+
+iter:540
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008187 -0.03003254]
+bUpdate: 0.01
+
+
+iter:541
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02007986 -0.01002654]
+bUpdate: 0.01
+
+
+iter:542
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01007584 -0.02002453]
+bUpdate: 0.01
+
+
+iter:543
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992618 0.02997947]
+bUpdate: -0.01
+
+
+iter:544
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992219 0.03997348]
+bUpdate: -0.01
+
+
+iter:545
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.37939701e-05 -3.45162648e-05]
+bUpdate: 0.0
+
+
+iter:546
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.37772113e-05 -3.45093615e-05]
+bUpdate: 0.0
+
+
+iter:547
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991624 0.0299655 ]
+bUpdate: -0.01
+
+
+iter:548
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008774 -0.0200405 ]
+bUpdate: 0.01
+
+
+iter:549
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008573 -0.01003649]
+bUpdate: 0.01
+
+
+iter:550
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008171 -0.03003448]
+bUpdate: 0.01
+
+
+iter:551
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02992031 0.03997153]
+bUpdate: -0.01
+
+
+iter:552
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008568 -0.03003647]
+bUpdate: 0.01
+
+
+iter:553
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008366 -0.01003046]
+bUpdate: 0.01
+
+
+iter:554
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01992036 0.02997155]
+bUpdate: -0.01
+
+
+iter:555
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.36269337e-05 -3.44484955e-05]
+bUpdate: 0.0
+
+
+iter:556
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008361 -0.02003444]
+bUpdate: 0.01
+
+
+iter:557
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991841 0.03996957]
+bUpdate: -0.01
+
+
+iter:558
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.75771675e-05 -3.84286305e-05]
+bUpdate: 0.0
+
+
+iter:559
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008756 -0.02003842]
+bUpdate: 0.01
+
+
+iter:560
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008554 -0.01003441]
+bUpdate: 0.01
+
+
+iter:561
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991847 0.02996759]
+bUpdate: -0.01
+
+
+iter:562
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008551 -0.0300384 ]
+bUpdate: 0.01
+
+
+iter:563
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991651 0.03996761]
+bUpdate: -0.01
+
+
+iter:564
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008947 -0.01004039]
+bUpdate: 0.01
+
+
+iter:565
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008546 -0.02003838]
+bUpdate: 0.01
+
+
+iter:566
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.34399403e-05 -3.43699856e-05]
+bUpdate: 0.0
+
+
+iter:567
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991658 0.02996564]
+bUpdate: -0.01
+
+
+iter:568
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008741 -0.03004036]
+bUpdate: 0.01
+
+
+iter:569
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991461 0.03996565]
+bUpdate: -0.01
+
+
+iter:570
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.13720085e-05 -4.23412981e-05]
+bUpdate: 0.0
+
+
+iter:571
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990865 0.02995767]
+bUpdate: -0.01
+
+
+iter:572
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.53354634e-05 -4.83243633e-05]
+bUpdate: 0.0
+
+
+iter:573
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009532 -0.01004831]
+bUpdate: 0.01
+
+
+iter:574
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100913  -0.03004631]
+bUpdate: 0.01
+
+
+iter:575
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008928 -0.0200403 ]
+bUpdate: 0.01
+
+
+iter:576
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991274 0.03996371]
+bUpdate: -0.01
+
+
+iter:577
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009324 -0.03004428]
+bUpdate: 0.01
+
+
+iter:578
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009123 -0.01003827]
+bUpdate: 0.01
+
+
+iter:579
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991279 0.02996374]
+bUpdate: -0.01
+
+
+iter:580
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009119 -0.02004226]
+bUpdate: 0.01
+
+
+iter:581
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.91711924e-05 -3.82482432e-05]
+bUpdate: 0.0
+
+
+iter:582
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.91533582e-05 -3.82405935e-05]
+bUpdate: 0.0
+
+
+iter:583
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991086 0.02996177]
+bUpdate: -0.01
+
+
+iter:584
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009312 -0.01004423]
+bUpdate: 0.01
+
+
+iter:585
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100891  -0.02004222]
+bUpdate: 0.01
+
+
+iter:586
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991292 0.03996179]
+bUpdate: -0.01
+
+
+iter:587
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009306 -0.0300462 ]
+bUpdate: 0.01
+
+
+iter:588
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.10452280e-05 -4.01911288e-05]
+bUpdate: 0.0
+
+
+iter:589
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990897 0.02995982]
+bUpdate: -0.01
+
+
+iter:590
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009501 -0.01004618]
+bUpdate: 0.01
+
+
+iter:591
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.09898118e-05 -4.41658190e-05]
+bUpdate: 0.0
+
+
+iter:592
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009097 -0.02004416]
+bUpdate: 0.01
+
+
+iter:593
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008895 -0.03004015]
+bUpdate: 0.01
+
+
+iter:594
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991306 0.03996586]
+bUpdate: -0.01
+
+
+iter:595
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990708 0.02995787]
+bUpdate: -0.01
+
+
+iter:596
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100969  -0.02004812]
+bUpdate: 0.01
+
+
+iter:597
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009488 -0.03004412]
+bUpdate: 0.01
+
+
+iter:598
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009286 -0.01003811]
+bUpdate: 0.01
+
+
+iter:599
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.88427298e-05 -3.60988008e-05]
+bUpdate: 0.0
+
+
+iter:600
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01008882 -0.02003609]
+bUpdate: 0.01
+
+
+iter:601
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02008681 -0.01003208]
+bUpdate: 0.01
+
+
+iter:602
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.27898349e-05 -3.00779458e-05]
+bUpdate: 0.0
+
+
+iter:603
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991723 0.03996993]
+bUpdate: -0.01
+
+
+iter:604
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991124 0.02996193]
+bUpdate: -0.01
+
+
+iter:605
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009274 -0.03004406]
+bUpdate: 0.01
+
+
+iter:606
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990928 0.03996195]
+bUpdate: -0.01
+
+
+iter:607
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0100967  -0.03004604]
+bUpdate: 0.01
+
+
+iter:608
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990532 0.02995997]
+bUpdate: -0.01
+
+
+iter:609
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009866 -0.02004602]
+bUpdate: 0.01
+
+
+iter:610
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.66442692e-05 -4.20154613e-05]
+bUpdate: 0.0
+
+
+iter:611
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009662 -0.01004201]
+bUpdate: 0.01
+
+
+iter:612
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.26056153e-05 -3.99986568e-05]
+bUpdate: 0.0
+
+
+iter:613
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990741 0.03996001]
+bUpdate: -0.01
+
+
+iter:614
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009857 -0.02004798]
+bUpdate: 0.01
+
+
+iter:615
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009655 -0.03004397]
+bUpdate: 0.01
+
+
+iter:616
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990547 0.02996204]
+bUpdate: -0.01
+
+
+iter:617
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009851 -0.01004396]
+bUpdate: 0.01
+
+
+iter:618
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009449 -0.02004195]
+bUpdate: 0.01
+
+
+iter:619
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990753 0.03996206]
+bUpdate: -0.01
+
+
+iter:620
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990155 0.02995407]
+bUpdate: -0.01
+
+
+iter:621
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010243 -0.03005192]
+bUpdate: 0.01
+
+
+iter:622
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010041 -0.01004591]
+bUpdate: 0.01
+
+
+iter:623
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.63932925e-05 -4.39031527e-05]
+bUpdate: 0.0
+
+
+iter:624
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.63740138e-05 -4.38943721e-05]
+bUpdate: 0.0
+
+
+iter:625
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009635 -0.03004389]
+bUpdate: 0.01
+
+
+iter:626
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.43354681e-05 -3.78768161e-05]
+bUpdate: 0.0
+
+
+iter:627
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009432 -0.01003787]
+bUpdate: 0.01
+
+
+iter:628
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199097  0.02996414]
+bUpdate: -0.01
+
+
+iter:629
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009428 -0.02004185]
+bUpdate: 0.01
+
+
+iter:630
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009226 -0.01003785]
+bUpdate: 0.01
+
+
+iter:631
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01991176 0.02996416]
+bUpdate: -0.01
+
+
+iter:632
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009222 -0.02004183]
+bUpdate: 0.01
+
+
+iter:633
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009021 -0.03003782]
+bUpdate: 0.01
+
+
+iter:634
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-8.81882354e-05 -3.18154558e-05]
+bUpdate: 0.0
+
+
+iter:635
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02991183 0.03996819]
+bUpdate: -0.01
+
+
+iter:636
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009415 -0.0300398 ]
+bUpdate: 0.01
+
+
+iter:637
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.21341330e-05 -3.37947704e-05]
+bUpdate: 0.0
+
+
+iter:638
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009212 -0.02003379]
+bUpdate: 0.01
+
+
+iter:639
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0299099  0.03997022]
+bUpdate: -0.01
+
+
+iter:640
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009608 -0.01003778]
+bUpdate: 0.01
+
+
+iter:641
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990794 0.02996423]
+bUpdate: -0.01
+
+
+iter:642
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990396 0.03995824]
+bUpdate: -0.01
+
+
+iter:643
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010202 -0.02004975]
+bUpdate: 0.01
+
+
+iter:644
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101     -0.03004574]
+bUpdate: 0.01
+
+
+iter:645
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009798 -0.01003973]
+bUpdate: 0.01
+
+
+iter:646
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990604 0.02996227]
+bUpdate: -0.01
+
+
+iter:647
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.79436336e-05 -4.37176463e-05]
+bUpdate: 0.0
+
+
+iter:648
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.79240449e-05 -4.37089027e-05]
+bUpdate: 0.0
+
+
+iter:649
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.79044601e-05 -4.37001609e-05]
+bUpdate: 0.0
+
+
+iter:650
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990212 0.02995631]
+bUpdate: -0.01
+
+
+iter:651
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010187 -0.02004968]
+bUpdate: 0.01
+
+
+iter:652
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009984 -0.03004567]
+bUpdate: 0.01
+
+
+iter:653
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009782 -0.01003966]
+bUpdate: 0.01
+
+
+iter:654
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.38053952e-05 -3.76556788e-05]
+bUpdate: 0.0
+
+
+iter:655
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009379 -0.03003765]
+bUpdate: 0.01
+
+
+iter:656
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990823 0.02996836]
+bUpdate: -0.01
+
+
+iter:657
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009575 -0.02003763]
+bUpdate: 0.01
+
+
+iter:658
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990627 0.03996637]
+bUpdate: -0.01
+
+
+iter:659
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009971 -0.01004162]
+bUpdate: 0.01
+
+
+iter:660
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009569 -0.03003961]
+bUpdate: 0.01
+
+
+iter:661
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990633 0.0399664 ]
+bUpdate: -0.01
+
+
+iter:662
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009965 -0.0100416 ]
+bUpdate: 0.01
+
+
+iter:663
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009563 -0.02003959]
+bUpdate: 0.01
+
+
+iter:664
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.36147545e-05 -3.55808334e-05]
+bUpdate: 0.0
+
+
+iter:665
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199064  0.02996443]
+bUpdate: -0.01
+
+
+iter:666
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009758 -0.01004157]
+bUpdate: 0.01
+
+
+iter:667
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990644 0.03996044]
+bUpdate: -0.01
+
+
+iter:668
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009954 -0.02004755]
+bUpdate: 0.01
+
+
+iter:669
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990248 0.02995646]
+bUpdate: -0.01
+
+
+iter:670
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101015  -0.03004953]
+bUpdate: 0.01
+
+
+iter:671
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.94793737e-05 -4.35222529e-05]
+bUpdate: 0.0
+
+
+iter:672
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990054 0.02995649]
+bUpdate: -0.01
+
+
+iter:673
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010344 -0.0300495 ]
+bUpdate: 0.01
+
+
+iter:674
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010142 -0.02004349]
+bUpdate: 0.01
+
+
+iter:675
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0200994  -0.01003949]
+bUpdate: 0.01
+
+
+iter:676
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990462 0.03996252]
+bUpdate: -0.01
+
+
+iter:677
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.01359659e-04 -4.54708528e-05]
+bUpdate: 0.0
+
+
+iter:678
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.01339387e-04 -4.54617587e-05]
+bUpdate: 0.0
+
+
+iter:679
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010132 -0.01004545]
+bUpdate: 0.01
+
+
+iter:680
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0199027  0.02995656]
+bUpdate: -0.01
+
+
+iter:681
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010128 -0.03004943]
+bUpdate: 0.01
+
+
+iter:682
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009926 -0.02004343]
+bUpdate: 0.01
+
+
+iter:683
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.72392877e-05 -3.94163151e-05]
+bUpdate: 0.0
+
+
+iter:684
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009722 -0.01003941]
+bUpdate: 0.01
+
+
+iter:685
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.32003959e-05 -3.74005501e-05]
+bUpdate: 0.0
+
+
+iter:686
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009318 -0.02003739]
+bUpdate: 0.01
+
+
+iter:687
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990884 0.02996661]
+bUpdate: -0.01
+
+
+iter:688
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990486 0.03996062]
+bUpdate: -0.01
+
+
+iter:689
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010113 -0.03004737]
+bUpdate: 0.01
+
+
+iter:690
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.91056327e-05 -4.13615643e-05]
+bUpdate: 0.0
+
+
+iter:691
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009909 -0.03004135]
+bUpdate: 0.01
+
+
+iter:692
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990293 0.03996465]
+bUpdate: -0.01
+
+
+iter:693
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989695 0.02995666]
+bUpdate: -0.01
+
+
+iter:694
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010703 -0.02004933]
+bUpdate: 0.01
+
+
+iter:695
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.020105   -0.01004532]
+bUpdate: 0.01
+
+
+iter:696
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.00983566e-04 -4.33103550e-05]
+bUpdate: 0.0
+
+
+iter:697
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010096 -0.0300433 ]
+bUpdate: 0.01
+
+
+iter:698
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990106 0.03996271]
+bUpdate: -0.01
+
+
+iter:699
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010492 -0.02004529]
+bUpdate: 0.01
+
+
+iter:700
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201029  -0.01004128]
+bUpdate: 0.01
+
+
+iter:701
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990112 0.02996073]
+bUpdate: -0.01
+
+
+iter:702
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010286 -0.01004526]
+bUpdate: 0.01
+
+
+iter:703
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009884 -0.02004325]
+bUpdate: 0.01
+
+
+iter:704
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01009682 -0.03003924]
+bUpdate: 0.01
+
+
+iter:705
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-9.48023412e-05 -3.32348570e-05]
+bUpdate: 0.0
+
+
+iter:706
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990522 0.02996677]
+bUpdate: -0.01
+
+
+iter:707
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990124 0.03996078]
+bUpdate: -0.01
+
+
+iter:708
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010474 -0.03004721]
+bUpdate: 0.01
+
+
+iter:709
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989728 0.0299588 ]
+bUpdate: -0.01
+
+
+iter:710
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201067 -0.0100472]
+bUpdate: 0.01
+
+
+iter:711
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.02681837e-04 -4.51865973e-05]
+bUpdate: 0.0
+
+
+iter:712
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.026613e-04 -4.517756e-05]
+bUpdate: 0.0
+
+
+iter:713
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010264 -0.02004517]
+bUpdate: 0.01
+
+
+iter:714
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989938 0.03995884]
+bUpdate: -0.01
+
+
+iter:715
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201066  -0.01004915]
+bUpdate: 0.01
+
+
+iter:716
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010258 -0.02004714]
+bUpdate: 0.01
+
+
+iter:717
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989944 0.02995687]
+bUpdate: -0.01
+
+
+iter:718
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010454 -0.03004912]
+bUpdate: 0.01
+
+
+iter:719
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.02517261e-04 -4.31135492e-05]
+bUpdate: 0.0
+
+
+iter:720
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198975 0.0299569]
+bUpdate: -0.01
+
+
+iter:721
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.06476258e-04 -4.90963055e-05]
+bUpdate: 0.0
+
+
+iter:722
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010645 -0.01004909]
+bUpdate: 0.01
+
+
+iter:723
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.02433672e-04 -4.70766690e-05]
+bUpdate: 0.0
+
+
+iter:724
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010241 -0.03004707]
+bUpdate: 0.01
+
+
+iter:725
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010039 -0.02004106]
+bUpdate: 0.01
+
+
+iter:726
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990163 0.03996295]
+bUpdate: -0.01
+
+
+iter:727
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010435 -0.03004504]
+bUpdate: 0.01
+
+
+iter:728
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010233 -0.01003903]
+bUpdate: 0.01
+
+
+iter:729
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01990169 0.02996297]
+bUpdate: -0.01
+
+
+iter:730
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010229 -0.02004302]
+bUpdate: 0.01
+
+
+iter:731
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.00271492e-04 -3.90093949e-05]
+bUpdate: 0.0
+
+
+iter:732
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989975 0.029961  ]
+bUpdate: -0.01
+
+
+iter:733
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010423 -0.03004499]
+bUpdate: 0.01
+
+
+iter:734
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989779 0.03996102]
+bUpdate: -0.01
+
+
+iter:735
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010819 -0.01004698]
+bUpdate: 0.01
+
+
+iter:736
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010417 -0.02004497]
+bUpdate: 0.01
+
+
+iter:737
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.02147627e-04 -4.09586081e-05]
+bUpdate: 0.0
+
+
+iter:738
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010213 -0.01004095]
+bUpdate: 0.01
+
+
+iter:739
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990189 0.03996106]
+bUpdate: -0.01
+
+
+iter:740
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.04087151e-04 -4.69344379e-05]
+bUpdate: 0.0
+
+
+iter:741
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010407 -0.03004693]
+bUpdate: 0.01
+
+
+iter:742
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989795 0.02995908]
+bUpdate: -0.01
+
+
+iter:743
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010603 -0.02004691]
+bUpdate: 0.01
+
+
+iter:744
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.010104  -0.0300429]
+bUpdate: 0.01
+
+
+iter:745
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.01983105e-04 -3.68895217e-05]
+bUpdate: 0.0
+
+
+iter:746
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010196 -0.02003688]
+bUpdate: 0.01
+
+
+iter:747
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02009994 -0.01003287]
+bUpdate: 0.01
+
+
+iter:748
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02990408 0.03996913]
+bUpdate: -0.01
+
+
+iter:749
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198981  0.02996114]
+bUpdate: -0.01
+
+
+iter:750
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010588 -0.01004485]
+bUpdate: 0.01
+
+
+iter:751
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989814 0.02995715]
+bUpdate: -0.01
+
+
+iter:752
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.05841214e-04 -4.88367065e-05]
+bUpdate: 0.0
+
+
+iter:753
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010582 -0.03004883]
+bUpdate: 0.01
+
+
+iter:754
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101038  -0.02004282]
+bUpdate: 0.01
+
+
+iter:755
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.01778121e-04 -3.88086103e-05]
+bUpdate: 0.0
+
+
+iter:756
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989824 0.0299612 ]
+bUpdate: -0.01
+
+
+iter:757
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.05737414e-04 -4.47930884e-05]
+bUpdate: 0.0
+
+
+iter:758
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989428 0.03995522]
+bUpdate: -0.01
+
+
+iter:759
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101117  -0.02005278]
+bUpdate: 0.01
+
+
+iter:760
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010967 -0.03004876]
+bUpdate: 0.01
+
+
+iter:761
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010765 -0.01004275]
+bUpdate: 0.01
+
+
+iter:762
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010363 -0.03004075]
+bUpdate: 0.01
+
+
+iter:763
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989839 0.02996526]
+bUpdate: -0.01
+
+
+iter:764
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989441 0.03995927]
+bUpdate: -0.01
+
+
+iter:765
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.11567155e-04 -4.87230709e-05]
+bUpdate: 0.0
+
+
+iter:766
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011154 -0.01004871]
+bUpdate: 0.01
+
+
+iter:767
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010752 -0.0200467 ]
+bUpdate: 0.01
+
+
+iter:768
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101055  -0.02004269]
+bUpdate: 0.01
+
+
+iter:769
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989652 0.02996131]
+bUpdate: -0.01
+
+
+iter:770
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989254 0.03995532]
+bUpdate: -0.01
+
+
+iter:771
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011344 -0.03005267]
+bUpdate: 0.01
+
+
+iter:772
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011142 -0.01004666]
+bUpdate: 0.01
+
+
+iter:773
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.07392769e-04 -4.46491658e-05]
+bUpdate: 0.0
+
+
+iter:774
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010737 -0.02004464]
+bUpdate: 0.01
+
+
+iter:775
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989465 0.03995937]
+bUpdate: -0.01
+
+
+iter:776
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988867 0.02995138]
+bUpdate: -0.01
+
+
+iter:777
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011531 -0.01005461]
+bUpdate: 0.01
+
+
+iter:778
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011128 -0.0300526 ]
+bUpdate: 0.01
+
+
+iter:779
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.09261163e-04 -4.65920138e-05]
+bUpdate: 0.0
+
+
+iter:780
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010924 -0.03004658]
+bUpdate: 0.01
+
+
+iter:781
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010722 -0.01004057]
+bUpdate: 0.01
+
+
+iter:782
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101032  -0.02003857]
+bUpdate: 0.01
+
+
+iter:783
+XY_tmp:
+[[ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989882 0.03996544]
+bUpdate: -0.01
+
+
+iter:784
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.07155145e-04 -4.25506397e-05]
+bUpdate: 0.0
+
+
+iter:785
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989287 0.02995746]
+bUpdate: -0.01
+
+
+iter:786
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.11112287e-04 -4.85336211e-05]
+bUpdate: 0.0
+
+
+iter:787
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988891 0.02995148]
+bUpdate: -0.01
+
+
+iter:788
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011507 -0.03005451]
+bUpdate: 0.01
+
+
+iter:789
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011304 -0.0100485 ]
+bUpdate: 0.01
+
+
+iter:790
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989098 0.03995351]
+bUpdate: -0.01
+
+
+iter:791
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.010115   -0.02005448]
+bUpdate: 0.01
+
+
+iter:792
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011298 -0.03005047]
+bUpdate: 0.01
+
+
+iter:793
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988905 0.02995554]
+bUpdate: -0.01
+
+
+iter:794
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011493 -0.01005045]
+bUpdate: 0.01
+
+
+iter:795
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011091 -0.02004844]
+bUpdate: 0.01
+
+
+iter:796
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989111 0.03995557]
+bUpdate: -0.01
+
+
+iter:797
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14865687e-04 -5.24257565e-05]
+bUpdate: 0.0
+
+
+iter:798
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14842714e-04 -5.24152713e-05]
+bUpdate: 0.0
+
+
+iter:799
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011482 -0.0200524 ]
+bUpdate: 0.01
+
+
+iter:800
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198872  0.02995161]
+bUpdate: -0.01
+
+
+iter:801
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011677 -0.03005438]
+bUpdate: 0.01
+
+
+iter:802
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14750867e-04 -4.83737515e-05]
+bUpdate: 0.0
+
+
+iter:803
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011473 -0.01004836]
+bUpdate: 0.01
+
+
+iter:804
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.10704971e-04 -4.63544040e-05]
+bUpdate: 0.0
+
+
+iter:805
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988932 0.02995365]
+bUpdate: -0.01
+
+
+iter:806
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011466 -0.02005234]
+bUpdate: 0.01
+
+
+iter:807
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.12637762e-04 -4.83253969e-05]
+bUpdate: 0.0
+
+
+iter:808
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011262 -0.03004832]
+bUpdate: 0.01
+
+
+iter:809
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011059 -0.01004231]
+bUpdate: 0.01
+
+
+iter:810
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.06570593e-04 -4.02976075e-05]
+bUpdate: 0.0
+
+
+iter:811
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989345 0.03995971]
+bUpdate: -0.01
+
+
+iter:812
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011253 -0.01004828]
+bUpdate: 0.01
+
+
+iter:813
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010851 -0.02004627]
+bUpdate: 0.01
+
+
+iter:814
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010648 -0.03004226]
+bUpdate: 0.01
+
+
+iter:815
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989554 0.02996375]
+bUpdate: -0.01
+
+
+iter:816
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989156 0.02995775]
+bUpdate: -0.01
+
+
+iter:817
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.12419884e-04 -4.82384266e-05]
+bUpdate: 0.0
+
+
+iter:818
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101124  -0.03004823]
+bUpdate: 0.01
+
+
+iter:819
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011037 -0.02004222]
+bUpdate: 0.01
+
+
+iter:820
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989165 0.03996179]
+bUpdate: -0.01
+
+
+iter:821
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011433 -0.0100462 ]
+bUpdate: 0.01
+
+
+iter:822
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011031 -0.02004419]
+bUpdate: 0.01
+
+
+iter:823
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989171 0.03995982]
+bUpdate: -0.01
+
+
+iter:824
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14264590e-04 -4.81769309e-05]
+bUpdate: 0.0
+
+
+iter:825
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011424 -0.03004817]
+bUpdate: 0.01
+
+
+iter:826
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011222 -0.01004216]
+bUpdate: 0.01
+
+
+iter:827
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198918  0.02995985]
+bUpdate: -0.01
+
+
+iter:828
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.12174806e-04 -4.61412007e-05]
+bUpdate: 0.0
+
+
+iter:829
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988785 0.03995387]
+bUpdate: -0.01
+
+
+iter:830
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011813 -0.01005412]
+bUpdate: 0.01
+
+
+iter:831
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988589 0.02994789]
+bUpdate: -0.01
+
+
+iter:832
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011808 -0.0200581 ]
+bUpdate: 0.01
+
+
+iter:833
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011606 -0.03005409]
+bUpdate: 0.01
+
+
+iter:834
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14036665e-04 -4.80790608e-05]
+bUpdate: 0.0
+
+
+iter:835
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.14013857e-04 -4.80694450e-05]
+bUpdate: 0.0
+
+
+iter:836
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988601 0.02995194]
+bUpdate: -0.01
+
+
+iter:837
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011797 -0.01005405]
+bUpdate: 0.01
+
+
+iter:838
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011394 -0.02005204]
+bUpdate: 0.01
+
+
+iter:839
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011192 -0.03004803]
+bUpdate: 0.01
+
+
+iter:840
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.09899489e-04 -4.20193954e-05]
+bUpdate: 0.0
+
+
+iter:841
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010988 -0.02004201]
+bUpdate: 0.01
+
+
+iter:842
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02010786 -0.010038  ]
+bUpdate: 0.01
+
+
+iter:843
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989617 0.03996401]
+bUpdate: -0.01
+
+
+iter:844
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01010981 -0.03004399]
+bUpdate: 0.01
+
+
+iter:845
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989221 0.02996202]
+bUpdate: -0.01
+
+
+iter:846
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011177 -0.03004397]
+bUpdate: 0.01
+
+
+iter:847
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989025 0.03996204]
+bUpdate: -0.01
+
+
+iter:848
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988427 0.02995404]
+bUpdate: -0.01
+
+
+iter:849
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.19702227e-04 -5.19458187e-05]
+bUpdate: 0.0
+
+
+iter:850
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011968 -0.01005194]
+bUpdate: 0.01
+
+
+iter:851
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011565 -0.02004993]
+bUpdate: 0.01
+
+
+iter:852
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011363 -0.02004592]
+bUpdate: 0.01
+
+
+iter:853
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.11608493e-04 -4.19058744e-05]
+bUpdate: 0.0
+
+
+iter:854
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011159 -0.0300419 ]
+bUpdate: 0.01
+
+
+iter:855
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01989044 0.02996411]
+bUpdate: -0.01
+
+
+iter:856
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011354 -0.01004188]
+bUpdate: 0.01
+
+
+iter:857
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989048 0.03996013]
+bUpdate: -0.01
+
+
+iter:858
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201155  -0.01004787]
+bUpdate: 0.01
+
+
+iter:859
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011147 -0.02004586]
+bUpdate: 0.01
+
+
+iter:860
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02989055 0.03995815]
+bUpdate: -0.01
+
+
+iter:861
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988457 0.02995016]
+bUpdate: -0.01
+
+
+iter:862
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.19406959e-04 -5.58285034e-05]
+bUpdate: 0.0
+
+
+iter:863
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011938 -0.03005582]
+bUpdate: 0.01
+
+
+iter:864
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.17359201e-04 -4.98061742e-05]
+bUpdate: 0.0
+
+
+iter:865
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.17335729e-04 -4.97962130e-05]
+bUpdate: 0.0
+
+
+iter:866
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011731 -0.03004979]
+bUpdate: 0.01
+
+
+iter:867
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011529 -0.02004378]
+bUpdate: 0.01
+
+
+iter:868
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988673 0.02996023]
+bUpdate: -0.01
+
+
+iter:869
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011724 -0.01004576]
+bUpdate: 0.01
+
+
+iter:870
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988678 0.03995625]
+bUpdate: -0.01
+
+
+iter:871
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101192  -0.03005174]
+bUpdate: 0.01
+
+
+iter:872
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011717 -0.02004573]
+bUpdate: 0.01
+
+
+iter:873
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988485 0.02995828]
+bUpdate: -0.01
+
+
+iter:874
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.19126692e-04 -4.77138467e-05]
+bUpdate: 0.0
+
+
+iter:875
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201191 -0.0100477]
+bUpdate: 0.01
+
+
+iter:876
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011508 -0.02004569]
+bUpdate: 0.01
+
+
+iter:877
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988694 0.02995831]
+bUpdate: -0.01
+
+
+iter:878
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02011703 -0.01004768]
+bUpdate: 0.01
+
+
+iter:879
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011301 -0.03004567]
+bUpdate: 0.01
+
+
+iter:880
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988901 0.03996034]
+bUpdate: -0.01
+
+
+iter:881
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.16965213e-04 -4.76506863e-05]
+bUpdate: 0.0
+
+
+iter:882
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988306 0.03995236]
+bUpdate: -0.01
+
+
+iter:883
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.22918431e-04 -5.56316279e-05]
+bUpdate: 0.0
+
+
+iter:884
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012289 -0.01005562]
+bUpdate: 0.01
+
+
+iter:885
+XY_tmp:
+[[1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988113 0.02994639]
+bUpdate: -0.01
+
+
+iter:886
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012285 -0.0300596 ]
+bUpdate: 0.01
+
+
+iter:887
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012082 -0.02005359]
+bUpdate: 0.01
+
+
+iter:888
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198812  0.02995042]
+bUpdate: -0.01
+
+
+iter:889
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.22773002e-04 -5.55661033e-05]
+bUpdate: 0.0
+
+
+iter:890
+XY_tmp:
+[[ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012275 -0.02005555]
+bUpdate: 0.01
+
+
+iter:891
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.20723898e-04 -5.15438791e-05]
+bUpdate: 0.0
+
+
+iter:892
+XY_tmp:
+[[1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201207  -0.01005153]
+bUpdate: 0.01
+
+
+iter:893
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011668 -0.03004952]
+bUpdate: 0.01
+
+
+iter:894
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011465 -0.03004351]
+bUpdate: 0.01
+
+
+iter:895
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.12629348e-04 -3.75046563e-05]
+bUpdate: 0.0
+
+
+iter:896
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988739 0.0399625 ]
+bUpdate: -0.01
+
+
+iter:897
+XY_tmp:
+[[2 1 1]
+ [1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988142 0.02995451]
+bUpdate: -0.01
+
+
+iter:898
+XY_tmp:
+[[1 2 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012256 -0.01005148]
+bUpdate: 0.01
+
+
+iter:899
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011854 -0.02004947]
+bUpdate: 0.01
+
+
+iter:900
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988349 0.03995454]
+bUpdate: -0.01
+
+
+iter:901
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012249 -0.03005345]
+bUpdate: 0.01
+
+
+iter:902
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012046 -0.01004744]
+bUpdate: 0.01
+
+
+iter:903
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.16440471e-04 -4.54310974e-05]
+bUpdate: 0.0
+
+
+iter:904
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988358 0.02995458]
+bUpdate: -0.01
+
+
+iter:905
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012039 -0.02005141]
+bUpdate: 0.01
+
+
+iter:906
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988163 0.0399526 ]
+bUpdate: -0.01
+
+
+iter:907
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987565 0.02994461]
+bUpdate: -0.01
+
+
+iter:908
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012832 -0.03006138]
+bUpdate: 0.01
+
+
+iter:909
+XY_tmp:
+[[ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0101263  -0.02005537]
+bUpdate: 0.01
+
+
+iter:910
+XY_tmp:
+[[2 1 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.24270354e-04 -5.13587346e-05]
+bUpdate: 0.0
+
+
+iter:911
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012425 -0.01005135]
+bUpdate: 0.01
+
+
+iter:912
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.20220651e-04 -4.93381932e-05]
+bUpdate: 0.0
+
+
+iter:913
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0298798  0.03995067]
+bUpdate: -0.01
+
+
+iter:914
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012617 -0.02005732]
+bUpdate: 0.01
+
+
+iter:915
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012415 -0.03005331]
+bUpdate: 0.01
+
+
+iter:916
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012212 -0.0100473 ]
+bUpdate: 0.01
+
+
+iter:917
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198819  0.02995471]
+bUpdate: -0.01
+
+
+iter:918
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012207 -0.02005128]
+bUpdate: 0.01
+
+
+iter:919
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.20050045e-04 -4.72675626e-05]
+bUpdate: 0.0
+
+
+iter:920
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987997 0.02995274]
+bUpdate: -0.01
+
+
+iter:921
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.24002029e-04 -5.32486575e-05]
+bUpdate: 0.0
+
+
+iter:922
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012398 -0.03005324]
+bUpdate: 0.01
+
+
+iter:923
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012195 -0.01004723]
+bUpdate: 0.01
+
+
+iter:924
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.17928043e-04 -4.52179147e-05]
+bUpdate: 0.0
+
+
+iter:925
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0198821  0.02995479]
+bUpdate: -0.01
+
+
+iter:926
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012188 -0.0100512 ]
+bUpdate: 0.01
+
+
+iter:927
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011786 -0.02004919]
+bUpdate: 0.01
+
+
+iter:928
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011583 -0.03004518]
+bUpdate: 0.01
+
+
+iter:929
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988619 0.03996083]
+bUpdate: -0.01
+
+
+iter:930
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988021 0.03995284]
+bUpdate: -0.01
+
+
+iter:931
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012576 -0.03005515]
+bUpdate: 0.01
+
+
+iter:932
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012374 -0.01004914]
+bUpdate: 0.01
+
+
+iter:933
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988029 0.02995287]
+bUpdate: -0.01
+
+
+iter:934
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012369 -0.02005312]
+bUpdate: 0.01
+
+
+iter:935
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.21664463e-04 -4.91125384e-05]
+bUpdate: 0.0
+
+
+iter:936
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.21640130e-04 -4.91027159e-05]
+bUpdate: 0.0
+
+
+iter:937
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012162 -0.03004909]
+bUpdate: 0.01
+
+
+iter:938
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988041 0.03995692]
+bUpdate: -0.01
+
+
+iter:939
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012557 -0.01005107]
+bUpdate: 0.01
+
+
+iter:940
+XY_tmp:
+[[ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012154 -0.02004906]
+bUpdate: 0.01
+
+
+iter:941
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988048 0.02995495]
+bUpdate: -0.01
+
+
+iter:942
+XY_tmp:
+[[ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02987651 0.03994895]
+bUpdate: -0.01
+
+
+iter:943
+XY_tmp:
+[[ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987053 0.02994096]
+bUpdate: -0.01
+
+
+iter:944
+XY_tmp:
+[[2 1 1]
+ [1 2 1]
+ [1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.33443642e-04 -6.50234054e-05]
+bUpdate: 0.0
+
+
+iter:945
+XY_tmp:
+[[2 1 1]
+ [1 3 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01013342 -0.02006501]
+bUpdate: 0.01
+
+
+iter:946
+XY_tmp:
+[[2 1 1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01013139 -0.030061  ]
+bUpdate: 0.01
+
+
+iter:947
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012936 -0.01005499]
+bUpdate: 0.01
+
+
+iter:948
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012534 -0.03005297]
+bUpdate: 0.01
+
+
+iter:949
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012331 -0.01004696]
+bUpdate: 0.01
+
+
+iter:950
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011929 -0.02004495]
+bUpdate: 0.01
+
+
+iter:951
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988274 0.02995905]
+bUpdate: -0.01
+
+
+iter:952
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02987876 0.03995306]
+bUpdate: -0.01
+
+
+iter:953
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.27216830e-04 -5.49276473e-05]
+bUpdate: 0.0
+
+
+iter:954
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987281 0.02994508]
+bUpdate: -0.01
+
+
+iter:955
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02013117 -0.01006091]
+bUpdate: 0.01
+
+
+iter:956
+XY_tmp:
+[[ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.27139715e-04 -5.88934973e-05]
+bUpdate: 0.0
+
+
+iter:957
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012711 -0.02005888]
+bUpdate: 0.01
+
+
+iter:958
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012509 -0.03005487]
+bUpdate: 0.01
+
+
+iter:959
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.23063846e-04 -4.88589683e-05]
+bUpdate: 0.0
+
+
+iter:960
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.23039234e-04 -4.88491965e-05]
+bUpdate: 0.0
+
+
+iter:961
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012301 -0.01004884]
+bUpdate: 0.01
+
+
+iter:962
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011899 -0.03004683]
+bUpdate: 0.01
+
+
+iter:963
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01011697 -0.02004082]
+bUpdate: 0.01
+
+
+iter:964
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01988506 0.02996319]
+bUpdate: -0.01
+
+
+iter:965
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988108 0.0399572 ]
+bUpdate: -0.01
+
+
+iter:966
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201249 -0.0100508]
+bUpdate: 0.01
+
+
+iter:967
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012087 -0.03004879]
+bUpdate: 0.01
+
+
+iter:968
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02988115 0.03995722]
+bUpdate: -0.01
+
+
+iter:969
+XY_tmp:
+[[ 1  2  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987518 0.02994923]
+bUpdate: -0.01
+
+
+iter:970
+XY_tmp:
+[[1 2 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.28798172e-04 -5.67575801e-05]
+bUpdate: 0.0
+
+
+iter:971
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012877 -0.02005675]
+bUpdate: 0.01
+
+
+iter:972
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.26746658e-04 -5.27348793e-05]
+bUpdate: 0.0
+
+
+iter:973
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012672 -0.02005272]
+bUpdate: 0.01
+
+
+iter:974
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201247  -0.01004871]
+bUpdate: 0.01
+
+
+iter:975
+XY_tmp:
+[[ 2  3 -1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02987933 0.0399533 ]
+bUpdate: -0.01
+
+
+iter:976
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987335 0.02994531]
+bUpdate: -0.01
+
+
+iter:977
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01013062 -0.03006068]
+bUpdate: 0.01
+
+
+iter:978
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201286  -0.01005467]
+bUpdate: 0.01
+
+
+iter:979
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987543 0.02994734]
+bUpdate: -0.01
+
+
+iter:980
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012854 -0.02005865]
+bUpdate: 0.01
+
+
+iter:981
+XY_tmp:
+[[ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.26519095e-04 -5.46384317e-05]
+bUpdate: 0.0
+
+
+iter:982
+XY_tmp:
+[[1 3 1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.26493791e-04 -5.46275041e-05]
+bUpdate: 0.0
+
+
+iter:983
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012647 -0.03005462]
+bUpdate: 0.01
+
+
+iter:984
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012444 -0.02004861]
+bUpdate: 0.01
+
+
+iter:985
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012242 -0.0300446 ]
+bUpdate: 0.01
+
+
+iter:986
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987961 0.02996141]
+bUpdate: -0.01
+
+
+iter:987
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.24369747e-04 -4.45792975e-05]
+bUpdate: 0.0
+
+
+iter:988
+XY_tmp:
+[[ 3  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.02012434 -0.01004457]
+bUpdate: 0.01
+
+
+iter:989
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.02987968 0.03995744]
+bUpdate: -0.01
+
+
+iter:990
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201263  -0.01005055]
+bUpdate: 0.01
+
+
+iter:991
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012227 -0.02004854]
+bUpdate: 0.01
+
+
+iter:992
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987975 0.02995547]
+bUpdate: -0.01
+
+
+iter:993
+XY_tmp:
+[[ 3  4 -1]
+ [ 4  4 -1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012422 -0.03005052]
+bUpdate: 0.01
+
+
+iter:994
+XY_tmp:
+[[ 4  4 -1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.0298778  0.03995549]
+bUpdate: -0.01
+
+
+iter:995
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]
+ [ 4  4 -1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.28172894e-04 -5.25052218e-05]
+bUpdate: 0.0
+
+
+iter:996
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  3 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: True
+wUpdate: [-1.28147260e-04 -5.24947208e-05]
+bUpdate: 0.0
+
+
+iter:997
+XY_tmp:
+[[ 3  4 -1]
+ [ 2  1  1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: -1
+yEst: False
+wUpdate: [0.01987188 0.02994752]
+bUpdate: -0.01
+
+
+iter:998
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  2  1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.0201321  -0.01005847]
+bUpdate: 0.01
+
+
+iter:999
+XY_tmp:
+[[ 3  4 -1]
+ [ 1  3  1]]
+yDatum: 1
+yEst: False
+wUpdate: [-0.01012807 -0.02005646]
+bUpdate: 0.01
+
+

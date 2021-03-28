@@ -1,8 +1,13 @@
+# sources: Neural Network Design by Hagan, Demuth,n ..., chapters 4 and 11
 
 import pdb
+from test import dSigmoid
 import numpy as np
-import random
+#import random
 import matplotlib.pyplot as plt
+
+# debug config
+NBUG = True
 
 dataOR = [( 1,  1,  1,  1,  1),
           ( 1,  1, -1,  1,  1),
@@ -23,163 +28,150 @@ dataXOR = [( 1,  1,  1,  1, -1),
            (-1, -1, -1,  1, -1)]
 
 class nn_2layer:
-  def __init__(self, X, Y, lr, iters, prt=True, recTrainHist=True):
-    self.X = X
+  def __init__(self, X, Y, lr, iters, prt=True, loggerEnable=True):
+    self.X = np.concatenate((X, np.zeros((8,1))), axis = 1)
     self.nSamples, self.mFeatures = X.shape
     self.Y = Y
-    self.Yest = np.zeros((1,1)) # network's current estimate
-    iSize = self.mFeatures
-    hSize = 4 # nodes (units) for the hidden layer
-    oSize = 1
-    self.nnDims = [iSize, hSize, oSize]
+    self.Yest = np.zeros((1,8)) # network's current estimate
+    self.nnDims = [5, 5, 1]
     self.lr = lr
     self.iters = iters
     self.printRate = iters / 10
-    self.err = None # training error
-    #self.grad = dict() # a dict to hold all gradients (for SGD at BProp)
-    #self.gCache = dict() # will need this for chain rule at BProp
+    self.loss = None # training error
     # Print and data logging
     self.prt = prt
-    #self.logOn = recTrainHist # this is the Enable flag for data logging
+    self.batch_size = self.nSamples
 
-    # uniform distribution
+    ''' Initialize network weights
+    '''
     # first layer
     self.W1 = np.random.uniform(low=-.1, high=.1, \
-      size=(1, self.nnDims[0])) / np.sqrt(self.nnDims[0]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
-    self.B1 = np.random.uniform(low=-.1, high=.1, size=(self.nnDims[1], 1))
-    self.Z1 = np.zeros((hSize, oSize))
-    self.Y1 = np.zeros((hSize, oSize))
+      size=(self.nnDims[1], self.nnDims[0])) / np.sqrt(self.nnDims[0]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
     # second layer
     self.W2 = np.random.uniform(low=-.1, high=.1, \
       size=(self.nnDims[2], self.nnDims[1])) / np.sqrt(self.nnDims[1]) # we normalize W vectors by dividing by the sqrt of size of the previous layer
-    self.B2 = np.random.uniform(low=-.1, high=.1, size=(self.nnDims[2], 1))
-    self.Z2 = np.zeros((oSize, 1))
-    self.Yest = np.zeros((oSize, 1))
+
     if self.prt:
       print('Initialize model parameters:')
       print('W1:', self.W1)
-      print('B1:', self.B1)
       print('W2:', self.W2)
-      print('B2:', self.B2)
       print('\n\n')
     #pdb.set_trace()
-    #if self.logOn:'
+    #if self.logOn:
     # init datalogger
-    self.log = datalogger(recTrainHist)
+    self.log = datalogger(loggerEnable)
     return
 
-  def sigmoid(self, var):
-    res = 1/(1 + np.exp(-var))
+  def cEntropy(self,Yest): # batch normalized cross entropy loss
+    loss = (1./5) * (-np.dot(self.Y, np.log(Yest).T) - np.dot(1-self.Y, np.log(1-Yest).T))
+    return loss
+
+  def sigmoid(self, vec):
+    res = 1/(1 + np.exp(-vec))
     #pdb.set_trace()
+    return res
+
+  def hardlim(self, vec):
+    res = np.zeros(vec.shape)
+    for i in range(len(vec)):
+      if vec[i,:] > .5: res[i,:] = 1
+    else: res[i,:] = 0
     return res
 
   def dSigmoid(self, var):
     res = self.sigmoid(var) * (1.0 - self.sigmoid(var))
     return res
 
-  # forward pass is basically an estimator
-  def feedforward(self, iteration, xDatum, yDatum):
-    # 1st layer
-    self.Z1 = self.W1.dot(xDatum) + self.B1
-    self.Y1 = self.sigmoid(self.Z1)
-    # 2nd layer
-    self.Z2 = self.W2.dot(self.Y1) + self.B2
-    self.Yest = self.sigmoid(self.Z2)
-    # calc loss
-    self.loss = self.lossFunc(self.Y, self.Yest)
-    # log data
-    if self.log.on:
-      self.log.Z1.append(self.Z1)
-      self.log.Y1.append(self.Y1)
-      self.log.Z2.append(self.Z2)
-      self.log.Yest.append(self.Yest)
-      self.log.loss.append(self.loss)
-      self.log.iters.append(iteration)
-    return
-
-
-  def cEntropy(self, Yact, Yest): # not tested
-    loss = (1.0 / self.nSamples) * (- np.dot(Yact, np.log(Yest).T) - \
-    np.dot(1-Yact, np.log(1-Yest).T))
+  def MLE(self, Yact, Yest):
+    loss = (1/2) * (Yest - Yact)**2
     return loss
 
-  def dLossYest(self, Yact, Yest):
-    dLossYest = - ((Yact/Yest) - ((1-Yact)/(1-Yest)))
-    return dLossYest
+  def getacc(self, groundtruth, prediction):
+    correct = 0
+    for i in range(len(groundtruth)):
+      if groundtruth[i] == prediction[i]:
+        correct += 1
+    return correct / float(len(groundtruth)) * 100.0
 
-  def backprop(self, xDatum, yDatum):
+  # forward pass is basically an estimator
+  def forwardpass(self):
+    #if NBUG:
+    #  print('In forward pass...')
+    #pdb.set_trace()
+    # 1st layer
+    self.Z1 = self.X.dot(self.W1.T)
+    self.Y1 = self.sigmoid(self.Z1)
+    # 2nd layer
+    self.Z2 = self.Y1.dot(self.W2.T)
+    self.Y2  = self.sigmoid(self.Z2)
+    self.Yest = self.hardlim(self.Z2)
+    self.loss = self.cEntropy(self.Yest)
+    #pdb.set_trace()
+    # calc loss
+
+    #pdb.set_trace()
+    # log data
+    if self.log.on:
+      self.log.Yest.append(self.Yest)
+      self.log.loss.append(self.loss)
+    return
+
+  # backprop is similar to feedback in with much higher dimensions and in state space
+  def backprop(self):
     '''
       Backpropagation is done by performing partial derivative of the entire
-      network (the output loss - end of feedforward) with respect to the network
+      network (the output loss - end of forwardpass) with respect to the network
       parameters, W1, B1, W2, B2. Once output sensitivity (rate of change) is
       determined with respect to each parameter, we update them accordingly.
     '''
-    # start with the output
-    dLossYest = - (np.divide(yDatum, self.Yest) - np.divide(1-yDatum, 1-self.Yest))
-    # 2nd layer
-    dLossZ2 = dLossYest * self.dSigmoid(self.Z2)
-    dLossW2 = 1.0 / self.Y1.shape[1] * np.dot(dLossZ2, self.Y1.T)
-    dLossB2 = 1.0 / self.Y1.shape[1] * np.dot(dLossZ2, np.ones([dLossZ2.shape[1], 1]))
-    dLossY1 = np.dot(self.W2.T, dLossZ2)
-    # 1st layer
-    dLossZ1 = dLossY1 * self.dSigmoid(self.Z1)
-    dLossW1 = 1.0 / xDatum.shape[1] * np.dot(dLossZ1, xDatum.T)
-    dLossB1 = 1.0 / xDatum.shape[1] * np.dot(dLossZ1, np.ones([dLossZ1.shape[1], 1]))
-    #dLossY0 = np.dot(self.W1.T, dLossZ1)
-    # produce updates for each parameter
-    W1update = - (self.lr * dLossW1)
-    B1update = - (self.lr * dLossB1)
-    W2update = - (self.lr * dLossW2)
-    B2update = - (self.lr * dLossB2)
-    # update
-    self.W1u += W1update
-    self.B1u += B1update
-    self.W2u += W2update
-    self.B2u += B2update
+    #if NBUG:
+    #  print('In backprop...')
+    pdb.set_trace()
+    # start with the output - s^2 (sensitivity of the 2nd layer)
+    # get gradient loss of Yest
+    dLYest = - (np.divide(self.Y, self.Yest) - np.divide(1-self.Y, 1-self.Yest))
+
+    dLZ2 = dLYest * self.dSigmoid(self.Z2)
+    dLY1 = np.dot(dLZ2, self.W2) #
+    # dW2 1x5
+    dLW2 = 1./self.Y1.shape[1] * np.dot(dLZ2.T, self.Y1)
+
+    dLZ1 = dLY1 * self.dSigmoid(self.Z1)
+    #dLA0 = np.dot(self.W1, dLZ1.T)
+    dLW1 = 1./self.X.shape[1] * np.dot(self.X.T, dLZ1)
+
+    # perform update
+    self.W1 = self.W1 - self.lr * dLW1
+    self.W2 = self.W2 - self.lr * dLW2
+
     # log updates and updated parameters
-    if self.log.on:
-      self.log.W1update.append(W1update)
-      self.log.B1update.append(B1update)
-      self.log.W2update.append(W2update)
-      self.log.B2update.append(B2update)
-      self.log.W1.append(self.W1)
-      self.log.B1.append(self.B1)
-      self.log.W2.append(self.W2)
-      self.log.B2.append(self.B2)
+    #if self.log.on:
+      #self.log.cost.append(cost)
     return
 
-  def prepBatch(self):
-    self.W1u = 0.0
-    self.B1u = 0.0
-    self.W2u = 0.0
-    self.B2u = 0.0
-    return self
+  '''getAcc()
+    By calculating accuracy per batch, it is essentially calculating the moving
+    average for accuracy which is a much better representation than overall
+    average.
+  '''
+  def getAcc(self, Yest, Yact):
+    if (len(Yact) != len(Yest)):
+      print(">>>Err in (self.getAcc()): Batch output length mismatch!")
+    correct = 0
+    for i in range(len(Yact)):
+      if Yact[i] == Yest[i]:
+        correct += 1
+    return correct / float(len(Yact)) * 100.0
 
-  def train(self):
-    print('In training...')
-    # train with Batch Gradient Descent, since dataset is small, using it as the Batch
-    XY = np.concatenate((X, Y), axis=1)
-    XY_tmp = np.ndarray.copy(XY)
-
+  def BGD(self):
     for i in range(0, self.iters):
-
-      self.feedforward(i)
+      self.forwardpass()
       self.backprop()
-      self.updateperBatch()
-      if ((i % self.printRate == 0) & (self.prt)):
-        print('Forward pass:')
-        print('Z1:', self.Z1)
-        print('Y1:', self.Y1)
-        print('Z2:', self.Z2)
-        print('Yest (Yest):', self.Yest)
-        print('Loss:', self.loss)
-        print('Backprop:')
-        print('W1:', self.W1)
-        print('B1:', self.B1)
-        print('W2:', self.W2)
-        print('B2:', self.B2)
+      if (self.prt & (i%self.printRate==0)):
+        print ("Cost after iteration {}".format(i),": {}".format(self.loss))
         print('\n\n')
     return
+
 
 # data logger with easy data structure handler
 class datalogger:
@@ -193,12 +185,11 @@ class datalogger:
     self.B2 = list()
     self.Z2 = list()
     self.Yest = list()
+    self.loss = list()
     self.iters = list()
-    self.W1update = list()
-    self.B1update = list()
-    self.W2update = list()
-    self.B2update = list()
-    self.accHist = list()
+    self.acc = list()
+    self.batchAcc = list()
+    self.cost = list()
     return
 
 def get_data(data, Ymax,  Ymin):
@@ -225,14 +216,17 @@ if __name__ == '__main__':
   X, Y = get_data(dataOR, Ymax=1, Ymin=0) # rescale output to [0,1] since we're using Sigmoid activation function
 
   nnOR = nn_2layer(X, Y, lr=.001, iters=1000)
-  nnOR.train()
-  #plt.plot(range(len(pOR.accHist)), nnOR.accHist, label='OR Perceptron Taining Acc')
+  nnOR.BGD()
+
+  pdb.set_trace()
+
+  plt.plot(range(len(nnOR.log.loss)), nnOR.log.loss, label='Network Batch Loss')
   #plt.show()
   #figOR = plt.figure()
   #ax = figOR.add_subplot(111, projection='3d')
 
 
-
+  '''
   print("\n\n")
   print('-->> Training and testing with XOR')
   xorX, xorY = get_data(dataXOR, Ymax=1, Ymin=0) # rescale output to [0,1] since we're using Sigmoid activation function
@@ -242,6 +236,7 @@ if __name__ == '__main__':
   #plt.style.use('fivethirtyeight')
 
   plt.plot(range(len(pXOR.accHist)), pXOR.accHist, label='XOR Perceptron Taining Acc')
+  '''
 
   plt.xlabel('Training iterations')
   plt.ylabel('Training accuracy')
