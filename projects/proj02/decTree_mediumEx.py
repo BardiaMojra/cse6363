@@ -59,7 +59,6 @@ class DecisionTreeClassifier:
     if tree is None:
       tree = {}
       tree[feature] = {}
-      pdb.set_trace()
 
     if df[feature].dtypes == object:
       """
@@ -263,11 +262,13 @@ if __name__ == '__main__':
   print('\n--------------Weather Dataset------------------------')
 
   data = pd.read_csv("./tic-tac-toe_train.csv")
+  dataTest = pd.read_csv("./tic-tac-toe_test.csv")
 
   #Split Features and target
   X, y = data.drop([data.columns[-1]], axis = 1), data[data.columns[-1]]
+  Xt, yt = dataTest.drop([dataTest.columns[-1]], axis = 1), dataTest[dataTest.columns[-1]]
 
   dt_clf = DecisionTreeClassifier()
   dt_clf.fit(X, y)
 
-  print("\nTrain Accuracy: {}".format(accuracy_score(y, dt_clf.predict(X))))
+  print("\nTrain Accuracy: {}".format(accuracy_score(yt, dt_clf.predict(Xt))))

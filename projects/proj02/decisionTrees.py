@@ -29,16 +29,12 @@ class decisionTree:
     self.mSamples = XYtrain.shape[0]
     self.df = self.X.copy()
     self.df['Y'] = self.Y.copy()
-
-
     # build decision tree
     self.buildTree(self.df)
     self.printTree()
-
     return
 
   def buildTree(self, df, tree=None):
-
     # determine which input feature results in highest infoGain
     feature = self.getBestSplit(df)
     print('feature: ', feature)
@@ -46,10 +42,6 @@ class decisionTree:
     if tree == None:
       tree = dict()
       tree[feature] = dict()
-
-    print('\n\n')
-    print('df[feature].dtypes: ', df[feature].dtypes)
-    print('df[feature]: ', df[feature])
 
     if df[feature].dtypes != object: # can add numerical dTree later
       print('\n\n')
@@ -61,9 +53,9 @@ class decisionTree:
         df_ch = self.splitSamples(df, val, feature, opt.eq) # get child subset
         Y_objs, cnts = np.unique(df_ch['Y'], return_counts=True) # return Y class cnts
 
-        if(len(cnts)==1): # single-class, pure group
+        if(len(cnts)==1): # single-class, pure group -- Leaf Node
           tree[feature][val] = Y_objs[0]
-        else:
+        else: # impure
           self.depth += 1
           if self.maxDepth != None and self.depth >= self.maxDepth:
             tree[feature][val] = Y_objs[np.argmax(cnts)]
@@ -82,8 +74,6 @@ class decisionTree:
     df_new = df[_opt(df[col], val)] # in df, all in 'col' w 'val' that satisfy '_opt' condition
     df_new = df_new.reset_index(drop=True) # drop old index, reset to num index
     return df_new
-  def train(self, X, Y):
-    self.inputFeatures = list()
 
   def getTotalEntropy(self, data):
     """Calculates total entropy of the give dataset.
@@ -131,11 +121,36 @@ class decisionTree:
       infoGain.append(infoGain_a)
     return df.columns[:-1][np.argmax(infoGain)]
 
-  def _predict_target(self, feature_lookup, x, tree):
+  def y_est(self, xDatum, features, tree):
+    for node in tree.keys():
+      val = xDatum[node]
+      tree = tree[node][val]
+      if type(tree) is dict:
+        pred = self.y_est(xDatum, features, tree)
+      else:
+        pred = tree
+        return pred
+    return pred
 
-  def predict(self, X):
+  def getEst(self, X):
+    predictions  = list()
+    features = {label: i for i, label in enumerate(list(X.columns))}
+    for idx in range(len(X)):
+      predictions.append(self.y_est(X.iloc[idx], features, self.tree))
+    return predictions
+  # end of decisionTree class
 
+def getAcc(gndTruth, Est):
+  correct = 0
+  for i in range(len(gndTruth)):
+    if gndTruth[i] == Est[i]:
+      correct += 1
+  return correct / float(len(gndTruth)) * 100.0
 
+def getData(XY):
+  X = XY.drop(XY.columns[-1], axis=1)
+  Y = XY[XY.columns[-1]]
+  return X, Y
 
 """Main
 """
@@ -148,8 +163,8 @@ if __name__ == "__main__":
   # test
   print(XYtrain.head())
 
-  X = XYtrain.drop(XYtrain.columns[-1], axis=1)
-  Y = XYtrain[XYtrain.columns[-1]]
-
   dTree = decisionTree(XYtrain, maxDepth=2)
-  #dTree.train()
+  Xtest, Ytest = getData(XYtest)
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Training accuracy: ', acc)
