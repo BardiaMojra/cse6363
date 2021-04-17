@@ -1,0 +1,350 @@
+   x x.1 x.2  o  b b.1 x.3 o.1 o.2     win
+0  o   x   o  x  o   b   x   x   o  no-win
+1  x   o   x  o  b   x   o   b   x     win
+2  x   x   b  o  o   o   b   x   b  no-win
+3  b   o   o  x  o   b   x   x   x     win
+4  o   o   x  b  b   x   o   x   x     win
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  2
+{'b': {'b': {'x.1': {'b': 'win', 'o': 'win', 'x': 'no-win'}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 71.08434
+Test accuracy: 55.55556
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  3
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win', 'o': 'no-win', 'x': 'win'}},
+                     'o': 'win',
+                     'x': 'no-win'}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 71.48594
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  4
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': 'win',
+                     'x': 'no-win'}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 71.88755
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+parentEntropy:0.59167
+Sum of infoGains: 0.88011
+best feature:  x.2
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  5
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': {'x.2': {'b': 'win', 'o': 'win', 'x': 'win'}},
+                     'x': 'no-win'}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 71.88755
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+parentEntropy:0.59167
+Sum of infoGains: 0.88011
+best feature:  x.2
+
+parentEntropy:0.95443
+Sum of infoGains: 2.17581
+best feature:  x
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  6
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': {'x.2': {'b': 'win',
+                                   'o': {'x': {'b': 'win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'x': 'no-win'}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 73.09237
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+parentEntropy:0.59167
+Sum of infoGains: 0.88011
+best feature:  x.2
+
+parentEntropy:0.95443
+Sum of infoGains: 2.17581
+best feature:  x
+
+parentEntropy:1.00000
+Sum of infoGains: 1.01796
+best feature:  x
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  7
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': {'x.2': {'b': 'win',
+                                   'o': {'x': {'b': 'win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'x': {'x': {'b': 'no-win', 'o': 'no-win', 'x': 'win'}}}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 74.69880
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+parentEntropy:0.59167
+Sum of infoGains: 0.88011
+best feature:  x.2
+
+parentEntropy:0.95443
+Sum of infoGains: 2.17581
+best feature:  x
+
+parentEntropy:1.00000
+Sum of infoGains: 1.01796
+best feature:  x
+
+parentEntropy:0.72193
+Sum of infoGains: 3.38059
+best feature:  x.2
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  8
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': {'x.2': {'b': 'win',
+                                   'o': {'x': {'b': 'win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'x': {'x': {'b': 'no-win',
+                                 'o': {'x.2': {'b': 'no-win',
+                                               'o': 'win',
+                                               'x': 'no-win'}},
+                                 'x': 'win'}}}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 75.10040
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+best feature:  b
+
+parentEntropy:0.85418
+Sum of infoGains: 0.45065
+best feature:  x.1
+
+parentEntropy:0.81128
+Sum of infoGains: 1.55439
+best feature:  x.3
+
+parentEntropy:0.91830
+Sum of infoGains: 1.92481
+best feature:  o
+
+parentEntropy:0.59167
+Sum of infoGains: 0.88011
+best feature:  x.2
+
+parentEntropy:0.95443
+Sum of infoGains: 2.17581
+best feature:  x
+
+parentEntropy:1.00000
+Sum of infoGains: 1.01796
+best feature:  x
+
+parentEntropy:0.72193
+Sum of infoGains: 3.38059
+best feature:  x.2
+
+parentEntropy:0.81128
+Sum of infoGains: 1.62090
+best feature:  x.2
+
+
+-------------------- Decision Tree --------------------
+Tree depth:  9
+{'b': {'b': {'x.1': {'b': {'x.3': {'b': 'win',
+                                   'o': {'o': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'o': {'x.2': {'b': 'win',
+                                   'o': {'x': {'b': 'win',
+                                               'o': 'no-win',
+                                               'x': 'win'}},
+                                   'x': 'win'}},
+                     'x': {'x': {'b': 'no-win',
+                                 'o': {'x.2': {'b': 'no-win',
+                                               'o': 'win',
+                                               'x': 'no-win'}},
+                                 'x': {'x.2': {'b': 'no-win',
+                                               'o': 'no-win',
+                                               'x': 'win'}}}}}},
+       'o': 'no-win',
+       'x': 'win'}}
+Training set accuracy: 75.90361
+Test accuracy: 60.60606

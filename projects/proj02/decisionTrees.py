@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import operator as opt
 import inspect as i
 import pdb
+import pprint as pp
 
 """Globals
 """
@@ -30,6 +31,8 @@ class decisionTree:
     self.df = self.X.copy()
     self.df['Y'] = self.Y.copy()
     # build decision tree
+    print('-------------------------------------------------------')
+    print("\n\n --> Initiate tree...")
     self.tree = self.buildTree(self.df)
     self.printTree()
     return
@@ -44,7 +47,7 @@ class decisionTree:
       tree[feature] = dict()
 
     if df[feature].dtypes != object: # can add numerical dTree later
-      print('\n\n')
+      print('\n')
       print('df[feature]: ', df[feature])
       print('\n>>>Err: non-object feature at ln:', i.getframeinfo(i.currentframe()).lineno)
       return
@@ -56,20 +59,18 @@ class decisionTree:
         if(len(cnts)==1): # single-class, pure group -- Leaf Node
           tree[feature][val] = Y_objs[0]
         else: # impure
-          if((self.depth < self.maxDepth) | (self.maxDepth is None)):
-            self.depth += 1
-            tree[feature][val] = self.buildTree(df_ch)
-          if self.maxDepth is not None and self.depth < self.maxDepth:
+          self.depth += 1
+          if self.maxDepth is not None and self.depth >= self.maxDepth:
             tree[feature][val] = Y_objs[np.argmax(cnts)]
           else:
-
+            tree[feature][val] = self.buildTree(df_ch)
     return tree
 
   def printTree(self):
-    print('\n\n')
+    print('\n')
     print('-------------------- Decision Tree --------------------')
     print('Tree depth: ', self.maxDepth)
-    print(self.tree)
+    pp.pprint(self.tree)
     return
 
   def splitSamples(self, df, val, col, _opt):
@@ -101,6 +102,7 @@ class decisionTree:
           if infoGain > 0:
             featureEntropy += -infoGain * np.log2(infoGain)
         featureWeight = len(data[a][data[a] == val]) / len(data)
+        #print('feature: {1:>5s}'.format(4, a),'  weight:{:.5f}'.format(featureWeight))
         entropy += featureWeight * featureEntropy
     else: # else could be numeric data
       print('>>>Err: none object data at ln:', i.getframeinfo(i.currentframe()).lineno)
@@ -124,7 +126,7 @@ class decisionTree:
       infoGain_a = parentEntropy - featureEntropy
       igSum += infoGain_a
       infoGain.append(infoGain_a)
-      print('feature:{1:>5s}'.format(4, a), '  infoGain:{:.5f}'.format(infoGain_a))
+      #print('feature:{1:>5s}'.format(4, a), '  infoGain:{:.5f}'.format(infoGain_a))
     print('Sum of infoGains: {:.5f}'.format(igSum))
     return df.columns[:-1][np.argmax(infoGain)]
 
@@ -166,13 +168,71 @@ if __name__ == "__main__":
   # import data
   XYtrain = pd.read_csv("./tic-tac-toe_train.csv")
   XYtest = pd.read_csv("./tic-tac-toe_test.csv")
-
+  Xt, Yt = getData(XYtrain)
+  Xtest, Ytest = getData(XYtest)
   # test
   print(XYtrain.head())
 
   dTree = decisionTree(XYtrain, maxDepth=2)
-  Xtest, Ytest = getData(XYtest)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
   Y_est = dTree.getEst(Xtest)
   acc = getAcc(Ytest, Y_est)
-  print('Training accuracy: ', acc)
-  print()
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=3)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=4)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=5)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=6)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=7)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=8)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
+
+  dTree = decisionTree(XYtrain, maxDepth=9)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
