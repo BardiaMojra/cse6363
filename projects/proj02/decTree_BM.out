@@ -1,0 +1,22 @@
+   x x.1 x.2  o  b b.1 x.3 o.1 o.2     win
+0  o   x   o  x  o   b   x   x   o  no-win
+1  x   o   x  o  b   x   o   b   x     win
+2  x   x   b  o  o   o   b   x   b  no-win
+3  b   o   o  x  o   b   x   x   x     win
+4  o   o   x  b  b   x   o   x   x     win
+
+parentEntropy:0.92612
+feature:    x   infoGain:0.03075
+feature:  x.1   infoGain:0.01658
+feature:  x.2   infoGain:0.00625
+feature:    o   infoGain:0.00910
+feature:    b   infoGain:0.10478
+feature:  b.1   infoGain:0.00766
+feature:  x.3   infoGain:0.01006
+feature:  o.1   infoGain:0.01934
+feature:  o.2   infoGain:0.02719
+Sum of infoGains: 0.23171
+best feature:  b
+> /home/bardi/git/cse6363/projects/proj02/decisionTrees.py(56)buildTree()
+-> if(len(cnts)==1): # single-class, pure group -- Leaf Node
+(Pdb) 

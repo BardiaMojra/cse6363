@@ -30,14 +30,14 @@ class decisionTree:
     self.df = self.X.copy()
     self.df['Y'] = self.Y.copy()
     # build decision tree
-    self.buildTree(self.df)
+    self.tree = self.buildTree(self.df)
     self.printTree()
     return
 
   def buildTree(self, df, tree=None):
     # determine which input feature results in highest infoGain
     feature = self.getBestSplit(df)
-    print('feature: ', feature)
+    print('best feature: ', feature)
     # init tree
     if tree == None:
       tree = dict()
@@ -52,21 +52,23 @@ class decisionTree:
       for val in np.unique(df[feature]): # for each possible value in 'feature' col
         df_ch = self.splitSamples(df, val, feature, opt.eq) # get child subset
         Y_objs, cnts = np.unique(df_ch['Y'], return_counts=True) # return Y class cnts
-
+        #pdb.set_trace()
         if(len(cnts)==1): # single-class, pure group -- Leaf Node
           tree[feature][val] = Y_objs[0]
         else: # impure
-          self.depth += 1
-          if self.maxDepth != None and self.depth >= self.maxDepth:
+          if((self.depth < self.maxDepth) | (self.maxDepth is None)):
+            self.depth += 1
+            tree[feature][val] = self.buildTree(df_ch)
+          if self.maxDepth is not None and self.depth < self.maxDepth:
             tree[feature][val] = Y_objs[np.argmax(cnts)]
           else:
-            tree[feature][val] = self.buildTree(df_ch)
-    self.tree = tree
-    return
+
+    return tree
 
   def printTree(self):
     print('\n\n')
     print('-------------------- Decision Tree --------------------')
+    print('Tree depth: ', self.maxDepth)
     print(self.tree)
     return
 
@@ -114,11 +116,16 @@ class decisionTree:
       Sum of all Entropy(data_subsets) =
     """
     infoGain = list()
+    igSum = 0.0
     parentEntropy = self.getTotalEntropy(df) # H_D(Y)
-    for a in list(df.columns[-1]):
+    print('\nparentEntropy:{:.5f}'.format(parentEntropy))
+    for a in list(df.columns[:-1]):
       featureEntropy = self.getFeatureEntropy(df, a) # H_D(Y\A=a)
       infoGain_a = parentEntropy - featureEntropy
+      igSum += infoGain_a
       infoGain.append(infoGain_a)
+      print('feature:{1:>5s}'.format(4, a), '  infoGain:{:.5f}'.format(infoGain_a))
+    print('Sum of infoGains: {:.5f}'.format(igSum))
     return df.columns[:-1][np.argmax(infoGain)]
 
   def y_est(self, xDatum, features, tree):
@@ -168,3 +175,4 @@ if __name__ == "__main__":
   Y_est = dTree.getEst(Xtest)
   acc = getAcc(Ytest, Y_est)
   print('Training accuracy: ', acc)
+  print()
