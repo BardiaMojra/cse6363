@@ -67,10 +67,8 @@ class DecisionTreeClassifier:
 
       """
       for feat_val in np.unique(df[feature]):
-
         new_df = self._split_rows(df, feature, feat_val, operator.eq)
         targets, count = np.unique(new_df['target'], return_counts = True)
-
         if(len(count) == 1): #pure group
           tree[feature][feat_val] = targets[0]
         else:
@@ -79,7 +77,6 @@ class DecisionTreeClassifier:
             tree[feature][feat_val] = targets[np.argmax(count)]
           else:
             tree[feature][feat_val] = self._build_tree(new_df)
-
     else:
       """
         - to handle columns with Numerical Values(int, float....)

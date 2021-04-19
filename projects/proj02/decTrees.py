@@ -2,9 +2,6 @@
   @author Bardia Mojra
   @date April 13, 2021
   @brief Project 02 on Decision Trees for CSE6363 Machine Learning w Dr. Huber.
-
-  @link https://medium.com/swlh/decision-tree-implementation-from-scratch-in-python-1cff4c00c71f
-  @link https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8
 """
 
 import numpy as np
@@ -20,9 +17,10 @@ import pprint as pp
 eps = np.finfo(float).eps
 
 class decisionTree:
-  def __init__(self, XYtrain, maxDepth=None):
+  def __init__(self, XYtrain, maxDepth=None, prt=True):
     self.depth = 0
     self.maxDepth = maxDepth
+    self.prt = prt
     self.X = XYtrain.drop(XYtrain.columns[-1], axis=1)
     self.Y = XYtrain[XYtrain.columns[-1]]
     self.features = np.asarray(self.X.columns)
@@ -31,8 +29,9 @@ class decisionTree:
     self.df = self.X.copy()
     self.df['Y'] = self.Y.copy()
     # build decision tree
-    print('-------------------------------------------------------')
-    print("\n\n --> Initiate tree...")
+    if self.prt is True:
+      print('-------------------------------------------------------')
+      print("\n\n --> Initiate tree...")
     self.tree = self.buildTree(self.df)
     self.printTree()
     return
@@ -40,7 +39,8 @@ class decisionTree:
   def buildTree(self, df, tree=None):
     # determine which input feature results in highest infoGain
     feature = self.getBestSplit(df)
-    print('best feature: ', feature)
+    if self.prt is True:
+      print('feature: ', feature)
     # init tree
     if tree == None:
       tree = dict()
@@ -60,6 +60,8 @@ class decisionTree:
           tree[feature][val] = Y_objs[0]
         else: # impure
           self.depth += 1
+          #pp.pprint(tree)
+          #pdb.set_trace()
           if self.maxDepth is not None and self.depth >= self.maxDepth:
             tree[feature][val] = Y_objs[np.argmax(cnts)]
           else:
@@ -67,10 +69,11 @@ class decisionTree:
     return tree
 
   def printTree(self):
-    print('\n')
-    print('-------------------- Decision Tree --------------------')
-    print('Tree depth: ', self.maxDepth)
-    pp.pprint(self.tree)
+    if self.prt is True:
+      print('\n')
+      print('-------------------- Decision Tree --------------------')
+      print('Tree depth: ', self.maxDepth)
+      pp.pprint(self.tree)
     return
 
   def splitSamples(self, df, val, col, _opt):
@@ -120,20 +123,34 @@ class decisionTree:
     infoGain = list()
     igSum = 0.0
     parentEntropy = self.getTotalEntropy(df) # H_D(Y)
-    print('\nparentEntropy:{:.5f}'.format(parentEntropy))
+    if self.prt is True:
+      print('\nparentEntropy:{:.5f}'.format(parentEntropy))
     for a in list(df.columns[:-1]):
       featureEntropy = self.getFeatureEntropy(df, a) # H_D(Y\A=a)
       infoGain_a = parentEntropy - featureEntropy
       igSum += infoGain_a
       infoGain.append(infoGain_a)
       #print('feature:{1:>5s}'.format(4, a), '  infoGain:{:.5f}'.format(infoGain_a))
-    print('Sum of infoGains: {:.5f}'.format(igSum))
+    if self.prt is True:
+      print('Sum of infoGains: {:.5f}'.format(igSum))
     return df.columns[:-1][np.argmax(infoGain)]
 
   def y_est(self, xDatum, features, tree):
+    #pdb.set_trace()
     for node in tree.keys():
       val = xDatum[node]
-      tree = tree[node][val]
+      if type(val) == str:
+        #pdb.set_trace()
+        if val not in tree[node]:
+          tree = tree[0][val]
+        else:
+          tree = tree[node][val]
+      else:
+        pdb.set_trace()
+        print('new val', list(tree[node].key())[0])
+        tree = tree[node][val]
+        pdb.set_trace()
+
       if type(tree) is dict:
         pred = self.y_est(xDatum, features, tree)
       else:
@@ -148,6 +165,41 @@ class decisionTree:
       predictions.append(self.y_est(X.iloc[idx], features, self.tree))
     return predictions
   # end of decisionTree class
+
+
+class randForrest:
+  def __init__(self, df, nTrees, nSamp, maxDep=None):
+    self.df = df.copy(deep=True)
+    self.X = df.drop(df.columns[-1], axis=1)
+    self.Y = df[df.columns[-1]]
+    self.nTrees = nTrees
+    self.nFeat = int(np.log2(self.X.shape[1]))
+    #self.nFeat = nFeat
+    self.size = nSamp
+    self.mxDep = maxDep
+
+    #print(self.nFeat, "sha: ", self.X.shape[1])
+    #pdb.set_trace()
+
+    self.trainResHist = list()
+    self.trees = list()
+
+    for t in range(self.nTrees):
+      df_temp = self.df.sample(self.size, replace=True) # new set, rand with replacement
+      df_new = df_temp.copy(deep=True)
+      df_new.reset_index(drop=True, inplace=True)
+      #print("df_new")
+      #pp.pprint(df_new)
+      Xn, Yn = getData(df_new)
+      tree = decisionTree(df_new, maxDepth=maxDep, prt=True)
+      Yn_est = tree.getEst(Xn)
+      acc = getAcc(Yn, Yn_est)
+      self.trainResHist.append(acc)
+      self.trees.append(tree)
+      #pdb.set_trace()
+    return
+
+  # end of bagging class
 
 def getAcc(gndTruth, Est):
   correct = 0
@@ -167,11 +219,20 @@ if __name__ == "__main__":
 
   # import data
   XYtrain = pd.read_csv("./tic-tac-toe_train.csv")
+  XYtrain = XYtrain.rename({'x':'p0','x.1':'p1','x.2':'p2','o':'p3','b':'p4', \
+    'b.1':'p5','x.3':'p6','o.1':'p7','o.2':'p8'}, axis='columns')
   XYtest = pd.read_csv("./tic-tac-toe_test.csv")
+  XYtest = XYtest.rename({'x':'p0','x.1':'p1','x.2':'p2','o':'p3','b':'p4', \
+    'b.1':'p5','x.3':'p6','o.1':'p7','o.2':'p8'}, axis='columns')
   Xt, Yt = getData(XYtrain)
   Xtest, Ytest = getData(XYtest)
+
   # test
-  print(XYtrain.head())
+  print('Original Data Set:')
+  print(XYtrain)
+  #pdb.set_trace()
+
+
 
   dTree = decisionTree(XYtrain, maxDepth=2)
   Y_est = dTree.getEst(Xt)
@@ -236,3 +297,31 @@ if __name__ == "__main__":
   Y_est = dTree.getEst(Xtest)
   acc = getAcc(Ytest, Y_est)
   print('Test accuracy: {:.5f}'.format(acc))
+
+
+  '''
+  plt.style.use('ggplot')
+  plt.plot(range(len(pOR.accHist)), pOR.accHist, label='OR Perceptron Taining Acc')
+  #plt.show()
+  #figOR = plt.figure()
+  #ax = figOR.add_subplot(111, projection='3d')
+
+
+
+  print("\n\n")
+  print('-->> Training and testing with XOR')
+  xorX, xorY = get_data(dataXOR)
+  pXOR = perceptron( 0.1, 1000, True, True)
+  pXOR.train(xorX,xorY)
+  #plt.style.use('fivethirtyeight')
+
+  plt.plot(range(len(pXOR.accHist)), pXOR.accHist, label='XOR Perceptron Taining Acc')
+
+  plt.xlabel('Training iterations')
+  plt.ylabel('Training accuracy [%]')
+  plt.title('OR vs. XOR training accuracy')
+  plt.legend()
+  #plt.grid(True)
+  #plt.tight_layout()
+  plt.show()
+  '''
