@@ -1,0 +1,39 @@
+Original Data Set:
+    p0 p1 p2 p3 p4 p5 p6 p7 p8     win
+0    o  x  o  x  o  b  x  x  o  no-win
+1    x  o  x  o  b  x  o  b  x     win
+2    x  x  b  o  o  o  b  x  b  no-win
+3    b  o  o  x  o  b  x  x  x     win
+4    o  o  x  b  b  x  o  x  x     win
+..  .. .. .. .. .. .. .. .. ..     ...
+244  o  x  x  o  o  x  x  b  o  no-win
+245  x  b  o  o  x  b  o  x  x     win
+246  x  x  x  o  o  b  o  b  x     win
+247  o  b  b  x  o  b  x  x  o  no-win
+248  x  x  b  o  o  o  b  b  x  no-win
+
+[249 rows x 10 columns]
+
+
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  10
+Test accuracy: 58.58586
+
+
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  50
+Test accuracy: 58.58586
+
+
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  100
+Test accuracy: 54.54545

@@ -191,7 +191,7 @@ class randForrest:
       #print("df_new")
       #pp.pprint(df_new)
       Xn, Yn = getData(df_new)
-      tree = decisionTree(df_new, maxDepth=maxDep, prt=True)
+      tree = decisionTree(df_new, maxDepth=maxDep, prt=False)
       Yn_est = tree.getEst(Xn)
       acc = getAcc(Yn, Yn_est)
       self.trainResHist.append(acc)
@@ -233,6 +233,13 @@ if __name__ == "__main__":
   #pdb.set_trace()
 
 
+  dTree = decisionTree(XYtrain, maxDepth=1)
+  Y_est = dTree.getEst(Xt)
+  acc = getAcc(Yt, Y_est)
+  print('Training set accuracy: {:.5f}'.format(acc))
+  Y_est = dTree.getEst(Xtest)
+  acc = getAcc(Ytest, Y_est)
+  print('Test accuracy: {:.5f}'.format(acc))
 
   dTree = decisionTree(XYtrain, maxDepth=2)
   Y_est = dTree.getEst(Xt)

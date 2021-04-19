@@ -1,0 +1,22 @@
+
+--> Q01 Discussion
+Unfortunately, the performance decreased slightly after implementation of
+bagging which leads me to alludes to implementation bug.
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  10
+Test accuracy: 53.53535
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  50
+Test accuracy: 57.57576
+
+-------------------- Bagging with RandForrest --------------------
+Tree depth:  9
+Samples per tree:  50
+Num of trees:  100
+Test accuracy: 57.57576

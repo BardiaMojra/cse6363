@@ -22,6 +22,21 @@ parentEntropy:0.92612
 Sum of infoGains: 0.23171
 feature:  p4
 
+
+-------------------- Decision Tree --------------------
+Tree depth:  1
+{'p4': {'b': 'win', 'o': 'no-win', 'x': 'win'}}
+Training set accuracy: 71.08434
+Test accuracy: 52.52525
+-------------------------------------------------------
+
+
+ --> Initiate tree...
+
+parentEntropy:0.92612
+Sum of infoGains: 0.23171
+feature:  p4
+
 parentEntropy:0.85418
 Sum of infoGains: 0.45065
 feature:  p1

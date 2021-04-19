@@ -60,7 +60,7 @@ class decisionTree:
           tree[feature][val] = Y_objs[0]
         else: # impure
           self.depth += 1
-          pp.pprint(tree)
+          #pp.pprint(tree)
           #pdb.set_trace()
           if self.maxDepth is not None and self.depth >= self.maxDepth:
             tree[feature][val] = Y_objs[np.argmax(cnts)]
@@ -142,14 +142,16 @@ class decisionTree:
       if type(val) == str:
         #pdb.set_trace()
         if val not in tree[node]:
-          tree = tree[0][val]
+          if val == 'o' or val == 'x':
+            val = 'b'
+          elif val == 'b':
+            val = 'x'
+          tree = tree[node][val]
         else:
           tree = tree[node][val]
       else:
-        pdb.set_trace()
-        print('new val', list(tree[node].key())[0])
-        tree = tree[node][val]
-        pdb.set_trace()
+        print('>>>Err: none str data at ln:', i.getframeinfo(i.currentframe()).lineno)
+        #pdb.set_trace()
 
       if type(tree) is dict:
         pred = self.y_est(xDatum, features, tree)
@@ -166,90 +168,48 @@ class decisionTree:
     return predictions
   # end of decisionTree class
 
-
-class randForrest:
-  def __init__(self, df, nTrees, nSamp, maxDep=None):
-    self.df = df.copy(deep=True)
-    self.X = df.drop(df.columns[-1], axis=1)
-    self.Y = df[df.columns[-1]]
-    self.nTrees = nTrees
-    self.nFeat = int(np.log2(self.X.shape[1]))
-    #self.nFeat = nFeat
-    self.size = nSamp
-    self.mxDep = maxDep
-
-    #print(self.nFeat, "sha: ", self.X.shape[1])
-    #pdb.set_trace()
-
-    self.trainResHist = list()
-    self.trees = list()
-
-    for t in range(self.nTrees):
-      df_temp = self.df.sample(self.size, replace=True) # new set, rand with replacement
-      df_new = df_temp.copy(deep=True)
-      df_new.reset_index(drop=True, inplace=True)
-      #print("df_new")
-      #pp.pprint(df_new)
-      Xn, Yn = getData(df_new)
-      tree = decisionTree(df_new, maxDepth=maxDep, prt=True)
-      Yn_est = tree.getEst(Xn)
-      acc = getAcc(Yn, Yn_est)
-      self.trainResHist.append(acc)
-      self.trees.append(tree)
-      #pdb.set_trace()
-    return
-
-  def est(self, X):
-    features = X.columns
-    est = list()
-    #for datum in range(len(X)):
-    cntr_win = 0
-    cntr_no_win = 0
-    for t in range(len(self.trees)):
-      #pdb.set_trace()
-      decTree = self.trees[t]
-      #pdb.set_trace()
-
-      pred = decTree.getEst(X)
-      pred = np.asarray(pred)
-
-      pdb.set_trace()
-
-      """
-      if pred == {'win'}:
-        cntr_win += 1
-      else:
-        cntr_no_win += 1
-      """
-
-      if cntr_win > cntr_no_win:
-        res = {'win'}
-      else:
-        res = {'no-win'}
-      est.append(res)
-    return est
+def boosting(D, ED, depth, k=10):
+  forest = []
+  alphas = []
+  weight = []
+  #init weight
+  for i in range(len(D)):
+    weight.append(1.0 / len(D))
+  for i in range(k):
+    sD = random.choices(D, weights=weight, k=len(D))
+    tree = decisionTree(sD)
+    tree.learn_tree(depth)
+    #compute error
+    e = 0.0
+    for j, d in enumerate(D):
+      pred = tree.label(d, depth)
+      if pred != d[-1]:
+        e += weight[j]
+    alpha = 0.5 * math.log((1 - e) / e)
+    #update weight
+    for j, d in enumerate(D):
+      pred = 1 if tree.label(d, depth) == 'win' else -1
+      gt = 1 if d[-1] == 'win' else -1
+      weight[j] = weight[j] * math.exp(-(alpha * pred * gt))
+    #normalize
+    for j in range(len(weight)):
+      weight[j] /= sum(weight)
+    forest.append(tree)
+    alphas.append(alpha)
+  acc = 0.0
+  for d in ED:
+    p = 0
+    for i in range(len(forest)):
+      temp = 1 if forest[i].label(d, depth) == 'win' else -1
+      p += alphas[i] * temp
+    if p > 0.0:
+      pred = 'win'
+    else:
+      pred = 'no-win'
+    if pred == d[-1]: acc += 1
+  print(depth, k, acc/len(ED))
 
 
-"""  def y_est(self, xDatum, features, tree):
-    #pdb.set_trace()
-    for node in tree.keys():
-      val = xDatum[node]
-      tree = tree[node][val]
-      if type(tree) is dict:
-        pred = self.y_est(xDatum, features, tree)
-      else:
-        pred = tree
-        return pred
-    return pred
-
-  def getEst(self, X):
-    predictions  = list()
-    features = {label: i for i, label in enumerate(list(X.columns))}
-    for idx in range(len(X)):
-      predictions.append(self.y_est(X.iloc[idx], features, self.tree))
-    return predictions"""
-
-  # end of bagging class
 
 def getAcc(gndTruth, Est):
   correct = 0
@@ -282,100 +242,4 @@ if __name__ == "__main__":
   print(XYtrain)
   #pdb.set_trace()
 
-  forrest = randForrest(XYtrain, nTrees=10, nSamp=50, maxDep=4)
-  Y_est = forrest.est(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-
-  dTree = decisionTree(XYtrain, maxDepth=2)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=3)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=4)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=5)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=6)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=7)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=8)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-  dTree = decisionTree(XYtrain, maxDepth=9)
-  Y_est = dTree.getEst(Xt)
-  acc = getAcc(Yt, Y_est)
-  print('Training set accuracy: {:.5f}'.format(acc))
-  Y_est = dTree.getEst(Xtest)
-  acc = getAcc(Ytest, Y_est)
-  print('Test accuracy: {:.5f}'.format(acc))
-
-
-  '''
-  plt.style.use('ggplot')
-  plt.plot(range(len(pOR.accHist)), pOR.accHist, label='OR Perceptron Taining Acc')
-  #plt.show()
-  #figOR = plt.figure()
-  #ax = figOR.add_subplot(111, projection='3d')
-
-
-
-  print("\n\n")
-  print('-->> Training and testing with XOR')
-  xorX, xorY = get_data(dataXOR)
-  pXOR = perceptron( 0.1, 1000, True, True)
-  pXOR.train(xorX,xorY)
-  #plt.style.use('fivethirtyeight')
-
-  plt.plot(range(len(pXOR.accHist)), pXOR.accHist, label='XOR Perceptron Taining Acc')
-
-  plt.xlabel('Training iterations')
-  plt.ylabel('Training accuracy [%]')
-  plt.title('OR vs. XOR training accuracy')
-  plt.legend()
-  #plt.grid(True)
-  #plt.tight_layout()
-  plt.show()
-  '''
+  forrest = boosting(XYtrain, nTrees=10, nSamp=50, maxDep=9)

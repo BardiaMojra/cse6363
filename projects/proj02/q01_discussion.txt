@@ -1,0 +1,59 @@
+
+--> Q01 Discussion
+As shown below, I wasnt able to reach 100-precent with training data set which
+implies there is a bug in my implementation. Nevertheless, Test accuracy increases
+as decision tree depth grows. If anything, I am underfitting. I achieved maximum
+of 60-percent accuracy on test set with 9-level deep tree.
+
+-------------------- Decision Tree --------------------
+Tree depth:  1
+Training set accuracy: 71.08434
+Test accuracy: 52.52525
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  2
+Training set accuracy: 71.08434
+Test accuracy: 55.55556
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  3
+Training set accuracy: 71.48594
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  4
+Training set accuracy: 71.88755
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  5
+Training set accuracy: 71.88755
+Test accuracy: 56.56566
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  6
+Training set accuracy: 73.09237
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  7
+Training set accuracy: 74.69880
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  8
+Training set accuracy: 75.10040
+Test accuracy: 59.59596
+-------------------------------------------------------
+
+-------------------- Decision Tree --------------------
+Tree depth:  9
+Training set accuracy: 75.90361
+Test accuracy: 60.60606
