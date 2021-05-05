@@ -249,25 +249,35 @@ class Hierarchical_Clustering:
   def evaluate(self, current_clusters):
     gold_standard = self.gold_standard
     current_clustes_pairs = []
-
-    for (current_cluster_key, current_cluster_value) in current_clusters.items():
-      tmp = list(itertools.combinations(current_cluster_value["elements"], 2))
+    precision  = int
+    recall = int
+    for a in range(len(current_clusters)):
+      va = current_clusters.__getitem__(a)
+      tmp = list(itertools.combinations(get_cluster(va), 2))
       current_clustes_pairs.extend(tmp)
+
     tp_fp = len(current_clustes_pairs)
 
     gold_standard_pairs = []
-    for (gold_standard_key, gold_standard_value) in gold_standard.items():
+
+    for gold_standard_value in gold_standard.items():
       tmp = list(itertools.combinations(gold_standard_value, 2))
       gold_standard_pairs.extend(tmp)
     tp_fn = len(gold_standard_pairs)
     tp = 0.0
+
+    pdb.set_trace()
+
+
     for ccp in current_clustes_pairs:
       if ccp in gold_standard_pairs:
         tp += 1
+
     if tp_fp == 0:
       precision = 0.0
     else:
       precision = tp/tp_fp
+
     if tp_fn == 0:
       precision = 0.0
     else:
@@ -290,7 +300,7 @@ class Hierarchical_Clustering:
       line = line.strip('\n')
       row = str(line)
       row = row.split(",")
-      iris_class = row[-1]
+      target_class = row[-1]
 
       data = {}
       data.setdefault("id", id)   # duplicate
@@ -303,8 +313,8 @@ class Hierarchical_Clustering:
       clusters[clusters_key].setdefault("centroid", row[:-1])
       clusters[clusters_key].setdefault("elements", [id])
 
-      #gold_standard.setdefault(iris_class, [])
-      #gold_standard[iris_class].append(id)
+      gold_standard.setdefault(target_class, [])
+      gold_standard[target_class].append(id)
       id += 1
     return dataset, clusters #, gold_standard
 
@@ -317,26 +327,38 @@ class Hierarchical_Clustering:
     """
     return self.dataset
 
-  def display(self, current_clusters):
+  def display(self, current_clusters): #, precision, recall):
     print()
-    print(' --> Cluster Evaluation:')
-    print(precision)
-    print(recall)
+    #print(' --> Cluster Evaluation:')
+    #print(precision)
+    #print(recall)
     print(' --> Final clusters:')
     clusters = current_clusters
     for cluster in clusters:
       print(cluster)
 
+'''
 def get_clusters(clus_set):
-  clusters = list()
-  for cluster in clus_set:
-    clus = cluster.replace('[','')
-    clus = clus.replace(']','')
-    clus = clus.replace(' ','')
-    clusList = clus.split(',')
-    clusList = [ int(n) for n in clusList]
-    clusters.append(clusList)
-  return clusters
+  return [clusters.append(get_clusters(cluster)) for cluster in clus_set]
+
+def get_cluster(cluster):
+  clus = cluster.replace('[','')
+  clus = clus.replace(']','')
+  clus = clus.replace(' ','')
+  clusList = clus.split(',')
+  clusList = [ int(n) for n in clusList]
+  return clusList
+'''
+def get_clusters(clus_set):
+  return [get_cluster(cluster) for cluster in clus_set]
+
+def get_cluster(cluster):
+  clus = cluster.replace('[','')
+  clus = clus.replace(']','')
+  clus = clus.replace(' ','')
+  clusList = clus.split(',')
+  clusList = [ int(n) for n in clusList]
+  return clusList
 
 def rnd(num, precision):
   return math.floor(num * 10**precision)/10**precision
@@ -350,9 +372,10 @@ if __name__ == '__main__':
 
   Ds = get_data(Ds, 'training dataset')
   Ys = get_data(Ds, 'training target')
-  fset_1 = data[:, [0,1]]
-  fset_2 = data[:, [0,2]]
-  fset_3 = data[:, [1,2]]
+  Ys = Ys[:, -1]
+  fset_1 = Ds[:, [0,1]]
+  fset_2 = Ds[:, [0,2]]
+  fset_3 = Ds[:, [1,2]]
 
   figure, (plt1, plt2, plt3) = plt.subplots(1,3)
   plt1.scatter(fset_1[:,0], fset_1[:,1], color='b')
@@ -378,12 +401,13 @@ if __name__ == '__main__':
   print()
   print('>>>>> minimum or single linkage hierarchial clustering <<<<<')
 
-  figure_hcmin, (plthcmin1, plthcmin2, plthcmin3, plthcmin4) = plt.subplots(1,4)
+  figure_hcmin, (plthcmin1, plthcmin2) = plt.subplots(1,2)
   figure_hcmin.suptitle('Min or Single Linkage HC')
+  #pdb.set_trace()
 
   # plot the groundtruth data
   for x in range(len(fset_1)):
-    if Y[x] == 'M': color = 'r'
+    if Ys[x] == 'M': color = 'r'
     else: color = 'b'
     plthcmin1.scatter(fset_1[x,0], fset_1[x,1], color=color)
   plthcmin1.set_title('Ground-Truth')
@@ -391,17 +415,17 @@ if __name__ == '__main__':
   plthcmin1.set_ylabel('Weight')
   plthcmin1.set_xlabel('Height')
 
-  pdb.set_trace()c
+  #pdb.set_trace()
 
   k=2
   print()
   print(' |--> k:', k)
   # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
+  hc = Hierarchical_Clustering(XYs, k)
   hc.initialize()
   current_clusters = hc.hierarchical_clustering()
-  precision, recall = hc.evaluate(current_clusters)
-  hc.display(current_clusters, precision, recall)
+  #precision, recall = hc.evaluate(current_clusters)
+  hc.display(current_clusters)#, precision, recall)
   clusters = get_clusters(current_clusters)
   # plot the clusters generated in previous step
   for i, cluster in enumerate(clusters):
@@ -410,113 +434,4 @@ if __name__ == '__main__':
       plthcmin2.scatter(fset_1[n,0], fset_1[n,1], color=color)
   plthcmin2.set_title('k:2')
   plthcmin2.set_xlabel('Height')
-
-  k=3
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmin3.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmin3.set_title('k:3')
-  plthcmin3.set_xlabel('Height')
-
-  k=4
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmin4.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmin4.set_title('k:4')
-  plthcmin4.set_xlabel('Height')
-
   figure_hcmin.show()
-  plt.savefig('./p01_fig02_min.png')
-
-
-  print()
-  print()
-  print('>>>>> maximum or complete linkage hierarchial clustering <<<<<')
-
-  figure_hcmax, (plthcmax1, plthcmax2, plthcmax3, plthcmax4) = plt.subplots(1,4)
-  figure_hcmax.suptitle('Max or Complete Linkage HC')
-
-  # plot the groundtruth data
-  for x in range(len(fset_1)):
-    if Y[x] == 'M': color = 'r'
-    else: color = 'b'
-    plthcmax1.scatter(fset_1[x,0], fset_1[x,1], color=color)
-  plthcmax1.set_title('Ground-Truth')
-  #plthcmax1.legend(loc='upper right', shadow=True)
-  plthcmax1.set_ylabel('Weight')
-  plthcmax1.set_xlabel('Height')
-
-
-  k=2
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax2.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax2.set_title('k:2')
-  plthcmax2.set_xlabel('Height')
-
-  k=3
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax3.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax3.set_title('k:3')
-  plthcmax3.set_xlabel('Height')
-
-  k=4
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax4.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax4.set_title('k:4')
-  plthcmax4.set_xlabel('Height')
-
-  figure_hcmax.show()
-  plt.savefig('./p01_fig03_max.png')
