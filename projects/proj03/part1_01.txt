@@ -1,5 +1,5 @@
 '''
-  @author Bardia Mojra
+  Bardia Mojra
 
   @link https://github.com/ZwEin27/Hierarchical-Clustering/blob/master/hclust.py
 '''
@@ -14,63 +14,11 @@ import itertools
 import pdb
 
 
-D=[(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
+D= [(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
 (171,65,28),(155,48,31),(165,60,27),(182,80,30),(175,69,28),(178,80,27),
 (160,50,31),(170,72,30)]
 
 Y = ['W', 'M', 'W', 'M', 'M', 'M', 'W', 'W', 'W', 'M', 'W', 'M', 'W', 'M']
-
-Ds=[
-  (170, 57, 32, 'W'),
-  (190, 95, 28, 'M'),
-  (150, 45, 35, 'W'),
-  (168, 65, 29, 'M'),
-  (175, 78, 26, 'M'),
-  (185, 90, 32, 'M'),
-  (171, 65, 28, 'W'),
-  (155, 48, 31, 'W'),
-  (165, 60, 27, 'W')
-]
-
-
-Du= [
-  (182, 80, 30),
-  (160, 50, 31),
-  (177, 79, 28),
-  (181, 83, 28),
-  (178, 82, 28),
-  (180, 80, 29),
-  (160, 51, 29),
-  (175, 67, 28),
-  (170, 65, 28),
-  (175, 69, 28),
-  (170, 72, 30),
-  (171, 62, 27),
-  (168, 59, 24),
-  (165, 55, 30),
-  (173, 75, 28),
-  (178, 77, 28),
-  (163, 50, 27),
-  (178, 80, 27),
-  (152, 45, 29),
-  (185, 90, 30),
-  (158, 45, 28),
-  (162, 58, 28),
-  (172, 65, 27),
-  (182, 84, 27),
-  (177, 80, 30)
-]
-
-Dt = [
-  (169, 58, 30, 'W'),
-  (185, 90, 29, 'M'),
-  (148, 40, 31, 'W'),
-  (177, 80, 29, 'M'),
-  (170, 62, 27, 'W'),
-  (172, 72, 30, 'M'),
-  (175, 68, 27, 'W'),
-  (178, 80, 29, 'M')
-]
 
 
 def get_data(data, label):
@@ -106,7 +54,7 @@ class Hierarchical_Clustering:
     self.dimension = 0
     self.heap = []
     self.clusters = []
-    self.gold_standard = {}
+    #self.gold_standard = {}
 
   def initialize(self):
     """ Initialize and check parameters
@@ -246,6 +194,7 @@ class Hierarchical_Clustering:
       new_heap_entry.append([new_cluster["elements"], ex_cluster["elements"]])
       heapq.heappush(heap, (dist, new_heap_entry))
 
+  '''
   def evaluate(self, current_clusters):
     gold_standard = self.gold_standard
     current_clustes_pairs = []
@@ -273,6 +222,7 @@ class Hierarchical_Clustering:
     else:
       recall = tp/tp_fn
     return precision, recall
+  '''
 
   ''' Helper Functions
   '''
@@ -319,10 +269,7 @@ class Hierarchical_Clustering:
 
   def display(self, current_clusters):
     print()
-    print(' --> Cluster Evaluation:')
-    print(precision)
-    print(recall)
-    print(' --> Final clusters:')
+    print('final clusters:')
     clusters = current_clusters
     for cluster in clusters:
       print(cluster)
@@ -341,15 +288,21 @@ def get_clusters(clus_set):
 def rnd(num, precision):
   return math.floor(num * 10**precision)/10**precision
 
+def get_GT(y):
+  pdb.set_trace()
+
+  return y
 
 
 
-'''main
-'''
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""                               Main Method                                    """
+"""                                                                              """
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if __name__ == '__main__':
 
-  Ds = get_data(Ds, 'training dataset')
-  Ys = get_data(Ds, 'training target')
+  data = get_data(D, 'dataset')
+  Y = get_data(Y, 'target')
   fset_1 = data[:, [0,1]]
   fset_2 = data[:, [0,2]]
   fset_3 = data[:, [1,2]]
@@ -367,12 +320,12 @@ if __name__ == '__main__':
   plt3.set_xlabel('Weight')
   plt3.set_ylabel('Age')
 
-  figure.suptitle('Feature Correlations')
-  plt.savefig('./p01_fig01_feature_correlations.png')
+  figure.suptitle('Feature Correlation')
+  plt.savefig('./p01_fig01.png')
   figure.show()
 
 
-  XYs = './Ds.dat'
+  input_data = './dataset.dat'
   colors = ['b', 'r', 'g', 'c', 'm']
   print()
   print()
@@ -391,7 +344,6 @@ if __name__ == '__main__':
   plthcmin1.set_ylabel('Weight')
   plthcmin1.set_xlabel('Height')
 
-  pdb.set_trace()c
 
   k=2
   print()
@@ -400,8 +352,7 @@ if __name__ == '__main__':
   hc = Hierarchical_Clustering(input_data, k)
   hc.initialize()
   current_clusters = hc.hierarchical_clustering()
-  precision, recall = hc.evaluate(current_clusters)
-  hc.display(current_clusters, precision, recall)
+  hc.display(current_clusters)
   clusters = get_clusters(current_clusters)
   # plot the clusters generated in previous step
   for i, cluster in enumerate(clusters):

@@ -1,5 +1,5 @@
 '''
-  @author Bardia Mojra
+  Bardia Mojra
 
   @link https://github.com/ZwEin27/Hierarchical-Clustering/blob/master/hclust.py
 '''
@@ -14,63 +14,11 @@ import itertools
 import pdb
 
 
-D=[(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
+D= [(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
 (171,65,28),(155,48,31),(165,60,27),(182,80,30),(175,69,28),(178,80,27),
 (160,50,31),(170,72,30)]
 
 Y = ['W', 'M', 'W', 'M', 'M', 'M', 'W', 'W', 'W', 'M', 'W', 'M', 'W', 'M']
-
-Ds=[
-  (170, 57, 32, 'W'),
-  (190, 95, 28, 'M'),
-  (150, 45, 35, 'W'),
-  (168, 65, 29, 'M'),
-  (175, 78, 26, 'M'),
-  (185, 90, 32, 'M'),
-  (171, 65, 28, 'W'),
-  (155, 48, 31, 'W'),
-  (165, 60, 27, 'W')
-]
-
-
-Du= [
-  (182, 80, 30),
-  (160, 50, 31),
-  (177, 79, 28),
-  (181, 83, 28),
-  (178, 82, 28),
-  (180, 80, 29),
-  (160, 51, 29),
-  (175, 67, 28),
-  (170, 65, 28),
-  (175, 69, 28),
-  (170, 72, 30),
-  (171, 62, 27),
-  (168, 59, 24),
-  (165, 55, 30),
-  (173, 75, 28),
-  (178, 77, 28),
-  (163, 50, 27),
-  (178, 80, 27),
-  (152, 45, 29),
-  (185, 90, 30),
-  (158, 45, 28),
-  (162, 58, 28),
-  (172, 65, 27),
-  (182, 84, 27),
-  (177, 80, 30)
-]
-
-Dt = [
-  (169, 58, 30, 'W'),
-  (185, 90, 29, 'M'),
-  (148, 40, 31, 'W'),
-  (177, 80, 29, 'M'),
-  (170, 62, 27, 'W'),
-  (172, 72, 30, 'M'),
-  (175, 68, 27, 'W'),
-  (178, 80, 29, 'M')
-]
 
 
 def get_data(data, label):
@@ -106,7 +54,7 @@ class Hierarchical_Clustering:
     self.dimension = 0
     self.heap = []
     self.clusters = []
-    self.gold_standard = {}
+    #self.gold_standard = {}
 
   def initialize(self):
     """ Initialize and check parameters
@@ -246,6 +194,7 @@ class Hierarchical_Clustering:
       new_heap_entry.append([new_cluster["elements"], ex_cluster["elements"]])
       heapq.heappush(heap, (dist, new_heap_entry))
 
+  '''
   def evaluate(self, current_clusters):
     gold_standard = self.gold_standard
     current_clustes_pairs = []
@@ -273,6 +222,7 @@ class Hierarchical_Clustering:
     else:
       recall = tp/tp_fn
     return precision, recall
+  '''
 
   ''' Helper Functions
   '''
@@ -319,10 +269,7 @@ class Hierarchical_Clustering:
 
   def display(self, current_clusters):
     print()
-    print(' --> Cluster Evaluation:')
-    print(precision)
-    print(recall)
-    print(' --> Final clusters:')
+    print('final clusters:')
     clusters = current_clusters
     for cluster in clusters:
       print(cluster)
@@ -341,182 +288,28 @@ def get_clusters(clus_set):
 def rnd(num, precision):
   return math.floor(num * 10**precision)/10**precision
 
+def get_GT(y):
+  pdb.set_trace()
+
+  return y
 
 
 
-'''main
-'''
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""                               Main Method                                    """
+"""                                                                              """
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if __name__ == '__main__':
 
-  Ds = get_data(Ds, 'training dataset')
-  Ys = get_data(Ds, 'training target')
-  fset_1 = data[:, [0,1]]
-  fset_2 = data[:, [0,2]]
-  fset_3 = data[:, [1,2]]
-
-  figure, (plt1, plt2, plt3) = plt.subplots(1,3)
-  plt1.scatter(fset_1[:,0], fset_1[:,1], color='b')
-  plt1.set_xlabel('Height')
-  plt1.set_ylabel('Weight')
-
-  plt2.scatter(fset_2[:,0], fset_2[:,1], color='r')#, title='Height vs. Age')
-  plt2.set_xlabel('Height')
-  plt2.set_ylabel('Age')
-
-  plt3.scatter(fset_3[:,0], fset_3[:,1], color='g')#, title='Weight vs. Age')
-  plt3.set_xlabel('Weight')
-  plt3.set_ylabel('Age')
-
-  figure.suptitle('Feature Correlations')
-  plt.savefig('./p01_fig01_feature_correlations.png')
-  figure.show()
+  '''Pseudo code for part 2:
+    - Mix the two datasets to create a new combined dataset, lets call it allD.
+    - Use previous implementation to cluster similar data points into two classes,
+    M, and W.
+    - For the two clusters, count the majority class to label the entire cluster.
+    - Then, for each cluster, remove unlabeled data and use logistic regression
+    to train each cluster on labeled data.
 
 
-  XYs = './Ds.dat'
-  colors = ['b', 'r', 'g', 'c', 'm']
-  print()
-  print()
-  print('>>>>> minimum or single linkage hierarchial clustering <<<<<')
-
-  figure_hcmin, (plthcmin1, plthcmin2, plthcmin3, plthcmin4) = plt.subplots(1,4)
-  figure_hcmin.suptitle('Min or Single Linkage HC')
-
-  # plot the groundtruth data
-  for x in range(len(fset_1)):
-    if Y[x] == 'M': color = 'r'
-    else: color = 'b'
-    plthcmin1.scatter(fset_1[x,0], fset_1[x,1], color=color)
-  plthcmin1.set_title('Ground-Truth')
-  #plthcmin1.legend(loc='upper right', shadow=True)
-  plthcmin1.set_ylabel('Weight')
-  plthcmin1.set_xlabel('Height')
-
-  pdb.set_trace()c
-
-  k=2
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  precision, recall = hc.evaluate(current_clusters)
-  hc.display(current_clusters, precision, recall)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmin2.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmin2.set_title('k:2')
-  plthcmin2.set_xlabel('Height')
-
-  k=3
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmin3.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmin3.set_title('k:3')
-  plthcmin3.set_xlabel('Height')
-
-  k=4
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k)
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmin4.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmin4.set_title('k:4')
-  plthcmin4.set_xlabel('Height')
-
-  figure_hcmin.show()
-  plt.savefig('./p01_fig02_min.png')
 
 
-  print()
-  print()
-  print('>>>>> maximum or complete linkage hierarchial clustering <<<<<')
-
-  figure_hcmax, (plthcmax1, plthcmax2, plthcmax3, plthcmax4) = plt.subplots(1,4)
-  figure_hcmax.suptitle('Max or Complete Linkage HC')
-
-  # plot the groundtruth data
-  for x in range(len(fset_1)):
-    if Y[x] == 'M': color = 'r'
-    else: color = 'b'
-    plthcmax1.scatter(fset_1[x,0], fset_1[x,1], color=color)
-  plthcmax1.set_title('Ground-Truth')
-  #plthcmax1.legend(loc='upper right', shadow=True)
-  plthcmax1.set_ylabel('Weight')
-  plthcmax1.set_xlabel('Height')
-
-
-  k=2
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax2.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax2.set_title('k:2')
-  plthcmax2.set_xlabel('Height')
-
-  k=3
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax3.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax3.set_title('k:3')
-  plthcmax3.set_xlabel('Height')
-
-  k=4
-  print()
-  print(' |--> k:', k)
-  # make the clusters
-  hc = Hierarchical_Clustering(input_data, k, linkage='complete')
-  hc.initialize()
-  current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
-  clusters = get_clusters(current_clusters)
-  # plot the clusters generated in previous step
-  for i, cluster in enumerate(clusters):
-    color = colors[i]
-    for n in cluster:
-      plthcmax4.scatter(fset_1[n,0], fset_1[n,1], color=color)
-  plthcmax4.set_title('k:4')
-  plthcmax4.set_xlabel('Height')
-
-  figure_hcmax.show()
-  plt.savefig('./p01_fig03_max.png')
+  '''

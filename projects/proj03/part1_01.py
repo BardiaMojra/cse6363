@@ -1,5 +1,5 @@
 '''
-  Bardia Mojra
+  @author Bardia Mojra
 
   @link https://github.com/ZwEin27/Hierarchical-Clustering/blob/master/hclust.py
 '''
@@ -14,11 +14,13 @@ import itertools
 import pdb
 
 
-D= [(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
+D=[(170,57,32),(190,95,28),(150,45,35),(168,65,29),(175,78,26),(185,90,32),
 (171,65,28),(155,48,31),(165,60,27),(182,80,30),(175,69,28),(178,80,27),
 (160,50,31),(170,72,30)]
 
 Y = ['W', 'M', 'W', 'M', 'M', 'M', 'W', 'W', 'W', 'M', 'W', 'M', 'W', 'M']
+
+
 
 
 def get_data(data, label):
@@ -54,7 +56,7 @@ class Hierarchical_Clustering:
     self.dimension = 0
     self.heap = []
     self.clusters = []
-    #self.gold_standard = {}
+    self.gold_standard = {}
 
   def initialize(self):
     """ Initialize and check parameters
@@ -73,7 +75,6 @@ class Hierarchical_Clustering:
     self.dimension = len(self.dataset[0]["data"])
     if self.dimension == 0:
       self.quit("dimension for dataset cannot be zero")
-
 
   def euclidean_distance(self, data_point_one, data_point_two):
     """
@@ -194,7 +195,6 @@ class Hierarchical_Clustering:
       new_heap_entry.append([new_cluster["elements"], ex_cluster["elements"]])
       heapq.heappush(heap, (dist, new_heap_entry))
 
-  '''
   def evaluate(self, current_clusters):
     gold_standard = self.gold_standard
     current_clustes_pairs = []
@@ -222,7 +222,6 @@ class Hierarchical_Clustering:
     else:
       recall = tp/tp_fn
     return precision, recall
-  '''
 
   ''' Helper Functions
   '''
@@ -269,7 +268,10 @@ class Hierarchical_Clustering:
 
   def display(self, current_clusters):
     print()
-    print('final clusters:')
+    print(' --> Cluster Evaluation:')
+    print(precision)
+    print(recall)
+    print(' --> Final Clusters:')
     clusters = current_clusters
     for cluster in clusters:
       print(cluster)
@@ -288,17 +290,11 @@ def get_clusters(clus_set):
 def rnd(num, precision):
   return math.floor(num * 10**precision)/10**precision
 
-def get_GT(y):
-  pdb.set_trace()
-
-  return y
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""                               Main Method                                    """
-"""                                                                              """
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+'''main
+'''
 if __name__ == '__main__':
 
   data = get_data(D, 'dataset')
@@ -320,7 +316,7 @@ if __name__ == '__main__':
   plt3.set_xlabel('Weight')
   plt3.set_ylabel('Age')
 
-  figure.suptitle('Feature Correlation')
+  figure.suptitle('Feature Correlations')
   plt.savefig('./p01_fig01.png')
   figure.show()
 
@@ -344,6 +340,7 @@ if __name__ == '__main__':
   plthcmin1.set_ylabel('Weight')
   plthcmin1.set_xlabel('Height')
 
+  #pdb.set_trace()
 
   k=2
   print()
@@ -352,7 +349,8 @@ if __name__ == '__main__':
   hc = Hierarchical_Clustering(input_data, k)
   hc.initialize()
   current_clusters = hc.hierarchical_clustering()
-  hc.display(current_clusters)
+  precision, recall = hc.evaluate(current_clusters)
+  hc.display(current_clusters, precision, recall)
   clusters = get_clusters(current_clusters)
   # plot the clusters generated in previous step
   for i, cluster in enumerate(clusters):
