@@ -2,6 +2,7 @@
   @author Bardia Mojra
 
   @link https://github.com/ZwEin27/Hierarchical-Clustering/blob/master/hclust.py
+  @link https://towardsdatascience.com/a-gentle-introduction-to-self-training-and-semi-supervised-learning-ceee73178b38
 '''
 
 import numpy as np
