@@ -1,0 +1,55 @@
+
+   ----------> at ./data/raw-img/cane/ , dog is a class
+-     0  OIP-aNfn6alq4vrRSsTlo3DQdwHaFj.jpeg
+-     1  OIP-VvsvsibV2Vg31Me2o3xhngHaFB.jpeg
+
+   ----------> at ./data/raw-img/cavallo/ , horse is a class
+-     0  OIP-sv7RaMVHN-xdcgVpT86HZQHaGg.jpeg
+-     1  OIP-GEAjRYV5KQTK3NafDWqs5wHaFR.jpeg
+
+   ----------> at ./data/raw-img/elefante/ , elephant is a class
+-     0  OIP-ItsigrPgPmSJRrcIHhVTSwHaEC.jpeg
+-     1  OIP-mWRvhrLcX8xFhtV5BFOmVwAAAA.jpeg
+
+   ----------> at ./data/raw-img/farfalla/ , butterfly is a class
+-     0  OIP-nH0TTT46RqT2ws8DFDp9vwHaFq.jpeg
+-     1  OIP-Tb2VKr6uoXwvoj9oe4MDYAHaGL.jpeg
+
+   ----------> at ./data/raw-img/gallina/ , chicken is a class
+-     0  OIP-mmhJFXdbyhSgCsDWeY65NAHaJ4.jpeg
+-     1  OIP-Ozdbmh5kI3n4GWH0ni98aAHaFb.jpeg
+
+   ----------> at ./data/raw-img/gatto/ , cat is a class
+-     0  1215.jpeg
+-     1  1748.jpeg
+
+   ----------> at ./data/raw-img/mucca/ , cow is a class
+-     0  OIP-OYSl6ioWRMxp1K9EuOFlvAHaLG.jpeg
+-     1  OIP-XOxGkpdBZxNlcJC1e2UmsAHaFC.jpeg
+
+   ----------> at ./data/raw-img/pecora/ , sheep is a class
+-     0  OIP-ejzoeuWa4wh2HWkECimT0AHaF6.jpeg
+-     1  OIP-hYzkVFEn_5-gd3lXB1johQHaE7.jpeg
+
+   ----------> at ./data/raw-img/scoiattolo/ , squirrel is a class
+-     0  OIP-6C_SEg80EcOV6ywsc7N0gAHaHa.jpeg
+-     1  OIP-hJO3_4eXH_fL-J8K4MwX-gHaEK.jpeg
+
+--> output directory ./data/norm-img/cane/ successfully created.
+--> output directory ./data/norm-img/cane/ successfully created.
+--> output directory ./data/norm-img/cavallo/ successfully created.
+--> output directory ./data/norm-img/cavallo/ successfully created.
+--> output directory ./data/norm-img/elefante/ successfully created.
+--> output directory ./data/norm-img/elefante/ successfully created.
+--> output directory ./data/norm-img/farfalla/ successfully created.
+--> output directory ./data/norm-img/farfalla/ successfully created.
+--> output directory ./data/norm-img/gallina/ successfully created.
+--> output directory ./data/norm-img/gallina/ successfully created.
+--> output directory ./data/norm-img/gatto/ successfully created.
+--> output directory ./data/norm-img/gatto/ successfully created.
+--> output directory ./data/norm-img/mucca/ successfully created.
+--> output directory ./data/norm-img/mucca/ successfully created.
+--> output directory ./data/norm-img/pecora/ successfully created.
+--> output directory ./data/norm-img/pecora/ successfully created.
+--> output directory ./data/norm-img/scoiattolo/ successfully created.
+--> output directory ./data/norm-img/scoiattolo/ successfully created.
