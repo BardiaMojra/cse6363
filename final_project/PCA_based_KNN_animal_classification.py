@@ -377,15 +377,15 @@ if __name__ == '__main__':
 
   ''' NBUG config
   '''
-  #skip_data_load = True # just to save time
+  skip_data_load = True # just to save time
   skip_process_raw_data = True # set to False to save time, set True for first use.
-  #skip_process_dataXY = True # just to save dev time
+  skip_process_dataXY = True # just to save dev time
   skip_to_eigenXY = True # used saved PCA dataset
 
   ''' run config
   '''
   prt = True
-  image_size = 120 # pixels, equal height and width
+  image_size = 100 # pixels, equal height and width
   samples_per_class = 1000
   shuffles = 10 # shuffle n times to mix data
   testfrac = .2 # 0-1.0 | test set fraction of main set
@@ -405,7 +405,7 @@ if __name__ == '__main__':
       with open('dataset.json', 'wb') as dataset_file:
         pkl.dump(data, dataset_file)
     else: # load previously loaded dataset
-      print('--> Loading dataset object from binary file...')
+      print('---> Loading dataset object from binary file...')
       with open('dataset.json', 'rb') as dataset_file:
         data = pkl.load(dataset_file)
 
@@ -443,55 +443,58 @@ if __name__ == '__main__':
       plot_utility(label, image_size, V, img_mean, b)
 
     # print labels
-    print('--> labels:')
+    print()
+    print('---> labels:')
     pp(labels)
     print()
 
     # save processed dataset object
-    print('--> Saving dataXY object from binary file...')
+    print('---> Saving dataXY object to binary file...')
     with open('dataXY.json', 'wb') as dataXY_file:
       pkl.dump(dataXY, dataXY_file)
 
     # save keysXY dataset object
-    print('--> Saving keysXY object from binary file...')
+    print('---> Saving keysXY object to binary file...')
     with open('keysXY.json', 'wb') as keysXY_file:
       pkl.dump(keysXY, keysXY_file)
 
     # save eigenXY dataset object
-    print('--> Saving eigenXY object from binary file...')
+    print('---> Saving eigenXY object to binary file...')
     with open('eigenXY.json', 'wb') as eigenXY_file:
       pkl.dump(eigenXY, eigenXY_file)
 
   else:
     if skip_to_eigenXY == False:
       # load processed dataset object
-      print('--> Loading dataXY object from binary file...')
+      print('---> Loading dataXY object from binary file...')
       with open('dataXY.json', 'rb') as dataXY_file:
         dataXY = pkl.load(dataXY_file)
 
       # load keysXY dataset object
-      print('--> Loading keysXY object from binary file...')
+      print('---> Loading keysXY object from binary file...')
       with open('keysXY.json', 'rb') as keysXY_file:
         keysXY = pkl.load(keysXY_file)
     else:
       # load eigenXY dataset object
-      print('--> Loading eigenXY object from binary file...')
+      print('---> Loading eigenXY object from binary file...')
       with open('eigenXY.json', 'rb') as eigenXY_file:
         eigenXY = pkl.load(eigenXY_file)
 
   ''' keysXY: set of keys for all known classes
   '''
-  print('Class keys (mean projection):')
-  pp(keysXY)
-
+  #print()
+  #print('Class keys (mean projection):')
+  #pp(keysXY)
+  print()
   print('Processed dataset (PCA):')
   pp(eigenXY)
-
+  print()
   print('Shuffling processed dataset (PCA):')
   set_trace() # ----------------------------------------------------------------------------->>>>>>
 
   for _ in range(shuffles):
     eigenXY = np.random.shuffle(eigenXY)
+  print()
   print('Processed dataset (PCA): please inspect...')
   pp(eigenXY)
 
@@ -500,7 +503,7 @@ if __name__ == '__main__':
 
   test_size = int(testfrac * nSamps)
 
-  testXY = eigenXY[np.random.choice(nSamps, size=test_size, replace=False), :]
+  testXY = eigenXY[np.random.choice(nSamps, size=test_size, replace=False)]
   testX = copy.deepcopy(testXY[:][:-1])
   testX = copy.deepcopy(testXY[:][:-1])
 
