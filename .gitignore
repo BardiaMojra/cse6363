@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 final_project/data/*
 dataset.json
+trainXY.json
