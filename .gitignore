@@ -130,3 +130,6 @@ dmypy.json
 final_project/data/*
 dataset.json
 trainXY.json
+dataXY.json
+eigenXY.json
+keysXY.json

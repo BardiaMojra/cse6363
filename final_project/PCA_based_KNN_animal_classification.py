@@ -4,18 +4,21 @@ import matplotlib.pyplot as plt
 import os, shutil, math
 import random as rand
 import pickle as pkl
-
+import copy
+from pprint import pprint as pp
 from pdb import *
+
+from numpy.core.fromnumeric import _trace_dispatcher
 
 # acceptable image formats
 exts = {'.png', '.jpg', '.jpeg'}
 
-prt = True
-translations = {"cane": "dog", "cavallo": "horse", "elefante": "elephant", "farfalla": "butterfly", "gallina": "chicken", "gatto": "cat", "mucca": "cow", "pecora": "sheep", "scoiattolo": "squirrel"}
-
+translations = {"cane": "dog", "cavallo": "horse", "elefante": "elephant", \
+  "farfalla": "butterfly", "gallina": "chicken", "gatto": "cat", \
+  "mucca": "cow", "pecora": "sheep"}
 
 animals=['dog', 'horse','elephant', 'butterfly', 'chicken', 'cat', 'cow', \
- 'sheep', 'squirrel','spider']
+ 'sheep']
 
 '''
 class std_image:
@@ -91,9 +94,6 @@ class std_image:
     return
 #end of class std_image:
 '''
-
-
-
 
 def create_data_obj(src, subdir, categories, n_samples, img_size=250): # size, categories):
   data = list()
@@ -211,7 +211,7 @@ def plot_utility(label, image_size, V, img_mean, b, saveImg=True):
     axs[int((i+1)/5),(i+1)%5].imshow(V[i].reshape(image_size,image_size))
   figname = './output/figure_{}_{}.png'.format(b,label)
   if saveImg==True:
-    plt.savefig(figname, bbox_inches='tight',dpi=100)
+    plt.savefig(figname, bbox_inches='tight',dpi=300)
     print('---> Saved image: '+figname)
 
   #fig.show(bbox_inches='tight',dpi=100)
@@ -302,7 +302,6 @@ class KNN:
 
   def nFold_CrossValidation(self, trainXY, nfolds, k, prt=False):
       #print("trainXY", trainXY)
-
       self.scores = list()
       XYfolds = self.split_trainXY(trainXY, nfolds)
       for fold in XYfolds:
@@ -353,6 +352,7 @@ class KNN:
 
 
 
+
 if __name__ == '__main__':
 
   ''' ToDo: add a auto downloader
@@ -367,44 +367,144 @@ if __name__ == '__main__':
     CPA from scratch: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
 
   '''
-  image_size = 72 # pixels, equal height and weight
 
+  ''' Default config. Do not change.
+  '''
+  skip_process_raw_data = False # Do not change.
+  skip_data_load = False # Do not change.
+  skip_process_dataXY =  False # Do not change.
+  skip_to_eigenXY = False
+
+  ''' NBUG config
+  '''
+  #skip_data_load = True # just to save time
+  skip_process_raw_data = True # set to False to save time, set True for first use.
+  #skip_process_dataXY = True # just to save dev time
+  skip_to_eigenXY = True # used saved PCA dataset
+
+  ''' run config
+  '''
+  prt = True
+  image_size = 120 # pixels, equal height and width
+  samples_per_class = 1000
+  shuffles = 10 # shuffle n times to mix data
+  testfrac = .2 # 0-1.0 | test set fraction of main set
+
+
+  ''' create data object
+    data.append(np.asarray([i,pixels,target,src,category,translate,fname+ext]))
+  '''
   #data = norm_images(data, save=True) # normalize dataset
-  skip_data_load = True # just to save time
   if skip_data_load == False:
-    process_raw_data = False # set to False to save time, set True for first use.
-    if process_raw_data == True:
+    if skip_process_raw_data == False:
       # create data object
       data = create_data_obj(src='./data/', subdir='raw-img/', \
-        categories=translations, n_samples=1000, img_size=image_size)
+        categories=translations, n_samples=samples_per_class, img_size=image_size)
       # save loaded dataset
       #os.makedirs('temp')
       with open('dataset.json', 'wb') as dataset_file:
         pkl.dump(data, dataset_file)
     else: # load previously loaded dataset
-      print('--> Loading dataset object from binary file...\n')
+      print('--> Loading dataset object from binary file...')
       with open('dataset.json', 'rb') as dataset_file:
         data = pkl.load(dataset_file)
 
-  process_trainXY = False #True - just to save dev time
-  if process_trainXY == True:
-    trainXY = list()
+  ''' get PCA for entire dataset
+  '''
+  if skip_process_dataXY == False:
+    dataXY = list()
+    mfeat = image_size**2  # = img_size * img_size + y
+    keysXY = np.full((0, mfeat+ 1), 1)
+    keyy = np.full((1, mfeat+ 1), 1)
+    labels = list()
+    eigenXY_class = np.empty((samples_per_class, mfeat+ 1))
+    eigenXY = np.empty((0, mfeat+ 1))
+
+    # get data per class and process to obtain PCA
     for b, (directory, label) in enumerate(translations.items()):
       X, Y = get_data(data, label=label)
       #nSamps, mFeat = len(X), len(X[0])
       V,S,img_mean = pca(X)
-      trainXY.append([label,X,Y,V,S,img_mean])
+      #set_trace()
+      dataXY.append([label,X,Y,V,S,img_mean])
+      labels.append(label)
+      key = np.reshape(img_mean, (1,-1))
+      y = np.full((1,1), Y[0])
+      # copy processed PCA keys - mean
+      keyy = copy.deepcopy(np.concatenate((key,y), axis=1))
+      keysXY = copy.deepcopy(np.concatenate((keysXY, keyy), axis=0))
+      #set_trace()
+      Y = np.expand_dims(Y,axis=1)
+      eigenXY_class = copy.deepcopy(np.concatenate((V,Y), axis=1))
+      eigenXY = copy.deepcopy(np.concatenate((eigenXY,eigenXY_class), axis=0))
+      #print(eigenXY)
+      #set_trace()
+      # plot or save images
       plot_utility(label, image_size, V, img_mean, b)
-    with open('trainXY.json', 'wb') as trainXY_file:
-      pkl.dump(trainXY, trainXY_file)
-  else: # load previously loaded trainXY
-    print('--> Loading trainXY object from binary file...\n')
-    with open('trainXY.json', 'rb') as trainXY_file:
-      trainXY = pkl.load(trainXY_file)
 
+    # print labels
+    print('--> labels:')
+    pp(labels)
+    print()
 
-    """ Complete Dataset --- Part a and b """
-  knn_classifier = KNN(trainXY, k=5)
+    # save processed dataset object
+    print('--> Saving dataXY object from binary file...')
+    with open('dataXY.json', 'wb') as dataXY_file:
+      pkl.dump(dataXY, dataXY_file)
+
+    # save keysXY dataset object
+    print('--> Saving keysXY object from binary file...')
+    with open('keysXY.json', 'wb') as keysXY_file:
+      pkl.dump(keysXY, keysXY_file)
+
+    # save eigenXY dataset object
+    print('--> Saving eigenXY object from binary file...')
+    with open('eigenXY.json', 'wb') as eigenXY_file:
+      pkl.dump(eigenXY, eigenXY_file)
+
+  else:
+    if skip_to_eigenXY == False:
+      # load processed dataset object
+      print('--> Loading dataXY object from binary file...')
+      with open('dataXY.json', 'rb') as dataXY_file:
+        dataXY = pkl.load(dataXY_file)
+
+      # load keysXY dataset object
+      print('--> Loading keysXY object from binary file...')
+      with open('keysXY.json', 'rb') as keysXY_file:
+        keysXY = pkl.load(keysXY_file)
+    else:
+      # load eigenXY dataset object
+      print('--> Loading eigenXY object from binary file...')
+      with open('eigenXY.json', 'rb') as eigenXY_file:
+        eigenXY = pkl.load(eigenXY_file)
+
+  ''' keysXY: set of keys for all known classes
+  '''
+  print('Class keys (mean projection):')
+  pp(keysXY)
+
+  print('Processed dataset (PCA):')
+  pp(eigenXY)
+
+  print('Shuffling processed dataset (PCA):')
+  set_trace() # ----------------------------------------------------------------------------->>>>>>
+
+  for _ in range(shuffles):
+    eigenXY = np.random.shuffle(eigenXY)
+  print('Processed dataset (PCA): please inspect...')
+  pp(eigenXY)
+
+  set_trace()
+  nSamps = eigenXY.shape[0]
+
+  test_size = int(testfrac * nSamps)
+
+  testXY = eigenXY[np.random.choice(nSamps, size=test_size, replace=False), :]
+  testX = copy.deepcopy(testXY[:][:-1])
+  testX = copy.deepcopy(testXY[:][:-1])
+
+  knn_classifier = KNN(eigenXY, testX, testY, k=5)
 
 
 
