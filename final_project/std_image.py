@@ -1,9 +1,9 @@
 from PIL import Image, ImageOps
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import os, shutil
-from random import randrange
-
+import random as rand
+import pickle as pkl
 
 # acceptable image formats
 exts = {'.png', '.jpg', '.jpeg'}
@@ -93,7 +93,7 @@ class std_image:
 
 
 
-def create_data_obj(src, subdir, categories, n_samples): # size, categories):
+def create_data_obj(src, subdir, categories, n_samples, img_size=250): # size, categories):
   data = list()
   for category, translate in categories.items():
     path = src+subdir+category+'/'
@@ -108,11 +108,12 @@ def create_data_obj(src, subdir, categories, n_samples): # size, categories):
             #print()
             print('- %5d  %s%s' % (i,fname,ext))
           image = Image.open(path+fname+ext)
-          image = change_contrast(image, 100) # change contrast for grey scale
+          #image = change_contrast(image, 95) # change contrast for grey scale
           image = ImageOps.grayscale(image)
-          pixels = np.asarray(image)
+          image = image.resize((img_size,img_size))
+          pixels = np.asarray(image, order='f') # write to memory fortran style
           pixels = pixels.astype('float32')
-          data.append([i, pixels, target, src, category,  fname+ext])
+          data.append(np.asarray([i,pixels,target,src,category,fname+ext]))
         except OSError as error: # if returns error
           print('--> cant read image %s already exists.' % path+fname+ext)
           pass
@@ -158,8 +159,6 @@ def change_contrast(image, level=100):
     return 128 + factor * (c-128)
   return image.point(contrast)
 
-
-
 # split training dataset into n-folds for cross validation
 def split_trainXY(trainXY, nfolds):
   trainXY_nfolded = list()
@@ -180,6 +179,44 @@ def get_acc(groundtruth, prediction):
       correct += 1
   return correct / float(len(groundtruth)) * 100.0
 
+def get_data(data, category=None):
+  #rand.shuffle(data)
+  X = list()
+  Y = list()
+  for datum in data:
+    if category != None:
+      if datum[4]==category:
+        X.append(datum[1].flatten())
+        Y.append(datum[2])
+    else:
+      X.append(datum[1].flatten())
+      Y.append(datum[2])
+  X = np.asarray(X, order='f') # write to memory fortran style
+  Y = np.asarray(Y, order='f') # write to memory fortran style
+  return X,Y
+
+def pca(X):
+  # get dim
+  n_samples, dim = X.shape
+  # center data
+  mean = X.mean(axis=0)
+  X = X - mean
+  use_compact_technique = False # disabled, was getting poor results
+  if dim > n_samples and use_compact_technique==True:
+    # use compact trick
+    covar = np.dot(X,X.T) # calculate covariance matrix
+    eVals, eVecs = np.linalg.eigh(covar) # get eigen values and vectors of covariance
+    compact = np.dot(X.T,eVecs).T # compact trick
+    V = compact[::-1] # get last eigenvectors (highest value)
+    S = np.sqrt(eVals)[::-1] # get last eigenvalues (highest value)
+    for i in range(V.shape[1]):
+      V[:,i] /= S  # projection (V) divided by variance (S)
+  else:
+    # normal method, use SVD
+    U,S,V = np.linalg.svd(X)
+    V = V[:n_samples] # the rest is not usefull information
+  return V, S, mean
+
 
 
 if __name__ == '__main__':
@@ -189,22 +226,55 @@ if __name__ == '__main__':
   #url = 'https://www.kaggle.com/alessiocorrado99/animals10/download'
 
   ''' Image PCA
+    YouTube: https://www.youtube.com/watch?v=9YOWgQ4kHGg
+    Image CPA from scratch:
+    https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html
     https://glowingpython.blogspot.com/2011/07/pca-and-image-compression-with-numpy.html
+    CPA from scratch: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
+
   '''
+  image_size = 72 # pixels, equal height and weight
+  process_raw_data = True#False # set to False to save time, set True for first use.
 
-  # create data object
-  data = create_data_obj(src='./data/', subdir='raw-img/', \
-    categories=translations, n_samples=2)
+  if process_raw_data == True:
+    # create data object
+    data = create_data_obj(src='./data/', subdir='raw-img/', \
+      categories=translations, n_samples=1000, img_size=image_size)
+    # save loaded dataset
+    #os.makedirs('temp')
+    with open('dataset.json', 'wb') as dataset_file:
+      pkl.dump(data, dataset_file)
+  else: # load previously loaded dataset
+    with open('dataset.json', 'rb') as dataset_file:
+      data = pkl.load(dataset_file)
 
-  data = norm_images(data, save=True) # normalize dataset
+  #data = norm_images(data, save=True) # normalize dataset
+  trainXY = list()
+  for b, (directory, label) in enumerate(translations.items()):
+    X, Y = get_data(data, category=label)
+    #nSamps, mFeat = len(X), len(X[0])
+    V,S,img_mean = pca(X)
 
-  #random.shuffle(data)
+    trainXY.append([label,X,Y,V,S,img_mean])
 
-  X = list()
-  Y = list()
-  for datum in data:
-    X.append(datum[1])
-    Y.append(datum[2])
+    # show images
+    fig = plt.figure()
+    plt.gray()
+    plt.title("Eigen Features - "+label)
+    plt.subplot(2,5,1)
+    plt.imshow(img_mean.reshape(image_size,image_size))
+    plt.suptitle('Image Class Mean')
+    for i in range(9):
+      plt.subplot(2,5,i+2)
+      plt.imshow(V[i].reshape(image_size,image_size))
+      plt.suptitle('Eigen Feature n°{}'.format(i+1))
+    figname = './output/figure_{}_{}_mean_n_9_top_eFeautres.png'.format(i,label)
+    plt.savefig(figname, bbox_inches='tight')
+    plt.show()
+
+
+
+
 
 
 
