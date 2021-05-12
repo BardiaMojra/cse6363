@@ -96,6 +96,7 @@ class std_image:
 '''
 
 def create_data_obj(src, subdir, categories, n_samples, img_size=250): # size, categories):
+  print('---> Creating data object...')
   data = list()
   for category, translate in categories.items():
     path = src+subdir+category+'/'
@@ -178,6 +179,7 @@ def get_data(data, label=None):
   return X,Y
 
 def pca(X):
+  print('---> Computing principal components...')
   # get dim
   n_samples, dim = X.shape
   # center data
@@ -212,17 +214,18 @@ def plot_utility(label, image_size, V, img_mean, b, saveImg=True):
   figname = './output/figure_{}_{}.png'.format(b,label)
   if saveImg==True:
     plt.savefig(figname, bbox_inches='tight',dpi=300)
-    print('---> Saved image: '+figname)
+    print('---> Saving class eigen projections figure: '+figname)
 
   #fig.show(bbox_inches='tight',dpi=100)
   return
 
 
 class KNN:
-  def __init__(self, trainXY, testX=None, k=1, precision=4):
+  def __init__(self, trainXY, testX=None, testY=None, k=1, precision=4):
     self.precision = precision
-
-    set_trace()
+    self.prt=True
+    print('---> Initializing KNN classifier... ')
+    #set_trace()
 
     self.nFold_CrossValidation(trainXY, nfolds=10, k=k, prt=False)
     print('\n')
@@ -262,34 +265,39 @@ class KNN:
 
   # Calculate nearest neighbors
   def get_neighbors(self, trainX, test_row, k): # trainX, trainX_i, # of nearest neighbors
-      distances = list()
-      neighbors = list()
+    distances = list()
+    neighbors = list()
+    if self.prt == True:
+      print()
+      print()
+      print('Calculate distances to datum: ', test_row)
+      print('Training data XY  |   Distance |')
+      print('__________________|____________|')
+
+    #print('trainX shape: ', trainX.shape)
+    #set_trace()
+    for i, X_i in np.ndenumerate(trainX):
+      dist = np.linalg.norm(X_i - test_row)
+      #dist = self.euclidean_distance(X_i, test_row)
       if self.prt == True:
-          print()
-          print()
-          print('Calculate distances to datum: ', test_row)
-          print('Training data XY  |   Distance |')
-          print('__________________|____________|')
-      for X_i in trainX:
-          dist = self.euclidean_distance(X_i, test_row)
-          if self.prt == True:
-                  print(X_i, ' |  ', dist)
-          distances.append((X_i, dist))
-      distances.sort(key=lambda tup: tup[1])
-      for i in range(k): neighbors.append(distances[i][:])
-      #self.print_distances(distances)
-      #self.print_neighbors(neighbors)
-      if self.prt == True:
-          print()
-          print(k, ' Nearest Neighbors:')
-          for i in neighbors:
-              print(i)
-      return neighbors
+        print(' {} |  {}'.format(i, dist))
+      distances.append((X_i, dist))
+    distances.sort(key=lambda tup: tup[1])
+    for i in range(k): neighbors.append(distances[i][:])
+    #self.print_distances(distances)
+    #self.print_neighbors(neighbors)
+    if self.prt == True:
+      print()
+      print(k, ' Nearest Neighbors:')
+      for i in neighbors:
+        print(i)
+    return neighbors
 
   def predict_class(self, trainXY, testX, k):
       #print(trainXY.dtype)
       #print(testX.dtype)
       #self.trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
+      set_trace() #-----------------------------------------------------------------
       neighbors = self.get_neighbors(trainXY, testX, k)
       output_values = [row[-2][1] for row in neighbors]
       if self.prt == True:
@@ -303,6 +311,7 @@ class KNN:
   def nFold_CrossValidation(self, trainXY, nfolds, k, prt=False):
       #print("trainXY", trainXY)
       self.scores = list()
+      #set_trace()
       XYfolds = self.split_trainXY(trainXY, nfolds)
       for fold in XYfolds:
           testFold = list()
@@ -330,7 +339,7 @@ class KNN:
   def split_trainXY(self, trainXY, nfolds):
       trainXY_nfolded = list()
       trainXY_list = list(trainXY)
-      fold_size = len(trainXY)/nfolds
+      fold_size = trainXY.shape[0]/nfolds
       for i in range(nfolds):
           new_fold = list()
           while len(new_fold) < fold_size:
@@ -485,29 +494,28 @@ if __name__ == '__main__':
   #print()
   #print('Class keys (mean projection):')
   #pp(keysXY)
-  print()
-  print('Processed dataset (PCA):')
-  pp(eigenXY)
-  print()
-  print('Shuffling processed dataset (PCA):')
-  set_trace() # ----------------------------------------------------------------------------->>>>>>
-
+  #print()
+  #print('Processed dataset (PCA):')
+  #pp(eigenXY)
+  #print()
+  print('---> Shuffling PCA image dataset...')
   for _ in range(shuffles):
-    eigenXY = np.random.shuffle(eigenXY)
-  print()
-  print('Processed dataset (PCA): please inspect...')
-  pp(eigenXY)
+    np.random.shuffle(eigenXY)
+  print('   |---> PCA image set shape: {}'.format(eigenXY.shape))
 
-  set_trace()
+  print('---> Create test set: sampling PCA image dataset w/o replacement...')
   nSamps = eigenXY.shape[0]
-
   test_size = int(testfrac * nSamps)
+  rng = np.random.default_rng()
+  testXY = copy.deepcopy(eigenXY[:test_size][:])
+  trainXY = copy.deepcopy(eigenXY[test_size:][:])
+  print('   |---> PCA image training set shape: {}'.format(trainXY.shape))
+  print('   |---> PCA image test set shape: {}'.format(testXY.shape))
 
-  testXY = eigenXY[np.random.choice(nSamps, size=test_size, replace=False)]
   testX = copy.deepcopy(testXY[:][:-1])
-  testX = copy.deepcopy(testXY[:][:-1])
-
-  knn_classifier = KNN(eigenXY, testX, testY, k=5)
+  testY = copy.deepcopy(testXY[:][-1])
+  #set_trace()
+  knn_classifier = KNN(trainXY, testX, testY, k=5)
 
 
 
