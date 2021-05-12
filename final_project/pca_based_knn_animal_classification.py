@@ -223,11 +223,11 @@ def plot_utility(label, image_size, V, img_mean, b, saveImg=True):
 class KNN:
   def __init__(self, trainXY, testX=None, testY=None, k=1, precision=4):
     self.precision = precision
-    self.prt=True
+    self.prt = True
     print('---> Initializing KNN classifier... ')
     #set_trace()
 
-    self.nFold_CrossValidation(trainXY, nfolds=10, k=k, prt=False)
+    self.nFold_CrossValidation(trainXY, nfolds=10, k=k, prt=True)
     print('\n')
     if testX is not None:
       print('test dataset:')
@@ -237,31 +237,35 @@ class KNN:
     return
 
   def predict_testset(self, trainXY, testX, k, precision=4, prt=True):
-      self.prt = prt
-      self.precision = precision
-      self.predictions = list()
-      for datum in testX:
-          prediction = self.predict_class(trainXY, datum, k)
-          self.predictions.append(prediction)
-      if self.prt == True:
-          print()
-          print("Summary:")
-          print('k: ', k)
-          print('Test set:', testX)
-          print('Predictions:  ', self.predictions)
-          print('Precision: ', precision, " sigfig")
-      return self.predictions
+    self.prt = prt
+    self.precision = precision
+    self.predictions = list()
+    if self.prt == True:
+      print('---> Predicting test dataset...')
+
+    for datum in testX:
+      set_trace()
+      prediction = self.predict(trainXY, datum, k)
+      self.predictions.append(prediction)
+    if self.prt == True:
+      print()
+      print("Summary:")
+      print('k: ', k)
+      print('Test set:', testX)
+      print('Predictions:  ', self.predictions)
+      print('Precision: ', precision, " sigfig")
+    return self.predictions
 
   def euclidean_distance(self, row_A, row_B):
-      dist = 0.0
-      diffList = list()
-      for i in range(len(row_A[0])):
-          diff = 0.0
-          diff = row_A[0][i]-row_B[i]
-          diffList.append(diff)
-          dist += (diff)**2
-      dist = math.sqrt(dist)
-      return round(dist, self.precision)
+    dist = 0.0
+    diffList = list()
+    for i in range(len(row_A[0])):
+      diff = 0.0
+      diff = row_A[0][i]-row_B[i]
+      diffList.append(diff)
+      dist += (diff)**2
+    dist = math.sqrt(dist)
+    return round(dist, self.precision)
 
   # Calculate nearest neighbors
   def get_neighbors(self, trainX, test_row, k): # trainX, trainX_i, # of nearest neighbors
@@ -293,67 +297,73 @@ class KNN:
         print(i)
     return neighbors
 
-  def predict_class(self, trainXY, testX, k):
-      #print(trainXY.dtype)
-      #print(testX.dtype)
-      #self.trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
-      set_trace() #-----------------------------------------------------------------
-      neighbors = self.get_neighbors(trainXY, testX, k)
-      output_values = [row[-2][1] for row in neighbors]
-      if self.prt == True:
-          print()
-          print('KNN classes: ', output_values)
-      self.prediction = max(set(output_values), key=output_values.count)
-      if self.prt == True:
-          print('Datum prediction: ', self.prediction)
-      return (self.prediction)
-
-  def nFold_CrossValidation(self, trainXY, nfolds, k, prt=False):
-      #print("trainXY", trainXY)
-      self.scores = list()
-      #set_trace()
-      XYfolds = self.split_trainXY(trainXY, nfolds)
-      for fold in XYfolds:
-          testFold = list()
-          trainFolds = list(XYfolds)
-          trainFolds.remove(fold)
-          trainFolds = sum(trainFolds, [])
-          for datum in fold:
-              datum_copy = list(datum)
-              testFold.append(datum_copy[0])
-              datum_copy[-1] = None
-              #print("nfold - test datum:", datum_copy)
-          prediction = self.predict_testset(trainFolds, testFold, k, prt=False)
-          groundtruth = [datum[-1] for datum in fold]
-          acc = self.get_acc(groundtruth, prediction)
-          self.scores.append(acc)
+  def predict(self, trainXY, testX, k):
+    #print(trainXY.dtype)
+    #print(testX.dtype)
+    #self.trainXY = np.asarray([sublist for sublist in trainXY], dtype=object)
+    if self.prt == True:
+      print('---> Predicting test datum...')
+    set_trace() #-----------------------------------------------------------------
+    neighbors = self.get_neighbors(trainXY, testX, k)
+    output_values = [row[-2][1] for row in neighbors]
+    if self.prt == True:
       print()
-      print("Model accuracy is based on training data and ", nfolds, " folds cross validations.")
-      print("acc: ", self.scores)
-      overall_acc = (sum(self.scores)/float(len(self.scores)))
-      overall_acc = round(overall_acc, 2)
-      print("Overall model accuracy: ", overall_acc,'%')
-      return
+      print('KNN classes: ', output_values)
+    self.prediction = max(set(output_values), key=output_values.count)
+    if self.prt == True:
+      print('Datum prediction: ', self.prediction)
+    return (self.prediction)
+
+  def nFold_CrossValidation(self, trainXY, nfolds, k, prt=True):
+    if self.prt == True:
+      print('---> Training KNN model w/ n-fold cross-validation...')
+    #print("trainXY", trainXY)
+    self.scores = list()
+    #set_trace()
+    XYfolds = self.split_trainXY(trainXY, nfolds)
+    for fold in XYfolds:
+      testFold = list()
+      trainFolds = list(XYfolds)
+      trainFolds.remove(fold)
+      trainFolds = sum(trainFolds, [])
+      for datum in fold:
+        datum_copy = list(datum)
+        testFold.append(datum_copy[0])
+        datum_copy[-1] = None
+        #print("nfold - test datum:", datum_copy)
+      prediction = self.predict_testset(trainFolds, testFold, k, prt=True)
+      groundtruth = [datum[-1] for datum in fold]
+      acc = self.get_acc(groundtruth, prediction)
+      self.scores.append(acc)
+    print()
+    print("Model accuracy is based on training data and ", nfolds, " folds cross validations.")
+    print("acc: ", self.scores)
+    overall_acc = (sum(self.scores)/float(len(self.scores)))
+    overall_acc = round(overall_acc, 2)
+    print("Overall model accuracy: ", overall_acc,'%')
+    return
 
   # split training dataset into n-folds for cross validation
   def split_trainXY(self, trainXY, nfolds):
-      trainXY_nfolded = list()
-      trainXY_list = list(trainXY)
-      fold_size = trainXY.shape[0]/nfolds
-      for i in range(nfolds):
-          new_fold = list()
-          while len(new_fold) < fold_size:
-              idx = rand.randrange(len(trainXY_list))
-              new_fold.append(trainXY_list.pop(idx))
-          trainXY_nfolded.append(new_fold)
-      return trainXY_nfolded
+    trainXY_nfolded = list()
+    trainXY_list = list(trainXY)
+    fold_size = trainXY.shape[0]/nfolds
+    for i in range(nfolds):
+      new_fold = list()
+      while len(new_fold) < fold_size:
+        idx = rand.randrange(len(trainXY_list))
+        new_fold.append(trainXY_list.pop(idx))
+      trainXY_nfolded.append(new_fold)
+    return trainXY_nfolded
 
   def get_acc(self, groundtruth, prediction):
-      correct = 0
-      for i in range(len(groundtruth)):
-          if groundtruth[i] == prediction[i]:
-              correct += 1
-      return correct / float(len(groundtruth)) * 100.0
+    if self.prt == True:
+      print('---> Calculating accuracy...')
+    correct = 0
+    for i in range(len(groundtruth)):
+      if groundtruth[i] == prediction[i]:
+        correct += 1
+    return correct / float(len(groundtruth)) * 100.0
 
 
 
@@ -393,7 +403,7 @@ if __name__ == '__main__':
 
   ''' run config
   '''
-  prt = True
+  #prt = True
   image_size = 100 # pixels, equal height and width
   samples_per_class = 1000
   shuffles = 10 # shuffle n times to mix data
