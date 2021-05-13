@@ -17,34 +17,36 @@ translations = {"cane": "dog", "cavallo": "horse", "elefante": "elephant", \
   "farfalla": "butterfly", "gallina": "chicken", "gatto": "cat", \
   "mucca": "cow", "pecora": "sheep"}
 
-animals=['dog', 'horse','elephant', 'butterfly', 'chicken', 'cat', 'cow', \
- 'sheep']
+#animals=['dog', 'horse','elephant', 'butterfly', 'chicken', 'cat', 'cow', 'sheep']
+
+animals=['dog', 'horse', 'butterfly', 'chicken']
 
 def create_data_obj(src, subdir, categories, n_samples, img_size=250): # size, categories):
   print('---> Creating data object...')
   data = list()
   for category, translate in categories.items():
-    path = src+subdir+category+'/'
-    target = animals.index(translate)
-    print()
-    print('   ----------> at %s , %s is a class' % (path, translate))
-    for i, file in enumerate(os.listdir(path)):
-      if i < n_samples:
-        try:
-          fname, ext = os.path.splitext(file)
-          if prt is True:
-            #print()
-            print('- %5d  %s%s' % (i,fname,ext))
-          image = Image.open(path+fname+ext)
-          #image = change_contrast(image, 95) # change contrast for grey scale
-          image = ImageOps.grayscale(image)
-          image = image.resize((img_size,img_size))
-          pixels = np.asarray(image, order='f') # write to memory fortran style
-          pixels = pixels.astype('float32')
-          data.append(np.asarray([i,pixels,target,src,category,translate,fname+ext]))
-        except OSError as error: # if returns error
-          print('--> cant read image %s already exists.' % path+fname+ext)
-          pass
+    if translate in animals:
+      path = src+subdir+category+'/'
+      target = animals.index(translate)
+      print()
+      print('   ----------> at %s , %s is a class' % (path, translate))
+      for i, file in enumerate(os.listdir(path)):
+        if i < n_samples:
+          try:
+            fname, ext = os.path.splitext(file)
+            if prt is True:
+              #print()
+              print('- %5d  %s%s' % (i,fname,ext))
+            image = Image.open(path+fname+ext)
+            #image = change_contrast(image, 95) # change contrast for grey scale
+            image = ImageOps.grayscale(image)
+            image = image.resize((img_size,img_size))
+            pixels = np.asarray(image, order='f') # write to memory fortran style
+            pixels = pixels.astype('float32')
+            data.append(np.asarray([i,pixels,target,src,category,translate,fname+ext]))
+          except OSError as error: # if returns error
+            print('--> cant read image %s already exists.' % path+fname+ext)
+            pass
   return data
 
 def check_dest(dest):
@@ -105,11 +107,13 @@ def get_data(data, label=None):
 
 def pca(X):
   print('---> Computing principal components...')
+  assert X.shape[0]!=0, '   |---> Err: selected dataset is emptry...'
   # get dim
   n_samples, dim = X.shape
   # center data
   mean = X.mean(axis=0)
-  X = X - mean
+  std = np.std(X, axis=0)
+  X = (X - mean)/std
   use_compact_technique = False # disabled, was getting poor results
   if dim > n_samples and use_compact_technique==True:
     # use compact trick
@@ -155,13 +159,13 @@ class knn_classifier:
     self.n_classes = len(self.labels)
     # set up training data
     self.trainXY = trainXY
-    self.trainX = copy.deepcopy(trainXY[:][:-1])
-    self.trainY = copy.deepcopy(trainXY[:][-1])
+    self.trainX = copy.deepcopy(trainXY[:,:-1])
+    self.trainY = copy.deepcopy(trainXY[:,-1].astype(int))
     # set up test data
     if testXY is not None:
       self.testXY = testXY
-      self.testX = copy.deepcopy(testXY[:][:-1])
-      self.testY = copy.deepcopy(testXY[:][-1])
+      self.testX = copy.deepcopy(testXY[:,:-1])
+      self.testY = copy.deepcopy(testXY[:,-1])
     else:
       print('---> Err: no test set (testX) assigned!!')
     # end of __init__
@@ -175,30 +179,26 @@ class knn_classifier:
     print('---> Computing distance to K nearest neighbors...')
     knn_dists = list()
     knn_ids = list()
-    trainXY = self.trainXY
     k = self.k
-
-    print('------------>> NBUG:{} - dist.shape: {}'.format(__LINE__, row, index))
     set_trace() # check
     # compute distances for given test set
-    dist = [self.euclidean_dist(testx_i, trainXY[:][:-1]) for testx_i in testX]
+    dist = [self.euclidean_dist(testx_i, self.trainX) for testx_i in testX]
     for row in dist: # sort distances
-
       index = enumerate(row)
       sorted_knn = sorted(index, key=lambda x: x[1])[:k] # sort tuples based on 1th element
       idList = [tup[0] for tup in sorted_knn]
       distList = [tup[1] for tup in sorted_knn]
       knn_dists.append(distList)
       knn_ids.append(idList)
-    set_trace() # check
+    #set_trace() # check
     if self.prt == True: # print log
       print('')
       print(' TestX ID | KNN IDs (trainXY)        |')
       print('__________|__________________________|')
       for i in range(len(knn_ids)):
         #diststr =' '.join([str(round(item,6)) for item in knn_dists[i] ])
-        idsstr =' '.join([str(round(item)) for item in knn_ids[i] ])
-        print(' {:5d}  |  {}  |'.format(i , idsstr))
+        idsstr =', '.join([str(round(item)) for item in knn_ids[i] ])
+        print(' {:5d}  |  {}  |'.format(i+1 , idsstr))
     print()
     if dist_mode:
       return np.array(knn_dists), np.array(knn_ids)
@@ -217,22 +217,28 @@ class knn_classifier:
       dists, ids = self.get_kneighbors(testX, dist_mode=True)
       inv_dists = 1/dists
       mean_invdist = inv_dists / np.sum(inv_dists, axis=1)[:, np.newaxis]
-      set_trace()
-      for i, xdatum in enumerate(mean_invdist):
+      #set_trace()
+      i = 1
+      for xdatum in mean_invdist:
         Y = self.trainY[ids[i]]
-        for label in range(self.numLabels):
+        for label in range(len(animals)):
           ids = np.where(Y==label)
           prob_ids = np.sum(xdatum[ids])
           probs.append(np.array(prob_ids))
-      yest_probs = np.array(probs).reshape(testX.shape[0], self.numClasses)
+        i += 1
+      yest_probs = np.array(probs).reshape(testX.shape[0], len(animals))
       yest = np.array([np.argmax(p) for p in yest_probs])
       if prt:
         print('--> Predictions: ')
         print(yest)
     else: # in simple mode
-
-      neighbs = self.get_kneighbors(testX)
-      yest = np.array([np.argmax(np.bincount(self.trainY[n])) for n in neighbs])
+      neighbors = self.get_kneighbors(testX)
+      listtemp = list()
+      for n in neighbors:
+        #set_trace()
+        tmp = np.argmax(np.bincount(self.trainY[n]))
+        listtemp.append(tmp)
+      yest = np.array(listtemp)
     return yest
 
   def get_acc(self, testX, testY, vmode='simple'):
@@ -249,18 +255,20 @@ class knn_classifier:
   # end of knn_classifier class
 
 if __name__ == '__main__':
-
   ''' ToDo: add a auto downloader
   '''
-  #url = 'https://www.kaggle.com/alessiocorrado99/animals10/download'
 
   ''' Image PCA and KNN
+    dataset: https://www.kaggle.com/alessiocorrado99/animals10/download
     YouTube: https://www.youtube.com/watch?v=9YOWgQ4kHGg
     Image CPA from scratch:
     https://drscotthawley.github.io/blog/2019/12/21/PCA-From-Scratch.html
     https://glowingpython.blogspot.com/2011/07/pca-and-image-compression-with-numpy.html
     CPA from scratch: https://machinelearningmastery.com/calculate-principal-component-analysis-scratch-python/
     https://towardsdatascience.com/k-nearest-neighbors-classification-from-scratch-with-numpy-cb222ecfeac1
+
+    read on shuffling error.
+    https://stackoverflow.com/questions/39919181/indexerror-index-is-out-of-bounds-for-axis-0-with-size
   '''
 
   ''' Default config. Do not change.
@@ -273,16 +281,16 @@ if __name__ == '__main__':
 
   ''' NBUG config
   '''
-  skip_data_load = True # just to save time
-  skip_process_raw_data = True # set to False to save time, set True for first use.
-  skip_process_dataXY = True # just to save dev time
-  skip_to_eigenXY = True # used saved PCA dataset
+  #skip_data_load = True # just to save time
+  #skip_process_raw_data = True # set to False to save time, set True for first use.
+  #skip_process_dataXY = True # just to save dev time
+  #skip_to_eigenXY = True # used saved PCA dataset
 
   ''' run config
   '''
   prt = True
-  image_size = 50 # pixels, equal height and width
-  samples_per_class = 1000
+  image_size = 30 # pixels, equal height and width
+  samples_per_class = 100
   shuffles = 10 # shuffle n times to mix data
   testfrac = .2 # 0-1.0 | test set fraction of main set
 
@@ -318,25 +326,26 @@ if __name__ == '__main__':
     print()
     # get data per class and process to obtain PCA
     for b, (directory, label) in enumerate(translations.items()):
-      X, Y = get_data(data, label=label)
-      #nSamps, mFeat = len(X), len(X[0])
-      V,S,img_mean = pca(X)
-      #set_trace()
-      dataXY.append([label,X,Y,V,S,img_mean])
-      labels.append(label)
-      key = np.reshape(img_mean, (1,-1))
-      y = np.full((1,1), Y[0])
-      # copy processed PCA keys - mean
-      keyy = copy.deepcopy(np.concatenate((key,y), axis=1))
-      keysXY = copy.deepcopy(np.concatenate((keysXY, keyy), axis=0))
-      #set_trace()
-      Y = np.expand_dims(Y,axis=1)
-      eigenXY_class = copy.deepcopy(np.concatenate((V,Y), axis=1))
-      eigenXY = copy.deepcopy(np.concatenate((eigenXY,eigenXY_class), axis=0))
-      #print(eigenXY)
-      #set_trace()
-      # plot or save images
-      plot_utility(label, image_size, V, img_mean, b)
+      if label in animals:
+        X, Y = get_data(data, label=label)
+        #nSamps, mFeat = len(X), len(X[0])
+        V,S,img_mean = pca(X)
+        #set_trace()
+        dataXY.append([label,X,Y,V,S,img_mean])
+        labels.append(label)
+        key = np.reshape(img_mean, (1,-1))
+        y = np.full((1,1), Y[0])
+        # copy processed PCA keys - mean
+        keyy = copy.deepcopy(np.concatenate((key,y), axis=1))
+        keysXY = copy.deepcopy(np.concatenate((keysXY, keyy), axis=0))
+        #set_trace()
+        Y = np.expand_dims(Y,axis=1)
+        eigenXY_class = copy.deepcopy(np.concatenate((V,Y), axis=1))
+        eigenXY = copy.deepcopy(np.concatenate((eigenXY,eigenXY_class), axis=0))
+        #print(eigenXY)
+        #set_trace()
+        # plot or save images
+        plot_utility(label, image_size, V, img_mean, b)
 
     # save processed dataset object
     print('---> Saving dataXY object to binary file...')
@@ -406,8 +415,8 @@ if __name__ == '__main__':
   print('   |---> PCA image test set shape: {}'.format(testXY.shape))
 
   #set_trace()self, trainXY, testXY=None, k=1, precision=4, prt=True, vmode='simple', labels=None):
-  knn = knn_classifier(trainXY, testXY, k=5, prt=True, vmode='simple', labels=labels)
-  knn.get_acc(knn.testX, knn.testY) #, vmode='simple')
+  knn = knn_classifier(trainXY, testXY, k=5, prt=True, vmode='weighted', labels=labels)
+  knn.get_acc(knn.testX, knn.testY, vmode='weighted')
   print('\n---> End of process.')
 
 
