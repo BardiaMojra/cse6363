@@ -368,7 +368,7 @@ if __name__ == '__main__':
   samples_per_class = 300
   shuffles = 10 # shuffle n times to mix data
   testfrac = .2 # 0-1.0 | test set fraction of main set
-  PC_ratio = 5 # %
+  PC_ratio = 100 # %
   numPC = int((PC_ratio/100)*samples_per_class)
   clen = len(animals)
   ''' create data object
