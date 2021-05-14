@@ -136,14 +136,15 @@ def plot_utility(label, image_size, Z, img_mean, b, numPC, saveImg=True):
     #plt.subplot(2,5,i+2)
     axs[int((i)/5),(i)%5].set_title('PC n°{}'.format(i+1))
     axs[int((i)/5),(i)%5].imshow(Z[i].reshape(image_size,image_size))
-  figname = './output/figure_{}_{}_w_{}_PC_{}x{}'.format(b,label,numPC,image_size,image_size)
+  tag = get_tag(clen, b, label, image_size, numPC)
+  figname = './output/figure_{}'.format(tag)
   if saveImg==True:
     plt.savefig(figname, bbox_inches='tight',dpi=300)
     print('---> Saving class PC projections figure: '+figname)
   #fig.show(bbox_inches='tight',dpi=100)
   return
 
-def plot_PCvariance(label, image_size, b, saveImg=True):
+def plot_PCvariance(label, image_size, b, numPC, saveImg=True):
   with plt.style.context('seaborn'):
     plt.figure()
     plt.title('Principle Component Variances: {}, Img:{}x{}'.format(label,image_size,image_size))
@@ -151,13 +152,24 @@ def plot_PCvariance(label, image_size, b, saveImg=True):
     plt.ylabel('Variance')
     plt.plot(S)
     #plt.legend('')
-    figname = './output/figure_PCvar_{}_{}_img_{}x{}'.format(b,label,image_size,image_size)
+    tag = get_tag(clen, b, label, image_size, numPC)
+    figname = './output/figure_PCvar_{}'.format(tag)
     if saveImg==True:
       plt.savefig(figname, bbox_inches='tight',dpi=300)
       print('---> Saving class PC variance figure: '+figname)
     #fig.show(bbox_inches='tight',dpi=100)
   return
 
+
+def get_tag(clen, b, label, image_size, numPC, s='_'):
+  clen = 'CL'+str(clen)
+  b = s+'C'+str(b)
+  label = s+str(label)
+  image_size = s+'Res'+str(image_size)
+  numPC = s+'PC'+str(numPC)
+  tag = clen+b+label+image_size+numPC
+  print('   --->>> Test ID/config tag: '+tag)
+  return tag
 
 class knn_classifier:
   def __init__(self, trainXY, testXY=None, k=1, precision=4, prt=True, vmode='simple', labels=None):
@@ -351,13 +363,14 @@ if __name__ == '__main__':
   ''' run config
   '''
   prt = True
-  image_size = 48 # pixels, equal height and width
+  knn_k = 7
+  image_size = 30 # pixels, equal height and width
   samples_per_class = 300
   shuffles = 10 # shuffle n times to mix data
   testfrac = .2 # 0-1.0 | test set fraction of main set
-  PC_ratio = 60 # %
+  PC_ratio = 5 # %
   numPC = int((PC_ratio/100)*samples_per_class)
-
+  clen = len(animals)
   ''' create data object
     data.append(np.asarray([i,pixels,target,src,category,translate,fname+ext]))
   '''
@@ -411,7 +424,7 @@ if __name__ == '__main__':
         eImgs = Z.dot(V.T)
         #print('   |---> eImgs.shape: ', eImgs.shape)
         plot_utility(label, image_size, eImgs, img_mean, b, numPC)
-        plot_PCvariance(label, image_size, b)
+        plot_PCvariance(label, image_size, b, numPC)
 
     # save processed dataset object
     print('---> Saving dataXY object to binary file...')
@@ -478,14 +491,12 @@ if __name__ == '__main__':
   print('   |---> PCA image training set shape: {}'.format(trainXY.shape))
   print('   |---> PCA image test set shape: {}'.format(testXY.shape))
 
-  #set_trace()self, trainXY, testXY=None, k=1, precision=4, prt=True, vmode='simple', labels=None):
-  knn = knn_classifier(trainXY, testXY, k=7, prt=True, vmode='weighted', labels=labels)
+  knn = knn_classifier(trainXY, testXY, k=knn_k, prt=True, vmode='weighted', labels=labels)
 
   print()
   print('\------> Test model with: training data')
   knn.get_acc(knn.trainX, knn.trainY, vmode='weighted')
   knn.get_acc(knn.trainX, knn.trainY, vmode='simple')
-
 
   print('\------> Test model with: test data')
   knn.get_acc(knn.testX, knn.testY, vmode='weighted')

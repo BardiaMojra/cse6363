@@ -1,0 +1,200 @@
+---> Creating data object...
+
+---> at ./data/raw-img/cane/, dog is a class
+---> at ./data/raw-img/cavallo/, horse is a class
+---> at ./data/raw-img/gallina/, chicken is a class
+---> at ./data/raw-img/pecora/, sheep is a class
+
+---> Computing principal components...
+   --->>> Test ID/config tag: CL4_C0_dog_Res48_PC30
+---> Saving class PC projections figure: ./output/figure_CL4_C0_dog_Res48_PC30
+   --->>> Test ID/config tag: CL4_C0_dog_Res48_PC30
+---> Saving class PC variance figure: ./output/figure_PCvar_CL4_C0_dog_Res48_PC30
+---> Computing principal components...
+   --->>> Test ID/config tag: CL4_C1_horse_Res48_PC30
+---> Saving class PC projections figure: ./output/figure_CL4_C1_horse_Res48_PC30
+   --->>> Test ID/config tag: CL4_C1_horse_Res48_PC30
+---> Saving class PC variance figure: ./output/figure_PCvar_CL4_C1_horse_Res48_PC30
+---> Computing principal components...
+   --->>> Test ID/config tag: CL4_C4_chicken_Res48_PC30
+---> Saving class PC projections figure: ./output/figure_CL4_C4_chicken_Res48_PC30
+   --->>> Test ID/config tag: CL4_C4_chicken_Res48_PC30
+---> Saving class PC variance figure: ./output/figure_PCvar_CL4_C4_chicken_Res48_PC30
+---> Computing principal components...
+   --->>> Test ID/config tag: CL4_C7_sheep_Res48_PC30
+---> Saving class PC projections figure: ./output/figure_CL4_C7_sheep_Res48_PC30
+   --->>> Test ID/config tag: CL4_C7_sheep_Res48_PC30
+---> Saving class PC variance figure: ./output/figure_PCvar_CL4_C7_sheep_Res48_PC30
+---> Saving dataXY object to binary file...
+---> Saving eigenXY object to binary file...
+---> Saving labels object to binary file...
+
+---> Labels and class indices:
+   | -  0 : dog
+   | -  1 : horse
+   | -  2 : chicken
+   | -  3 : sheep
+
+---> Shuffling PCA image dataset...
+   |---> PCA image set shape: (1200, 31)
+---> Create test set: sampling PCA image dataset w/o replacement...
+   |---> PCA image training set shape: (960, 31)
+   |---> PCA image test set shape: (240, 31)
+---> Initializing KNN classifier... 
+
+\------> Test model with: training data
+---> Predicting class based on KNN: in weighted mode...
+---> Computing distance to K nearest neighbors...
+
+  | TestX ID | KNN IDs (Class IDs) - trainXY                        |
+  |__________|______________________________________________________|
+       1     |    0(0)  741(0)  703(0)  167(1)  888(1)   32(1)  890(0)    
+       2     |    1(0)  469(0)  889(0)  674(0)    0(0)  739(2)  157(0)    
+       3     |    2(2)  476(2)  269(2)  344(2)  207(2)  237(2)  530(2)    
+       4     |    3(2)  358(2)  398(2)  860(2)  514(2)  164(2)   24(2)    
+       5     |    4(2)  195(2)  196(2)  671(2)  231(2)  258(3)  602(2)    
+       6     |    5(2)  602(2)  196(2)  346(2)  489(2)  507(1)  195(2)    
+       7     |    6(1)  768(1)  631(1)  372(1)  540(1)  873(1)  630(1)    
+       8     |    7(2)  937(0)  130(2)  892(2)  425(2)  392(2)  904(1)    
+       9     |    8(1)  765(1)   46(1)  105(3)  771(1)  484(1)  882(2)    
+      10     |    9(0)  526(0)  941(0)  890(0)   32(1)  719(0)  153(0)    
+     ...     |  ...   
+
+
+---------->>>
+---> Printing test results, in weighted mode...
+
+  | TestX ID |   Y    |  Yest  |
+  |__________|________|________|
+       1     |    0   |    0 
+       2     |    0   |    0 
+       3     |    2   |    2 
+       4     |    2   |    2 
+       5     |    2   |    2 
+       6     |    2   |    2 
+       7     |    1   |    1 
+       8     |    2   |    2 
+       9     |    1   |    1 
+      10     |    0   |    0 
+      ...    |   ...  |   ... 
+
+   \-------->>> Prediction accuracy (weighted): 100.000%  <<-|
+
+
+---> Predicting class based on KNN: in simple mode...
+---> Computing distance to K nearest neighbors...
+
+  | TestX ID | KNN IDs (Class IDs) - trainXY                        |
+  |__________|______________________________________________________|
+       1     |    0(0)  741(0)  703(0)  167(1)  888(1)   32(1)  890(0)    
+       2     |    1(0)  469(0)  889(0)  674(0)    0(0)  739(2)  157(0)    
+       3     |    2(2)  476(2)  269(2)  344(2)  207(2)  237(2)  530(2)    
+       4     |    3(2)  358(2)  398(2)  860(2)  514(2)  164(2)   24(2)    
+       5     |    4(2)  195(2)  196(2)  671(2)  231(2)  258(3)  602(2)    
+       6     |    5(2)  602(2)  196(2)  346(2)  489(2)  507(1)  195(2)    
+       7     |    6(1)  768(1)  631(1)  372(1)  540(1)  873(1)  630(1)    
+       8     |    7(2)  937(0)  130(2)  892(2)  425(2)  392(2)  904(1)    
+       9     |    8(1)  765(1)   46(1)  105(3)  771(1)  484(1)  882(2)    
+      10     |    9(0)  526(0)  941(0)  890(0)   32(1)  719(0)  153(0)    
+     ...     |  ...   
+
+
+---------->>>
+---> Printing test results, in simple mode...
+
+  | TestX ID |   Y    |  Yest  |
+  |__________|________|________|
+       1     |    0   |    0 
+       2     |    0   |    0 
+       3     |    2   |    2 
+       4     |    2   |    2 
+       5     |    2   |    2 
+       6     |    2   |    2 
+       7     |    1   |    1 
+       8     |    2   |    2 
+       9     |    1   |    1 
+      10     |    0   |    0 
+      ...    |   ...  |   ... 
+
+   \-------->>> Prediction accuracy (simple): 91.771%  <<-|
+
+
+\------> Test model with: test data
+---> Predicting class based on KNN: in weighted mode...
+---> Computing distance to K nearest neighbors...
+
+  | TestX ID | KNN IDs (Class IDs) - trainXY                        |
+  |__________|______________________________________________________|
+       1     |  227(1)   28(1)  303(1)  110(1)  946(1)  850(2)  518(1)    
+       2     |  371(1)  882(2)  827(3)  884(3)  756(2)  231(2)  526(0)    
+       3     |  631(1)    6(1)  768(1)  270(1)  144(1)  372(1)  873(1)    
+       4     |  285(3)  534(3)  572(0)  294(1)  306(0)  367(0)  325(3)    
+       5     |  816(1)  466(1)  541(1)  819(1)  462(0)  567(1)  457(3)    
+       6     |  590(3)  412(3)  760(3)   61(3)  527(3)  777(3)   35(3)    
+       7     |  838(0)  468(0)   77(0)  249(0)  930(0)  558(0)  122(0)    
+       8     |  609(3)  507(1)  817(3)   87(3)  478(3)  269(2)  711(3)    
+       9     |  399(2)  278(2)  366(2)   40(2)  266(2)  165(2)  377(2)    
+      10     |  335(2)  548(2)  901(2)  447(2)  892(2)  216(2)  169(2)    
+     ...     |  ...   
+
+
+---------->>>
+---> Printing test results, in weighted mode...
+
+  | TestX ID |   Y    |  Yest  |
+  |__________|________|________|
+       1     |    1   |    1 
+       2     |    2   |    2 
+       3     |    1   |    1 
+       4     |    1   |    3 
+       5     |    1   |    1 
+       6     |    3   |    3 
+       7     |    0   |    0 
+       8     |    3   |    3 
+       9     |    2   |    2 
+      10     |    2   |    2 
+      ...    |   ...  |   ... 
+
+   \-------->>> Prediction accuracy (weighted): 87.083%  <<-|
+
+
+---> Predicting class based on KNN: in simple mode...
+---> Computing distance to K nearest neighbors...
+
+  | TestX ID | KNN IDs (Class IDs) - trainXY                        |
+  |__________|______________________________________________________|
+       1     |  227(1)   28(1)  303(1)  110(1)  946(1)  850(2)  518(1)    
+       2     |  371(1)  882(2)  827(3)  884(3)  756(2)  231(2)  526(0)    
+       3     |  631(1)    6(1)  768(1)  270(1)  144(1)  372(1)  873(1)    
+       4     |  285(3)  534(3)  572(0)  294(1)  306(0)  367(0)  325(3)    
+       5     |  816(1)  466(1)  541(1)  819(1)  462(0)  567(1)  457(3)    
+       6     |  590(3)  412(3)  760(3)   61(3)  527(3)  777(3)   35(3)    
+       7     |  838(0)  468(0)   77(0)  249(0)  930(0)  558(0)  122(0)    
+       8     |  609(3)  507(1)  817(3)   87(3)  478(3)  269(2)  711(3)    
+       9     |  399(2)  278(2)  366(2)   40(2)  266(2)  165(2)  377(2)    
+      10     |  335(2)  548(2)  901(2)  447(2)  892(2)  216(2)  169(2)    
+     ...     |  ...   
+
+
+---------->>>
+---> Printing test results, in simple mode...
+
+  | TestX ID |   Y    |  Yest  |
+  |__________|________|________|
+       1     |    1   |    1 
+       2     |    2   |    2 
+       3     |    1   |    1 
+       4     |    1   |    0 
+       5     |    1   |    1 
+       6     |    3   |    3 
+       7     |    0   |    0 
+       8     |    3   |    3 
+       9     |    2   |    2 
+      10     |    2   |    2 
+      ...    |   ...  |   ... 
+
+   \-------->>> Prediction accuracy (simple): 87.500%  <<-|
+
+
+
+---> End of process.
