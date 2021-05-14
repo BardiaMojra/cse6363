@@ -4,7 +4,7 @@ samples_per_class = 300
 testfrac = .2 # 0-1 | test set fraction of main set
 PC_ratio = 5 # %
 
-Experiment: CL4_C0_dog_Res48_PC15
+Experiment: CL4_Res48_PC15
 training data (weighted): 100.000%
 training data (simple): 87.812%
 test data (weighted): 85.417%

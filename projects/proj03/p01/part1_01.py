@@ -199,7 +199,7 @@ class Hierarchical_Clustering:
     gold_standard = self.gold_standard
     current_clustes_pairs = []
 
-    for (current_cluster_key, current_cluster_value) in current_clusters.items():
+    for current_cluster_key, current_cluster_value in current_clusters:
       tmp = list(itertools.combinations(current_cluster_value["elements"], 2))
       current_clustes_pairs.extend(tmp)
     tp_fp = len(current_clustes_pairs)
@@ -209,10 +209,12 @@ class Hierarchical_Clustering:
       tmp = list(itertools.combinations(gold_standard_value, 2))
       gold_standard_pairs.extend(tmp)
     tp_fn = len(gold_standard_pairs)
+
     tp = 0.0
     for ccp in current_clustes_pairs:
       if ccp in gold_standard_pairs:
         tp += 1
+
     if tp_fp == 0:
       precision = 0.0
     else:
@@ -221,6 +223,7 @@ class Hierarchical_Clustering:
       precision = 0.0
     else:
       recall = tp/tp_fn
+
     return precision, recall
 
   ''' Helper Functions
@@ -268,13 +271,24 @@ class Hierarchical_Clustering:
 
   def display(self, current_clusters):
     print()
-    print(' --> Cluster Evaluation:')
-    print(precision)
-    print(recall)
+    #print(' --> Cluster Evaluation:')
+    #print(precision)
+    #print(recall)
     print(' --> Final Clusters:')
     clusters = current_clusters
     for cluster in clusters:
       print(cluster)
+
+    print(' --> Ground Truth:')
+    Mlist = list()
+    Wlist = list()
+    for i in range(len(Y)):
+      if Y[i] == 'M': Mlist.append(i)
+      else: Wlist.append(i)
+    print('M: {}'.format(Mlist))
+    print('W: {}'.format(Wlist))
+
+
 
 def get_clusters(clus_set):
   clusters = list()
@@ -349,8 +363,8 @@ if __name__ == '__main__':
   hc = Hierarchical_Clustering(input_data, k)
   hc.initialize()
   current_clusters = hc.hierarchical_clustering()
-  precision, recall = hc.evaluate(current_clusters)
-  hc.display(current_clusters, precision, recall)
+  #precision, recall = hc.evaluate(current_clusters)
+  hc.display(current_clusters)#, precision, recall)
   clusters = get_clusters(current_clusters)
   # plot the clusters generated in previous step
   for i, cluster in enumerate(clusters):
@@ -359,6 +373,8 @@ if __name__ == '__main__':
       plthcmin2.scatter(fset_1[n,0], fset_1[n,1], color=color)
   plthcmin2.set_title('k:2')
   plthcmin2.set_xlabel('Height')
+
+
 
   k=3
   print()

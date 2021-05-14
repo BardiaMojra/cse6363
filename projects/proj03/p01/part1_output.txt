@@ -1,0 +1,153 @@
+dataset:
+[[170  57  32]
+ [190  95  28]
+ [150  45  35]
+ [168  65  29]
+ [175  78  26]
+ [185  90  32]
+ [171  65  28]
+ [155  48  31]
+ [165  60  27]
+ [182  80  30]
+ [175  69  28]
+ [178  80  27]
+ [160  50  31]
+ [170  72  30]]
+
+
+target:
+['W' 'M' 'W' 'M' 'M' 'M' 'W' 'W' 'W' 'M' 'W' 'M' 'W' 'M']
+
+
+
+
+>>>>> minimum or single linkage hierarchial clustering <<<<<
+
+ |--> k: 2
+> merging 3 & 6 with distance of 3.162
+> merging 4 & 11 with distance of 3.741
+> merging 7 & 12 with distance of 5.385
+> merging 10 & 13 with distance of 6.164
+> merging 10 & 3 with distance of 6.284
+> merging 4 & 9 with distance of 6.595
+> merging 0 & 8 with distance of 7.681
+> merging 1 & 5 with distance of 8.124
+> merging 7 & 2 with distance of 9.394
+> merging 0 & 3 with distance of 9.918
+> merging 1 & 4 with distance of 16.212
+> merging 0 & 2 with distance of 22.806
+
+ --> Final Clusters:
+[0, 2, 3, 6, 7, 8, 10, 12, 13]
+[1, 4, 5, 9, 11]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
+
+ |--> k: 3
+> merging 3 & 6 with distance of 3.162
+> merging 4 & 11 with distance of 3.741
+> merging 7 & 12 with distance of 5.385
+> merging 10 & 13 with distance of 6.164
+> merging 10 & 3 with distance of 6.284
+> merging 4 & 9 with distance of 6.595
+> merging 0 & 8 with distance of 7.681
+> merging 1 & 5 with distance of 8.124
+> merging 7 & 2 with distance of 9.394
+> merging 0 & 3 with distance of 9.918
+> merging 1 & 4 with distance of 16.212
+
+ --> Final Clusters:
+[0, 3, 6, 8, 10, 13]
+[1, 4, 5, 9, 11]
+[2, 7, 12]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
+
+ |--> k: 4
+> merging 3 & 6 with distance of 3.162
+> merging 4 & 11 with distance of 3.741
+> merging 7 & 12 with distance of 5.385
+> merging 10 & 13 with distance of 6.164
+> merging 10 & 3 with distance of 6.284
+> merging 4 & 9 with distance of 6.595
+> merging 0 & 8 with distance of 7.681
+> merging 1 & 5 with distance of 8.124
+> merging 7 & 2 with distance of 9.394
+> merging 0 & 3 with distance of 9.918
+
+ --> Final Clusters:
+[0, 3, 6, 8, 10, 13]
+[1, 5]
+[2, 7, 12]
+[4, 9, 11]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
+
+
+>>>>> maximum or complete linkage hierarchial clustering <<<<<
+
+ |--> k: 2
+> merging 1 & 2 with distance of 64.412
+> merging 1 & 13 with distance of 2.5
+> merging 7 & 9 with distance of 41.88
+> merging 7 & 3 with distance of 1.87
+> merging 3 & 6 with distance of 3.399
+> merging 3 & 8 with distance of 6.519
+> merging 3 & 10 with distance of 8.74
+> merging 3 & 1 with distance of 6.57
+> merging 0 & 4 with distance of 22.405
+> merging 0 & 1 with distance of 3.141
+> merging 0 & 5 with distance of 27.755
+> merging 0 & 12 with distance of 21.878
+
+ --> Final Clusters:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+[11]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
+
+ |--> k: 3
+> merging 1 & 2 with distance of 64.412
+> merging 1 & 13 with distance of 2.5
+> merging 7 & 9 with distance of 41.88
+> merging 7 & 3 with distance of 1.87
+> merging 3 & 6 with distance of 3.399
+> merging 3 & 8 with distance of 6.519
+> merging 3 & 10 with distance of 8.74
+> merging 3 & 1 with distance of 6.57
+> merging 0 & 4 with distance of 22.405
+> merging 0 & 1 with distance of 3.141
+> merging 0 & 5 with distance of 27.755
+
+ --> Final Clusters:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
+[11]
+[12]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
+
+ |--> k: 4
+> merging 1 & 2 with distance of 64.412
+> merging 1 & 13 with distance of 2.5
+> merging 7 & 9 with distance of 41.88
+> merging 7 & 3 with distance of 1.87
+> merging 3 & 6 with distance of 3.399
+> merging 3 & 8 with distance of 6.519
+> merging 3 & 10 with distance of 8.74
+> merging 3 & 1 with distance of 6.57
+> merging 0 & 4 with distance of 22.405
+> merging 0 & 1 with distance of 3.141
+
+ --> Final Clusters:
+[0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 13]
+[11]
+[12]
+[5]
+ --> Ground Truth:
+M: [1, 3, 4, 5, 9, 11, 13]
+W: [0, 2, 6, 7, 8, 10, 12]
