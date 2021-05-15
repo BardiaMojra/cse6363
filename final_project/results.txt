@@ -2,98 +2,252 @@
 knn_k = 7
 samples_per_class = 300
 testfrac = .2 # 0-1 | test set fraction of main set
-PC_ratio = 5 # %
+PCr = 5, 10, 30, 40, 60, 100
+Img-Res = 20, 30, 48
 
-Experiment: CL4_Res48_PC15
+
+------------//>>  -------------------- 20x20 pxl images
+01
+Experiment: CL4_C__Res20_PCr100
 training data (weighted): 100.000%
-training data (simple): 87.812%
-test data (weighted): 85.417%
-test data (simple): 82.500%
+training data (simple): 96.771%
+test data (weighted): 95.833%
+test data (simple): 95.833%
 
 ------------//>>
-
-Experiment: CL4_Res30_PC15
+02
+Experiment: CL4_C__Res20_PCr60
 training data (weighted): 100.000%
-training data (simple): 89.896%
-test data (weighted): 82.083%
-test data (simple): 81.667%
+training data (simple): 96.667%
+test data (weighted): 95.833%
+test data (simple): 94.583%
+------------//>>
+03
+Experiment tag: CL4_C__Res20_PCr40
+data (weighted): 100.000%
+data (simple): 96.146%
+data (weighted): 97.083%
+data (simple): 96.250%
 
 ------------//>>
-
-Experiment: CL4_Res48_PC30
+04
+Experiment tag: CL4_C__Res20_PCr30
 training data (weighted): 100.000%
-training data (simple): 91.771%
-test data (weighted): 87.083%
-test data (simple): 87.500%
-
-------------//>>
-
-Experiment: CL4_Res30_PC30
-training data (weighted): 100.000%
-training data (simple): 93.646%
+training data (simple): 96.562%
 test data (weighted): 91.667%
 test data (simple): 90.833%
 
 ------------//>>
-
-Experiment: CL4_Res30_PC45
+05
+Experiment tag: CL4_C__Res20_PCr10
 training data (weighted): 100.000%
-training data (simple): 94.896%
-test data (weighted): 93.333%
-test data (simple): 92.500%
+training data (simple): 92.500%
+test data (weighted): 87.500%
+test data (simple): 86.250%
 
 ------------//>>
+06
+Experiment tag: CL4_C__Res20_PCr5
+training data (weighted): 100.000%
+training data (simple): 88.646%
+test data (weighted): 77.083%
+test data (simple): 76.250%
 
-Experiment: CL4_Res48_PC45
+------------//>>  -------------------- 30x30 pxl images
+
+------------//>>
+07
+Experiment tag: CL4_C__Res30_PCr5
+training data (weighted): 100.000%
+training data (simple): 93.333%
+test data (weighted): 90.417%
+test data (simple): 90.833%
+
+
+------------//>>
+08
+Experiment tag: CL4_C__Res30_PCr10
 training data (weighted): 100.000%
 training data (simple): 93.438%
+test data (weighted): 90.417%
+test data (simple): 89.583%
+
+------------//>> ----- 1 repeat (experiment results variance study case)
+09
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 94.583%
+test data (weighted): 88.333%
+test data (simple): 87.917%
+
+------------//>> ----- 2 repeat (experiment results variance study case)
+10
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.208%
+test data (weighted): 94.167%
+test data (simple): 95.000%
+
+------------//>> ----- 3 repeat (experiment results variance study case)
+11
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 96.042%
 test data (weighted): 93.333%
+test data (simple): 93.333%
+
+------------//>> ----- 4 repeat (experiment results variance study case)
+12
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.312%
+test data (weighted): 91.667%
+test data (simple): 90.417%
+
+------------//>> ----- 5 repeat (experiment results variance study case)
+13
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.833%
+test data (weighted): 90.833%
+test data (simple): 91.250%
+
+------------//>> -----  6 repeat (experiment results variance study case)
+14
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.938%
+test data (weighted): 85.833%
+test data (simple): 87.083%
+
+------------//>> -----  7 repeat (experiment results variance study case)
+15
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.729%
+test data (weighted): 92.500%
+test data (simple): 92.917%
+
+------------//>> -----  8 repeat (experiment results variance study case)
+16
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 95.521%
+test data (weighted): 94.167%
+test data (simple): 93.750%
+
+------------//>> -----  9 repeat (experiment results variance study case)
+17
+Experiment tag: CL4_C__Res30_PCr30
+training data (weighted): 100.000%
+training data (simple): 96.771%
+test data (weighted): 91.250%
 test data (simple): 92.500%
 
-------------//>>
-
-Experiment: CL4_Res48_PC90
+------------//>> -----  10 repeat (experiment results variance study case)
+18
+Experiment tag: CL4_C__Res30_PCr30
 training data (weighted): 100.000%
-training data (simple): 94.062%
+training data (simple): 95.938%
+test data (weighted): 90.417%
+test data (simple): 88.750%
+
+------------//>>
+19
+Experiment tag: CL4_C__Res30_PCr40
+training data (weighted): 100.000%
+training data (simple): 96.458%
+test data (weighted): 89.583%
+test data (simple): 89.167%
+
+------------//>>
+20
+Experiment tag: CL4_C__Res30_PCr60
+training data (weighted): 100.000%
+training data (simple): 95.104%
+test data (weighted): 92.500%
+test data (simple): 90.833%
+
+------------//>>
+21
+Experiment tag: CL4_C__Res30_PCr100
+training data (weighted): 100.000%
+training data (simple): 97.604%
+test data (weighted): 92.917%
+test data (simple): 93.333%
+
+------------//>>  -------------------- 48x48 pxl images
+
+------------//>>
+22
+Experiment tag: CL4_C__Res48_PCr5
+training data (weighted): 100.000%
+training data (simple): 93.229%
+test data (weighted): 90.417%
+test data (simple): 89.583%
+
+------------//>>
+23
+Experiment tag: CL4_C__Res48_PCr10
+training data (weighted): 100.000%
+training data (simple): 89.375%
+test data (weighted): 87.500%
+test data (simple): 85.417%
+
+------------//>> repeat
+24
+Experiment tag: CL4_C__Res48_PCr10
+training data (weighted): 100.000%
+training data (simple): 94.688%
+test data (weighted): 88.750%
+test data (simple): 85.417%
+
+------------//>> repeat
+25
+Experiment tag: CL4_C__Res48_PCr10
+training data (weighted): 100.000%
+training data (simple): 89.792%
+test data (weighted): 87.500%
+test data (simple): 86.250%
+
+------------//>>
+26
+Experiment tag: CL4_C__Res48_PCr30
+training data (weighted): 100.000%
+training data (simple): 93.333%
 test data (weighted): 89.583%
 test data (simple): 88.750%
 
 ------------//>>
-
-Experiment: CL4_Res30_PC90
+27
+Experiment tag: CL4_C__Res48_PCr40
 training data (weighted): 100.000%
-training data (simple): 94.792%
-test data (weighted): 91.667%
-test data (simple): 89.167%
-
-------------//>>
-
-Experiment: CL4_Res30_PC180
-training data (weighted): 100.000%
-training data (simple): 95.625%
-test data (weighted): 93.750%
-test data (simple): 93.333%
-
-------------//>>
-
-Experiment: CL4_Res30_PC300
-training data (weighted): 100.000%
-training data (simple): 96.562%
-test data (weighted): 90.833%
-test data (simple): 91.250%
-
-------------//>>
-
-Experiment: CL4_Res48_PC300
-training data (weighted): 100.000%
-training data (simple): 91.875%
-test data (weighted): 85.833%
+training data (simple): 93.229%
+test data (weighted): 87.083%
 test data (simple): 87.083%
 
-------------//>>
-
-Experiment: CL4_Res48_PC180
+------------//>> repeat
+28
+Experiment tag: CL4_C__Res48_PCr40
 training data (weighted): 100.000%
-training data (simple): 89.583%
+training data (simple): 91.979%
 test data (weighted): 85.417%
-test data (simple): 84.167%
+test data (simple): 85.417%
+
+------------//>>
+29
+Experiment tag: CL4_C__Res48_PCr60
+training data (weighted): 100.000%
+training data (simple): 92.188%
+test data (weighted): 86.250%
+test data (simple): 86.250%
+
+------------//>>
+30
+Experiment tag: CL4_C__Res48_PCr100
+training data (weighted): 100.000%
+training data (simple): 94.062%
+test data (weighted): 93.333%
+test data (simple): 93.750%
+
+

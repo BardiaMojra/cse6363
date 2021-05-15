@@ -109,8 +109,6 @@ def get_data(data, label=None):
 def pca(X, components):
   print('---> Computing principal components...')
   assert X.shape[0]!=0, '   |---> Err: selected dataset is emptry...'
-  # get dim
-  #n_samples, dim = X.shape
   #print('   |---> X.shape: ', X.shape)
 
   mean = X.mean(axis=0) # normalize data
@@ -161,14 +159,14 @@ def plot_PCvariance(label, image_size, b, numPC, saveImg=True):
   return
 
 
-def get_tag(clen, b, label, image_size, numPC, s='_'):
+def get_tag(clen, b, label, image_size, PCr, s='_'):
   clen = 'CL'+str(clen)
   b = s+'C'+str(b)
   label = s+str(label)
   image_size = s+'Res'+str(image_size)
-  numPC = s+'PC'+str(numPC)
-  tag = clen+b+label+image_size+numPC
-  print('   --->>> Test ID/config tag: '+tag)
+  PCr = s+'PCr'+str(PCr)
+  tag = clen+b+label+image_size+PCr
+  #print('   --->>> Test ID/config tag: '+tag)
   return tag
 
 class knn_classifier:
@@ -200,7 +198,8 @@ class knn_classifier:
 
   # Calculate nearest neighbors
   def get_kneighbors(self, testX, dist_mode=False): # trainX, trainX_i, # of nearest neighbors
-    print('---> Computing distance to K nearest neighbors...')
+    if prt:
+      print('---> Computing distance to K nearest neighbors...')
     print_all = False
     dist = list()
     knn_dists = list()
@@ -233,7 +232,7 @@ class knn_classifier:
     knn_dists = np.asarray(knn_dists)
     knn_cls_ids = np.asarray(knn_cls_ids)
     #set_trace() # check
-    if self.prt == True:
+    if show_knn_details == True:
       self.print_neighbors(knn_ids, knn_cls_ids)
     if dist_mode:
       return knn_dists, knn_ids
@@ -246,7 +245,8 @@ class knn_classifier:
           - weighted: uses distances as weights in voting process.
     '''
     prt = False
-    print('---> Predicting class based on KNN: in {} mode...'.format(vmode))
+    if prt:
+      print('---> Predicting class based on KNN: in {} mode...'.format(vmode))
     if vmode=='weighted':
       probs = list()
       dists, ids = self.get_kneighbors(testX, dist_mode=True)
@@ -277,18 +277,18 @@ class knn_classifier:
         tmp = np.argmax(np.bincount(self.trainY[n]))
         listtemp.append(tmp)
       yest = np.array(listtemp)
-    print()
     if prt:
+      print()
       print('---> Set predictions: ')
       print(yest)
-    print('---------->>>')
+      print('---------->>>')
     return yest
 
-  def get_acc(self, testX, testY, vmode='simple'):
+  def get_acc(self, testX, testY, vmode='simple', test='_'):
     yest = self.predict(testX, vmode=vmode)
     #set_trace()
     acc = float(sum(yest==testY)) / float(len(testY))
-    self.print_est(testX, testY, yest, vmode, acc)
+    self.print_est(testX, testY, yest, vmode, acc, test=test)
     return acc
 
   def print_neighbors(self, knn_ids, knn_cls_ids, lim=True, limVal=10):
@@ -307,19 +307,23 @@ class knn_classifier:
     print()
     return
 
-  def print_est(self, testX, testY, Yest, vmode, acc, lim=True, limVal=10, ):
-    print('---> Printing test results, in {} mode...'.format(vmode))
-    print()
-    print('  | TestX ID |   Y    |  Yest  |')
-    print('  |__________|________|________|')
-    rows =testX.shape[0]
-    if lim and (rows>limVal): rows=limVal
-    for x in range(0, rows):
-      print('    {:4d}     | {:4d}   | {:4d} '.format(x+1 , testY[x].astype(int), Yest[x]))
-    if lim: print('      ...    |   ...  |   ... ')
-    print()
-    print('   \-------->>> Prediction accuracy ({}): {:.3f}%  <<-|'.format(vmode,(acc*100)))
-    print('\n')
+  def print_est(self, testX, testY, Yest, vmode, acc, lim=True, limVal=10, test=''):
+    if show_knn_details == True:
+      print('---> Printing test results, in {} mode...'.format(vmode))
+      print()
+      print('  | TestX ID |   Y    |  Yest  |')
+      print('  |__________|________|________|')
+      rows =testX.shape[0]
+      if lim and (rows>limVal): rows=limVal
+      for x in range(0, rows):
+        print('    {:4d}     | {:4d}   | {:4d} '.format(x+1 , testY[x].astype(int), Yest[x]))
+      if lim: print('      ...    |   ...  |   ... ')
+      print()
+    if run_in_testmode:
+      print('{} data ({}): {:.3f}% '.format(test, vmode,(acc*100)))
+    else:
+      print('   \-------->>> Prediction accuracy ({}): {:.3f}%  <<-|'.format(vmode,(acc*100)))
+      print('\n')
     return
   # end of knn_classifier class ---------------------
 
@@ -352,6 +356,10 @@ if __name__ == '__main__':
   skip_process_dataXY =  False # Do not change.
   skip_to_eigenXY = False # Do not change.
   prt = False # Do not change.
+  plot_n_save = False
+  show_knn_details = False
+  run_in_testmode = False
+
 
   ''' NBUG config
   '''
@@ -359,17 +367,20 @@ if __name__ == '__main__':
   #skip_process_raw_data = True # set to False to save time, set True for first use.
   #skip_process_dataXY = True # just to save dev time
   #skip_to_eigenXY = True # used saved PCA dataset
+  #plot_n_save = True
+  #show_knn_details = True
+  run_in_testmode = True
 
   ''' run config
   '''
-  prt = True
+  #prt = True
   knn_k = 7
-  image_size = 30 # pixels, equal height and width
+  image_size = 48 # pixels, equal height and width
   samples_per_class = 300
   shuffles = 10 # shuffle n times to mix data
   testfrac = .2 # 0-1.0 | test set fraction of main set
-  PC_ratio = 100 # %
-  numPC = int((PC_ratio/100)*samples_per_class)
+  PCr = 100 # % percentage of principal components used
+  numPC = int((PCr/100)*image_size**2)
   clen = len(animals)
   ''' create data object
     data.append(np.asarray([i,pixels,target,src,category,translate,fname+ext]))
@@ -423,8 +434,9 @@ if __name__ == '__main__':
         #print('   |---> V.shape: ', V.shape)
         eImgs = Z.dot(V.T)
         #print('   |---> eImgs.shape: ', eImgs.shape)
-        plot_utility(label, image_size, eImgs, img_mean, b, numPC)
-        plot_PCvariance(label, image_size, b, numPC)
+        if plot_n_save:
+          plot_utility(label, image_size, eImgs, img_mean, b, PCr)
+          plot_PCvariance(label, image_size, b, PCr)
 
     # save processed dataset object
     print('---> Saving dataXY object to binary file...')
@@ -493,16 +505,19 @@ if __name__ == '__main__':
 
   knn = knn_classifier(trainXY, testXY, k=knn_k, prt=True, vmode='weighted', labels=labels)
 
+  print('------------//>>')
   print()
-  print('\------> Test model with: training data')
-  knn.get_acc(knn.trainX, knn.trainY, vmode='weighted')
-  knn.get_acc(knn.trainX, knn.trainY, vmode='simple')
+  print('Experiment tag: {}'.format(get_tag(clen, '', '', image_size, PCr)))
+  #print('\------> Test model with: training data')
+  knn.get_acc(knn.trainX, knn.trainY, vmode='weighted', test='training')
+  knn.get_acc(knn.trainX, knn.trainY, vmode='simple', test='training')
 
-  print('\------> Test model with: test data')
-  knn.get_acc(knn.testX, knn.testY, vmode='weighted')
-  knn.get_acc(knn.testX, knn.testY, vmode='simple')
+  #print('\------> Test model with: test data')
+  knn.get_acc(knn.testX, knn.testY, vmode='weighted', test='test')
+  knn.get_acc(knn.testX, knn.testY, vmode='simple', test='test')
 
-  print('\n---> End of process.')
+
+  print('---> End of process.')
 
 
 
