@@ -1,0 +1,136 @@
+Ds:
+trainXY: (9, 4)
+trainX: (9, 3)
+trainY: (9,)
+
+uX: (25, 3)
+
+Dt:
+testXY: (8, 4)
+testX: (8, 3)
+testY: (8,)
+
+Simple Logistic Regression: 
+-->> training data acc: 100.000%
+-->> test data acc: 100.000%
+
+Probabilities of TestX Predictions:
+
+Logistic Regression: -- iter: 0
+-->> training data acc: 100.000%
+-->> test data acc: 100.000%
+
+Predict unlabeled...
+
+unlabeled data predictions and probabilities: 
+   Uest  Uest_Porb0  Uest_Porb1
+0     M    0.997675    0.002325
+1     W    0.001798    0.998202
+2     M    0.998680    0.001320
+3     M    0.999633    0.000367
+4     M    0.999768    0.000232
+5     M    0.998507    0.001493
+6     W    0.001874    0.998126
+7     W    0.249562    0.750438
+8     W    0.360155    0.639845
+9     M    0.578593    0.421407
+10    M    0.993670    0.006330
+11    W    0.031541    0.968459
+12    W    0.004556    0.995444
+13    W    0.006354    0.993646
+14    M    0.995267    0.004733
+15    M    0.992016    0.007984
+16    W    0.000148    0.999852
+17    M    0.998662    0.001338
+18    W    0.000598    0.999402
+19    M    0.999994    0.000006
+20    W    0.000042    0.999958
+21    W    0.081154    0.918846
+22    W    0.156259    0.843741
+23    M    0.999628    0.000372
+24    M    0.999667    0.000333
+
+high probability labels: 
+   Uest  Uest_Porb0  Uest_Porb1
+0     M    0.997675    0.002325
+2     M    0.998680    0.001320
+3     M    0.999633    0.000367
+4     M    0.999768    0.000232
+5     M    0.998507    0.001493
+10    M    0.993670    0.006330
+14    M    0.995267    0.004733
+15    M    0.992016    0.007984
+17    M    0.998662    0.001338
+19    M    0.999994    0.000006
+23    M    0.999628    0.000372
+24    M    0.999667    0.000333
+1     W    0.001798    0.998202
+6     W    0.001874    0.998126
+7     W    0.249562    0.750438
+8     W    0.360155    0.639845
+11    W    0.031541    0.968459
+12    W    0.004556    0.995444
+13    W    0.006354    0.993646
+16    W    0.000148    0.999852
+18    W    0.000598    0.999402
+20    W    0.000042    0.999958
+21    W    0.081154    0.918846
+22    W    0.156259    0.843741
+1 unlabeled instances remaining.
+
+
+remaining predictions with pseudo labels:
+   Uest  Uest_Porb0  Uest_Porb1
+0     M    0.997675    0.002325
+1     W    0.001798    0.998202
+2     M    0.998680    0.001320
+3     M    0.999633    0.000367
+4     M    0.999768    0.000232
+5     M    0.998507    0.001493
+6     W    0.001874    0.998126
+7     W    0.249562    0.750438
+8     W    0.360155    0.639845
+9     M    0.578593    0.421407
+10    M    0.993670    0.006330
+11    W    0.031541    0.968459
+12    W    0.004556    0.995444
+13    W    0.006354    0.993646
+14    M    0.995267    0.004733
+15    M    0.992016    0.007984
+16    W    0.000148    0.999852
+17    M    0.998662    0.001338
+18    W    0.000598    0.999402
+19    M    0.999994    0.000006
+20    W    0.000042    0.999958
+21    W    0.081154    0.918846
+22    W    0.156259    0.843741
+23    M    0.999628    0.000372
+24    M    0.999667    0.000333
+
+high probability threshold: 0.6
+
+
+Logistic Regression: -- iter: 1
+-->> training data acc: 96.970%
+-->> test data acc: 100.000%
+
+Predict unlabeled...
+
+unlabeled data predictions and probabilities: 
+  Uest  Uest_Porb0  Uest_Porb1
+9    W    0.406613    0.593387
+
+high probability labels: 
+Empty DataFrame
+Columns: [Uest, Uest_Porb0, Uest_Porb1]
+Index: []
+1 unlabeled instances remaining.
+
+
+remaining predictions with pseudo labels:
+  Uest  Uest_Porb0  Uest_Porb1
+9    W    0.406613    0.593387
+
+high probability threshold: 0.6
+
+End of process. ----->>> 

@@ -114,11 +114,11 @@ if __name__ == '__main__':
   Xt, Yt  = prepare_data(testX)
   predictions = list()
   theta = sgd(X, Y, alpha, n)
-
   for x in Xt:
     y_ = hypothesis(x, theta)
     y_ = rsig(y_)
     predictions.append(y_)
 
+  pdb.set_trace()
   acc = get_acc(Y,y_)
   print("acc: ", acc)

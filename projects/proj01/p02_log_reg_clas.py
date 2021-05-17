@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 import seaborn as sns
 from pdb import *
-
+from pprint import pprint as pp
+import copy
 
 trainXY = [ [170, 57, 32, 'W'],
 [190, 95, 28, 'M'],
@@ -61,12 +62,23 @@ def get_data(dataXY):
     if y[i] == 'W': y[i] = 1
   return X, np.array(y[:,np.newaxis], dtype='float64')
 
-def get_acc(yest, y):
+def get_acc(yest, y, window=50):
+  #y = y[:-window]
+  #yest = yest[:-window]
+  #set_trace()
   score = float(sum(yest == y))/ float(len(y))
   return round((score*100), 3)
 
 
 if __name__ == '__main__':
+
+  pp('Training set:')
+  pp(trainXY)
+  print()
+
+  pp('Test set:')
+  pp(testXY)
+  print()
 
   trainX, trainY = get_data(trainXY)
   testX, testY = get_data(testXY)
@@ -79,16 +91,22 @@ if __name__ == '__main__':
   params = np.zeros((n,1))
 
   iters = 1000
-  lr = 0.1
+  lr = 0.001
 
   init_cost = get_cost(trainX, trainY, params)
 
+
   print('Initial cost: {}'.format(init_cost))
+  print()
 
   cost_hist, params = grad_desc(trainX, trainY, params, lr, iters)
 
+
   print('Final cost: {}'.format(cost_hist[-1]))
-  print('Final params: {}'.format(params))
+  print()
+  print('Final params: ')
+  print(params)
+  print()
 
   plt.figure()
   sns.set_style('white')
@@ -96,16 +114,22 @@ if __name__ == '__main__':
   plt.title("Cost Gradient Descent")
   plt.xlabel("Iterations")
   plt.ylabel("Cost")
-  plt.show()
+  plt.savefig('./p02_log_reg_fig01_Cost_vs_GD.png', dpi=200)
+  #plt.show()
 
-  m = trainY.shape[0]
-  testX = np.hstack((np.ones((m,1)),testX))
+
+  yest = predict(trainX, params)
+  score = get_acc(yest, trainY)
+  print('train accuracy: {}'.format(score))
+
+  m = testX.shape[0]
+  b = np.ones((m,1))
+  testX = copy.deepcopy(np.concatenate((b,testX), axis=1))
   yest = predict(testX, params)
   score = get_acc(yest, testY)
-  print('test accuracy: '+score)
+  print('test accuracy: {}'.format(score))
 
-
-  set_trace()
+  print('---->>> end of process.')
 
 
 
