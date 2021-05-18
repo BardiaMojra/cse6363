@@ -1,0 +1,5 @@
+They both predicted correctly but LDA is a much more robust solution because
+it transforms the data set to a feature space where boundaries are calculated
+so that distance to class means are maximized as it reduces dimensions of the
+original dataset. In this case, both perform similarly. Overall LDA is a more
+robust tool for supervised training.
